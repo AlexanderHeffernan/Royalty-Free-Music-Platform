@@ -4,14 +4,17 @@
 ?>
     <title>RFM</title>
     <link rel="stylesheet" href="css-home/style.css">
+    <link rel="stylesheet" href="css-includes/waves.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <?php include 'includes/navbar.php';?>
-    <section class="hero">
+    <section class="herocontainer">
+        <div class="hero">
         <div class="container">
             <div class="header-container">
                 <h1>
-                The World's Largest <br>
+                The World's Largest 
                 Royalty Free Music Library
                 </h1>
             </div>
@@ -26,6 +29,7 @@
                     keyboard_arrow_down
                 </span>
             </div>
+        </div>
         </div>
     </section>
     <section class="content" id="content">

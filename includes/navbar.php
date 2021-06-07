@@ -24,3 +24,12 @@
     ?>
     
 </header>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascript/waves.js"></script>
+    <script src="javascript/script-home.js"></script>
+    <script type="text/javascript">
+    Waves.attach('button', ['waves-effect', 'waves-light']);
+    Waves.attach('.navlinks a', ['waves-effect', 'waves-light']);
+    Waves.attach('.flat-buttons', ['waves-effect', 'waves-light']);
+    Waves.init();
+</script>

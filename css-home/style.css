@@ -20,16 +20,36 @@ html {
 
 body {
   background: #121212;
-  height: 400vh;
+  height:auto;
+
 }
 
-.hero {
+.herocontainer{
+  position: relative;
   width: 100%;
-  height: 95vh;
-  background: url(../resources/hero_background.png);
-  background-size: 100vw 115vh;
+  height: 600px;
+  overflow: hidden;
+  padding-top: 6%; /* 16:9 Aspect Ratio */
+
+}
+
+
+
+.hero {
+  background: url(../resources/hero_background.png) center;
+  background-size:cover;
   background-position: center;
   color: #f2f2f2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+
+
 }
 
 .hero .container {
@@ -39,7 +59,9 @@ body {
   background-size: 300%;
   position: relative;
   -webkit-animation: hero-gradient 20s infinite alternate;
-          animation: hero-gradient 20s infinite alternate;
+  animation: hero-gradient 20s infinite alternate;
+
+
 }
 
 @-webkit-keyframes hero-gradient {
@@ -103,7 +125,7 @@ body {
 .hero .header-container {
   overflow: hidden;
   position: absolute;
-  top: 8rem;
+  top: 14rem;
   left: 2rem;
 }
 
@@ -118,7 +140,7 @@ body {
 .hero .search {
   position: absolute;
   left: 47.5%;
-  top: 18rem;
+  top: 23rem;
   -webkit-transform: translateX(-47.5%);
           transform: translateX(-47.5%);
   width: 50%;
@@ -195,12 +217,15 @@ body {
 
 .content {
   background: linear-gradient(#7d2681, #305d81);
+  padding-bottom: 75px;
+
 }
 .top-songs {
   /*background: blue;*/
   color: #fff;
   width: 100%;
   padding: 2.5rem 0;
+  padding-top:200px;
   justify-content: center;
 }
 
@@ -293,6 +318,9 @@ body {
 
   }
 }
+
+
+
 
 .title{
   width: 200px;
@@ -511,4 +539,51 @@ body {
 #homeLink {
   background-color: #8F0099;
   color: white;
+}
+
+#songsTable{
+  display: none;
+}
+
+tr{
+  display: none;
+}
+
+br{  
+  display: none;
+}
+
+b{  
+  display: none;
+}
+
+@media all and (max-width: 740px){
+  li{ 
+    position: relative;
+    left:15px;  
+  }
+}
+
+@media all and (max-width: 740px){
+  li{ 
+    position: relative;
+    left:15px;  
+  }
+}
+
+@media all and (max-width: 740px){
+  .topSongsRanking{ 
+    left:-40px;  
+  }
+}
+
+.header-container{
+  animation:slideInLeft; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 0.9s; /* don't forget to set a duration! */
+}
+
+
+.herocontainer{
+  animation:fadeIn; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 0.2s; /* don't forget to set a duration! */
 }

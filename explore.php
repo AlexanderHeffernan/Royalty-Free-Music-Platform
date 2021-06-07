@@ -13,6 +13,7 @@
     <div class="sortingNavigation">
         <div class="exploretextcontainer">
             <p class="exploretext">Explore</p>
+            <button class="hamburger" onclick="filterhamburger()"><i class="material-icons">menu</i></button>
         </div>
         <div class="sortresult">
             <div class="sortresultbtn">    
@@ -29,42 +30,43 @@
 
     <!-- content -->
     <div class="main-container" id="main-container"> 
-        <ul class="filters">
-            <button class="accordion showfilter1">Genres <i class="material-icons ddarrow1 arrowicon">chevron_right</i></button>
-            <div class="panel">
-                <button>JAZZ</button><br>
-                <button>ELECTRONIC</button><br>
-                <button>HIP HOP</button><br>
-                <button>COUNTRY</button><br>
-                <button>POP</button><br>
-                <button>ROCK</button><br>
-                <button>CINEMATIC</button>        
-            </div>
+        <ul class="filters" id="filters">
+            <div class="filtercontainer">
+                <button class="accordion showfilter1">Genres <i class="material-icons ddarrow1 arrowicon">chevron_right</i></button>
+                <div class="panel">
+                    <button>JAZZ</button><br>
+                    <button>ELECTRONIC</button><br>
+                    <button>HIP HOP</button><br>
+                    <button>COUNTRY</button><br>
+                    <button>POP</button><br>
+                    <button>ROCK</button><br>
+                    <button>CINEMATIC</button>        
+                </div>
 
-            <button class="accordion showfilter2">Mood <i class="material-icons ddarrow2 arrowicon">chevron_right</i></button>
-            <div class="panel">
-                <button>HAPPY</button><br>
-                <button>SAD</button><br>
-                <button>JOYFUL</button><br>
-                <button>NOSTALGIA</button><br>
-                <button>PEACEFUL</button>
-            </div>
+                <button class="accordion showfilter2">Mood <i class="material-icons ddarrow2 arrowicon">chevron_right</i></button>
+                <div class="panel">
+                    <button>HAPPY</button><br>
+                    <button>SAD</button><br>
+                    <button>JOYFUL</button><br>
+                    <button>NOSTALGIA</button><br>
+                    <button>PEACEFUL</button>
+                </div>
 
-            <button class="accordion showfilter3">Theme <i class="material-icons ddarrow3 arrowicon">chevron_right</i>
-            </button>
-            <div class="panel">
-                <button>UNKNOWN</button>
-            </div>
+                <button class="accordion showfilter3">Theme <i class="material-icons ddarrow3 arrowicon">chevron_right</i>
+                </button>
+                <div class="panel">
+                    <button>UNKNOWN</button>
+                </div>
 
-            <button class="accordion showfilter4">Instruments <i class="material-icons ddarrow4 arrowicon">chevron_right</i>
-            </button>
-            <div class="panel">
-                <button>UNKNOWN</button>
+                <button class="accordion showfilter4">Instruments <i class="material-icons ddarrow4 arrowicon">chevron_right</i>
+                </button>
+                <div class="panel">
+                    <button>UNKNOWN</button>
+                </div>
             </div>
-
         </ul>
-            
-        
+        <div id="ONE" class="tabcontent"></div><div id="TWO" class="tabcontent"></div><div id="THREE" class="tabcontent"></div><div id="FOUR" class="tabcontent"></div><div id="FIVE" class="tabcontent"></div><div id="SIX" class="tabcontent"></div><div id="SEVEN" class="tabcontent"></div>
+
         <ul id="musicList" class="musiclist">
             <!--
             <li onclick="play()">    

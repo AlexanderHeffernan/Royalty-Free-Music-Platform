@@ -1,158 +1,3 @@
-// AUDIO CONTROLING //
-var ids = [];
-var directories = [];
-var titles = [];
-var artists = [];
-var covers = [];
-var listens = [];
-var downloads = [];
-var duration = [];
-var genre = [];
-var mood = [];
-var instrument = [];
-
-var songsTable = document.getElementById('songsTable');
-
-var rowLength = songsTable.rows.length;
-
-for (i = 1; i < rowLength; i++){
-
-    var songsCells = songsTable.rows.item(i).cells;
-
-    var cellLength = songsCells.length;
-
-    for(var j = 0; j < cellLength; j++){
-
-        var cellVal = songsCells.item(j).innerHTML;
-        if(j == 0) {
-            ids.push(cellVal);
-        }
-        else if(j == 1) {
-            directories.push(cellVal);
-        }
-        else if(j == 2) {
-            titles.push(cellVal);
-        }
-        else if(j == 3) {
-            artists.push(cellVal);
-        }
-        else if(j == 4) {
-            covers.push(cellVal);
-        }
-        else if(j == 5) {
-            listens.push(parseInt(cellVal));
-        }
-        else if(j == 6) {
-            downloads.push(parseInt(cellVal));
-        }
-        else if(j == 7) {
-            duration.push(cellVal.toString());
-        }
-        else if(j == 8) {
-            genre.push(cellVal);
-        }
-        else if(j == 9) {
-            mood.push(cellVal);
-        }
-        else if(j == 10) {
-            instrument.push(cellVal);
-        }
-    }
-}
-
-var isPlaying = false;
-var songID = 1;
-
-var myAudio = [];
-
-for(var i = 0; i < directories.length; i++) {
-    myAudio.push(new Audio("../rfm/" + directories[i]));
-}
-
-function play(songIdInput) {
-    if(songIdInput == "current" || songIdInput == songID) {
-        if(isPlaying == true) {
-            myAudio[songID].pause()
-            document.getElementById('playPauseButton').src = "resources/play.png";
-            document.getElementById('playButton' + songID).src = "resources/play.png";
-            isPlaying = false;
-        }
-        else if(isPlaying == false) {
-            myAudio[songID].play();
-            document.getElementById('playPauseButton').src = "resources/pause.png";
-            document.getElementById('playButton' + songID).src = "resources/pause.png";
-            isPlaying = true;
-        }
-        document.getElementById('btm-nav_cover').src = "../rfm/" + covers[songID];
-        document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[songID];
-        document.getElementById('songTitle').innerHTML = titles[songID];
-        document.getElementById('songArtist').innerHTML = artists[songID];
-    }
-    else {
-        myAudio[songID].pause();
-        document.getElementById('playPauseButton').src = "resources/pause.png";
-        document.getElementById('playButton' + songID).src = "resources/play.png";
-        if(songID == songIdInput && isPlaying) {
-            isPlaying = false;
-        }
-        else {
-            songID = songIdInput;
-            myAudio[songID].play();
-            document.getElementById('playButton' + songID).src = "resources/pause.png";
-            document.getElementById('btm-nav_cover').src = "../rfm/" + covers[songID];
-            document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[songID];
-            document.getElementById('songTitle').innerHTML = titles[songID];
-            document.getElementById('songArtist').innerHTML = artists[songID];
-            isPlaying = true;
-        }
-        var statType = '0';
-        $.ajax({
-            url: "includes/incrementSongStats.inc.php",
-            type: 'post',
-            data: 'songID='+ids[songID]+'&statType='+statType
-        })
-    }
-    
-};
-
-function next() {
-    myAudio[songID].pause();
-    document.getElementById('playButton' + songID).src = "resources/play.png";
-    if(songID + 1 >= myAudio.length) {
-        songID = 0;
-    }
-    else {
-        songID += 1;
-    }
-    myAudio[songID].play();
-    document.getElementById('playButton' + songID).src = "resources/pause.png";
-    document.getElementById('playPauseButton').src = "resources/pause.png";
-    document.getElementById('playButton' + songID).src = "resources/pause.png";
-    document.getElementById('btm-nav_cover').src = "../rfm/" + covers[songID];
-    document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[songID];
-    document.getElementById('songTitle').innerHTML = titles[songID];
-    document.getElementById('songArtist').innerHTML = artists[songID];
-    isPlaying = true;
-}
-
-myAudio.onplaying = function() {
-  isPlaying = true;
-};
-myAudio.onpause = function() {
-  isPlaying = false;
-};
-
-function downloadSong() {
-    console.log('yay');
-    var statType = '1';
-    $.ajax({
-        url: "includes/incrementSongStats.inc.php",
-        type: 'post',
-        data: 'songID='+ids[songID]+'&statType='+statType
-    })
-};
-
-
 // WAVE EFFECTS //
 Waves.attach('button', ['waves-effect', 'waves-light']);
 Waves.attach('.ripple', ['waves-effect', 'waves-light']);
@@ -226,8 +71,18 @@ $(document).ready(function(){
     });
     });
 
-$(document).ready(function(){
-    $(".hamburger").click(function(){
-    $(".filters").toggleClass("toggleshowmobile");
-    });
-});
+
+
+
+function filterhamburger() {
+   var element = document.getElementById("filters");
+   element.classList.toggle("showsidenav");
+
+}
+
+
+
+
+$(".musiclist").click(function(){
+    $(".filters").removeClass('showsidenav');
+ });
