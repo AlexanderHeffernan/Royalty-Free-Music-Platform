@@ -15,6 +15,9 @@ var songsTable = document.getElementById('songsTable');
 
 var rowLength = songsTable.rows.length;
 
+const audio = document.querySelector('audio');
+var playButtonPress = 0;
+
 for (i = 1; i < rowLength; i++){
 
     var songsCells = songsTable.rows.item(i).cells;
@@ -67,7 +70,7 @@ var currentList = 0;
 var myAudio = [];
 
 for(var i = 0; i < directories.length; i++) {
-    myAudio.push(new Audio("../rfm/" + directories[i]));
+    myAudio.push("../rfm/" + directories[i]);
 }
 
 var sortingOrder = [];
@@ -281,30 +284,57 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID) {
 
 function play(songIdInput, listID) {
     if(listID == undefined) {
-        console.log(currentList);
         listID = currentList;
     }
     
     if(songIdInput == "current" || songIdInput == songID) {
-        if(isPlaying == true) {
-            myAudio[sortingOrder[currentList][songID]].pause()
+        if(playButtonPress == 0){
+            document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
+            songID = 0;
+            audio.src = myAudio[sortingOrder[currentList][songID]];
+            audio.play();
+            seekSlider.value = 0;
+            if(!audio.paused) {
+                requestAnimationFrame(whilePlaying);
+            }
+            document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
+            document.getElementById('playPauseButton').src = "resources/pause.png";
+            document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
+            document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[currentList][songID]];
+            document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[currentList][songID]];
+            document.getElementById('songTitle').innerHTML = titles[sortingOrder[currentList][songID]];
+            document.getElementById('songArtist').innerHTML = artists[sortingOrder[currentList][songID]];
+            isPlaying = true;
+            playButtonPress += 1;
+        }
+        else if(isPlaying == true) {
+            audio.pause();
             document.getElementById('playPauseButton').src = "resources/play.png";
             document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
             isPlaying = false;
+            document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
+            document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[listID][songID]];
+            document.getElementById('songTitle').innerHTML = titles[sortingOrder[listID][songID]];
+            document.getElementById('songArtist').innerHTML = artists[sortingOrder[listID][songID]];
         }
         else if(isPlaying == false) {
-            myAudio[sortingOrder[listID][songID]].play();
+            audio.play();
+            seekSlider.value = 0;
+            if(!audio.paused) {
+                requestAnimationFrame(whilePlaying);
+            }
             document.getElementById('playPauseButton').src = "resources/pause.png";
             document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
             isPlaying = true;
+
+            document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
+            document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[listID][songID]];
+            document.getElementById('songTitle').innerHTML = titles[sortingOrder[listID][songID]];
+            document.getElementById('songArtist').innerHTML = artists[sortingOrder[listID][songID]];
         }
-        document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
-        document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[listID][songID]];
-        document.getElementById('songTitle').innerHTML = titles[sortingOrder[listID][songID]];
-        document.getElementById('songArtist').innerHTML = artists[sortingOrder[listID][songID]];
     }
     else {
-        myAudio[sortingOrder[currentList][songID]].pause();
+        audio.pause();
         document.getElementById('playPauseButton').src = "resources/pause.png";
         document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
         if(songID == songIdInput && isPlaying) {
@@ -312,7 +342,14 @@ function play(songIdInput, listID) {
         }
         else {
             songID = songIdInput;
-            myAudio[sortingOrder[listID][songID]].play();
+            audio.src = myAudio[sortingOrder[listID][songID]];
+            audio.play();
+            audio.currentTime = 0;
+            seekSlider.value = 0;
+            if(!audio.paused) {
+                requestAnimationFrame(whilePlaying);
+            }
+            playButtonPress += 1;
             document.getElementById('playButton' + songID + "" + listID).src = "resources/pause.png";
             document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
             document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[listID][songID]];
@@ -335,47 +372,167 @@ function play(songIdInput, listID) {
 };
 
 function next() {
-    console.log(sortingOrder[currentList]);
-    myAudio[sortingOrder[currentList][songID]].pause();
-    document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
-    if(songID + 1 >= sortingOrder[currentList].length) {
-        if(currentList + 1 >= sortingOrder.length) {
-            currentList = 0;
-        }
-        else {
-            currentList += 1;
-        }
+    if(playButtonPress == 0) {
+        document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
         songID = 0;
+        audio.src = myAudio[sortingOrder[currentList][songID]];
+        audio.play();
+        audio.currentTime = 0;
+        seekSlider.value = 0;
+        if(!audio.paused) {
+            requestAnimationFrame(whilePlaying);
+        }
+        document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
+        document.getElementById('playPauseButton').src = "resources/pause.png";
+        document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
+        document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[currentList][songID]];
+        document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[currentList][songID]];
+        document.getElementById('songTitle').innerHTML = titles[sortingOrder[currentList][songID]];
+        document.getElementById('songArtist').innerHTML = artists[sortingOrder[currentList][songID]];
+        isPlaying = true;
+        playButtonPress += 1;
     }
     else {
-        songID += 1;
+        audio.pause();
+        document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
+        if(songID + 1 >= sortingOrder[currentList].length) {
+            if(currentList + 1 >= sortingOrder.length) {
+                currentList = 0;
+            }
+            else {
+                currentList += 1;
+            }
+            songID = 0;
+        }
+        else {
+            songID += 1;
+        }
+        audio.src = myAudio[sortingOrder[currentList][songID]];
+        audio.play();
+        audio.currentTime = 0;
+        seekSlider.value = 0;
+        if(!audio.paused) {
+            requestAnimationFrame(whilePlaying);
+        }
+        document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
+        document.getElementById('playPauseButton').src = "resources/pause.png";
+        document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
+        document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[currentList][songID]];
+        document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[currentList][songID]];
+        document.getElementById('songTitle').innerHTML = titles[sortingOrder[currentList][songID]];
+        document.getElementById('songArtist').innerHTML = artists[sortingOrder[currentList][songID]];
+        isPlaying = true;
     }
-    console.log(songID + " and " + sortingOrder[currentList].length);
-    console.log(sortingOrder[currentList]);
-    myAudio[sortingOrder[currentList][songID]].play();
-    document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
-    document.getElementById('playPauseButton').src = "resources/pause.png";
-    document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
-    document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[currentList][songID]];
-    document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[currentList][songID]];
-    document.getElementById('songTitle').innerHTML = titles[sortingOrder[currentList][songID]];
-    document.getElementById('songArtist').innerHTML = artists[sortingOrder[currentList][songID]];
-    isPlaying = true;
 };
 
-myAudio.onplaying = function() {
+audio.onplaying = function() {
   isPlaying = true;
 };
-myAudio.onpause = function() {
+audio.onpause = function() {
   isPlaying = false;
 };
 
 function downloadSong() {
-    console.log('yay');
+    console.log('yay ' + ids[sortingOrder[currentList][songID]]);
     var statType = '1';
     $.ajax({
         url: "includes/incrementSongStats.inc.php",
         type: 'post',
-        data: 'songID='+ids[sortingOrder[songID]]+'&statType='+statType
+        data: 'songID='+ids[sortingOrder[currentList][songID]]+'&statType='+statType
     })
 };
+
+const playIconContainer = document.getElementById('play-icon');
+const audioPlayerContainer = document.getElementById('audio-player-container');
+const seekSlider = document.getElementById('seek-slider');
+const volumeSlider = document.getElementById('volume-slider');
+const muteIconContainer = document.getElementById('mute-icon');
+let muteState = 'unmute';
+
+const durationContainer = document.getElementById('duration');
+const currentTimeContainer = document.getElementById('current-time');
+//const outputContainer = document.getElementById('volume-output');
+
+muteIconContainer.addEventListener('click', () => {
+    if(muteState === 'unmute') {
+        audio.muted = true;
+        muteState = 'mute';
+    } else {
+        audio.muted = false;
+        muteState = 'unmute';
+    }
+});
+
+const showRangeProgress = (rangeInput) => {
+    if(rangeInput === seekSlider) audioPlayerContainer.style.setProperty('--seek-before-width-duration', rangeInput.value / rangeInput.max * 100 + '%');
+    else audioPlayerContainer.style.setProperty('--volume-before-width', rangeInput.value / rangeInput.max * 100 + '%');
+}
+
+seekSlider.addEventListener('input', (e) => {
+    showRangeProgress(e.target);
+});
+volumeSlider.addEventListener('input', (e) => {
+    showRangeProgress(e.target);
+});
+
+
+
+
+
+/** Implementation of the functionality of the audio player */
+let raf = null;
+
+const calculateTime = (secs) => {
+    const minutes = Math.floor(secs / 60);
+    const seconds = Math.floor(secs % 60);
+    const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+    return `${minutes}:${returnedSeconds}`;
+}
+
+
+//const displayDuration = () => {
+//    durationContainer.textContent = calculateTime(audio.duration);
+//}
+
+const setSliderMax = () => {
+    seekSlider.max = Math.floor(audio.duration);
+}
+
+const whilePlaying = () => {
+    seekSlider.value = Math.floor(audio.currentTime);
+    currentTimeContainer.textContent = calculateTime(seekSlider.value);
+    audioPlayerContainer.style.setProperty('--seek-before-width-duration', `${seekSlider.value / seekSlider.max * 100}%`);
+    raf = requestAnimationFrame(whilePlaying);
+}
+
+if (audio.readyState > 0) {
+    //displayDuration();
+    setSliderMax();
+} else {
+    audio.addEventListener('loadedmetadata', () => {
+        //displayDuration();
+        setSliderMax();
+    });
+}
+
+
+seekSlider.addEventListener('input', () => {
+    currentTimeContainer.textContent = calculateTime(seekSlider.value);
+    if(!audio.paused) {
+        cancelAnimationFrame(raf);
+    }
+});
+
+seekSlider.addEventListener('change', () => {
+    audio.currentTime = seekSlider.value;
+    if(!audio.paused) {
+        requestAnimationFrame(whilePlaying);
+    }
+});
+
+volumeSlider.addEventListener('input', (e) => {
+    const value = e.target.value;
+
+    //outputContainer.textContent = value;
+    audio.volume = value / 100;
+});
