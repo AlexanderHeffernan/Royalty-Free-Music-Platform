@@ -195,7 +195,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID) {
         var tagsDiv = document.createElement("div");
         tagsDiv.className = "tagcont";
 
-        if(genre[sortingOrder[listID][i]] !== "") {
+        if(genre[sortingOrder[listID][i]] !== "" && genre[sortingOrder[listID][i]] !== "None") {
             var tagsText1 = document.createElement("p");
             tagsText1.className = "tags";
             tagsText1.innerHTML = genre[sortingOrder[listID][i]];
@@ -203,14 +203,14 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID) {
         }
         
 
-        if(mood[sortingOrder[listID][i]] !== "") {
+        if(mood[sortingOrder[listID][i]] !== "" && genre[sortingOrder[listID][i]] !== "None") {
             var tagsText2 = document.createElement("p");
             tagsText2.className = "tags";
             tagsText2.innerHTML = mood[sortingOrder[listID][i]];
             tagsDiv.appendChild(tagsText2);
         }
 
-        if(instrument[sortingOrder[listID][i]] !== "") {
+        if(instrument[sortingOrder[listID][i]] !== "" && genre[sortingOrder[listID][i]] !== "None") {
             var tagsText3 = document.createElement("p");
             tagsText3.className = "tags";
             tagsText3.innerHTML = instrument[sortingOrder[listID][i]];
