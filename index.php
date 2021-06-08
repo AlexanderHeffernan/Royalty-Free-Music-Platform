@@ -15,7 +15,7 @@
             <div class="header-container">
                 <h1>
                 The World's Largest 
-                Royalty Free Music Library – That is free!
+                Royalty Free Music Library
                 </h1>
             </div>
             <div class="search">
