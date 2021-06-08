@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+header {
+  background: linear-gradient(90deg, #57015F, black, black, black, black, black, #57015F);
+  height: 65px;
+  display: flex;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  z-index: 12;
+}
+
+.logo {
+  width: 200px;
+  height: 100%;
+}
+
+
+
+.logo a img {
+  width: 80px;
+  float: right;
+}
+
+.navlinks {
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+  left:-30px;
+}
+
+.navlinks a {
+  background-color: black;
+  color: white;
+  border: 1px solid #8F0099;
+  padding: 4px 4px;
+  margin: 20px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 16px;
+}
+
+#searchIcon {
+  position: relative;
+  top: 2px;
+}
+
+.navlinks a span {
+  font-size: 16px;
+  cursor: pointer;
+
+}
+
+.navlinks a:hover {
+  background-color: #8F0099;
+  color: white;
+  cursor: pointer;
+
+}
+
+#navBar-logo{
+  position: relative;
+  left:-70px;
+}
+
+.login {
+  position: relative;
+  left:-30px;
+}
+
+.login a {
+  color: white;
+  background-color: #8F0099;
+  padding: 10px 10px;
+  margin: 13px 10px;
+  width:120px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+@media all and (max-width: 920px) {
+  .logo{    
+    width: 22%;
+    height: 100%;
+
+
+  }
+}
+
+@media all and (max-width: 740px) {
+  .logo{    
+    width: 100px;
+    height: 100%;
+
+
+  }
+}
+
+
+@media all and (max-width: 740px) {
+  #navBar-logo{    
+    position: relative;
+    left:-60px;
+  }
+}
+
+
+@media all and (max-width: 740px) {
+  #navBar-logo{    
+    position: relative;
+    left:10px;
+  }
+}
+
+
+
+@media all and (max-width: 800px) {
+  .login{    
+    position: relative;
+    left:0px;
+    width: 19%;
+
+  }
+}
+
+@media all and (max-width: 740px) {
+  .navlinks{    
+    visibility: hidden;
+  }
+}
+
+
