@@ -137,6 +137,11 @@ body {
           animation: header 4s;
 }
 
+.hero .header-container p {
+  font-size: 1.5rem;
+  padding-top: 2rem;
+}
+
 .hero .search {
   position: absolute;
   left: 47.5%;
