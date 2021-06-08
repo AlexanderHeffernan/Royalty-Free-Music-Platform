@@ -1,4 +1,3 @@
-
 #songsTable{
   display: none;
 }
@@ -11,20 +10,23 @@
 .musiclist{
   width: 85%;
    /*height: 73vh;*/
-  height: auto;
+  height: 66vh;
   margin-top: 20px;
   position: relative;
   left:14.5%;
+  overflow: auto;
 }
 
-@media all and (max-width: 1207px) {
+@media all and (max-width: 1229px) {
   .musiclist{    
     left:auto;
     margin-left:auto ;
     margin-right:auto ;
-    width: 95%;
+    width: 99%;
+    height: 66vh;
     text-align: center;
-
+    overflow-x: hidden;
+    padding:1px;
     }
   }
 
@@ -52,7 +54,7 @@
     background: #121212;
     color: transparent;
     margin-bottom:150px;
-    overflow-x: hidden;
+    overflow: hidden;
   }
   
   /* ---------- main content ---------- */
@@ -67,7 +69,7 @@
 
 
   
-  @media all and (max-width: 1207px) {
+  @media all and (max-width: 1229px) {
     .main-container{   
       background-color:transparent ; 
       display: inline-block;
@@ -96,7 +98,7 @@
 
   }
 
-  @media all and (max-width: 1207px) {
+  @media all and (max-width: 1229px) {
   .filters{    
       display: block;
       max-height: auto;
@@ -133,7 +135,7 @@
     transition: 0.4s;
   }
   
-  @media all and (max-width: 1207px) {
+  @media all and (max-width: 1229px) {
     .accordion{    
       margin-bottom: 0px;
   
@@ -205,11 +207,11 @@
     background: transparent;
     height: 100%;   
     position: relative;
-    right: -30px;
+    right: -20px;
     top:0px;
   }
   
-  @media all and (max-width: 1207px) {
+  @media all and (max-width: 1229px) {
     .musiclist li{    
       margin-left:0px ;
       margin-right:0px ;
@@ -217,6 +219,13 @@
       left:0px;
 
   
+    }
+  }
+
+
+  @media all and (max-width: 870px) {
+    .musiclist li{    
+      padding-bottom: 30px;
     }
   }
 
@@ -231,7 +240,7 @@
 
   
   
-  @media all and (max-width: 1207px) {
+  @media all and (max-width: 1229px) {
     .musiclist .rightIcons{    
       right: -20px;
   
@@ -258,10 +267,14 @@
     width: 100%;
     display: flex;
   }
+
+
   
   .info{
     display: flex;
     width: 70%;
+    position: relative;
+    top:-8px;
   
   }
   
@@ -280,6 +293,13 @@
     margin-top: 20px;
     margin-left: 10px;
     position: relative;
+  }
+
+  @media all and (max-width: 870px) {
+    .title{    
+      width: 100%;
+
+    }
   }
   
   .composer{
@@ -328,7 +348,6 @@
     margin-left: 20px;
     margin-right: -12px;
     left:50px;
-  
     text-align: center;
     font-size: 13px;
     color:black;
@@ -338,7 +357,7 @@
     padding-bottom:2px ;
     height: 20px;
     border-radius: 50px;
-  
+    cursor: pointer;
   }
   
   @media all and (max-width: 870px) {
@@ -357,7 +376,6 @@
     border:1px solid #b6b6b6;
     margin-left: 20px;
     margin-right: -12px;
-  
     text-align: center;
     font-size: 13px;
     color:#b6b6b6;
@@ -384,11 +402,13 @@
     .tagcont{    
       position: relative;
       top:-15px;
+      left:-10px;
     
   
     }
   }
   
+
   
   .content-head{
     background-color: transparent;
@@ -443,7 +463,7 @@
   
   }
   
-  @media all and (max-width: 1207px) {
+  @media all and (max-width: 1229px) {
     .content-left{    
       background-color: transparent;
       width: 100%;
@@ -452,7 +472,7 @@
   
     }
   }
-  @media all and (max-width: 1207px) {
+  @media all and (max-width: 1229px) {
     .content-right{    
       display: none;
     }
@@ -471,7 +491,7 @@
   
   
   
-  @media all and (max-width: 1207px) {
+  @media all and (max-width: 1229px) {
     #sortbutton{
       margin-right: 1px;
   
@@ -562,14 +582,13 @@
     outline: none;
   
   }
-  
-  
+
   .dropdown {
     position: relative;
     display: inline-block;
   }
   
-  .dropdown-content {
+  .dropdown-content{
     display: none;
     position: absolute;
     background-color: #2e2e2e;
@@ -577,8 +596,9 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
+    right:10px;
+    transform: translateY(0px);
   }
-  
   
   @media all and (max-width: 1139px) {
     .dropdown-content{  
@@ -590,9 +610,12 @@
   
   .dropdown:hover .dropdown-content {
     display: block;
+    transform: translateY(60px);
+    transition: ease-in-out;
+    transition-duration: 0.4s;
   }
   
-  @media all and (max-width: 1207px) {
+  @media all and (max-width: 1229px) {
     .exploretext{    
       display: none;
     }
@@ -605,24 +628,7 @@
   }
   
 
-  
-  
-  
-  #fries{
-    display: none;
-  }
-  
-  @media all and (max-width: 1207px) {
-  #fries{    
-    display: block;
-    visibility: visible;
-    top:20px;
-    left:5px;
-    }
-  }
 
-
-  
   .sortingNavigation {
     background: linear-gradient(90deg, black, #1D1D1D, #1D1D1D, #1D1D1D, black);
     height: 70px;
@@ -633,19 +639,8 @@
     z-index: 10;
   }
 
-  @media all and (max-width: 660px) {
-    .sortingNavigation{    
-      height: 90px;
 
-      }
-    }
 
-    @media all and (max-width: 660px) {
-      .main-container{   
-        top:160px;
-
-      }
-    }
 
 
   
@@ -682,12 +677,9 @@
 
   @media all and (max-width: 669px) {
     .sortresultbtn{    
-      width: 100%;
+      width: auto;
     }
   }
-
-
-  
 
   @media all and (max-width: 669px) {
     .exploretextcontainer{ 
@@ -755,7 +747,7 @@
   visibility: hidden;
 }
 
-@media all and (max-width: 1207px) {
+@media all and (max-width: 1229px) {
   .hamburger{    
     display: block;
     visibility: visible;
@@ -764,7 +756,7 @@
 }
 
 
-@media all and (max-width: 1207px) {
+@media all and (max-width: 1229px) {
   .showsidenav{
   display: block;
   transition: 0.2s ease-in-out;
@@ -776,7 +768,37 @@
 } 
 
 
+@media all and (max-width: 662px) {
+  .sortresult{    
+    overflow: hidden;     
+    width: 100%;
 
+  }
+}
+
+
+
+
+.musiclist::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+.musiclist::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: transparent;
+
+}
+
+.musiclist::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #8F0099;
+}
 
 
 
@@ -821,3 +843,15 @@ body::-webkit-scrollbar-thumb
 	background-color: #8F0099;
 }
 
+
+
+/*changes*/
+
+img{
+user-drag: none; 
+user-select: none;
+-moz-user-select: none;
+-webkit-user-drag: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+}

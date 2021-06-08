@@ -9,6 +9,8 @@
     display: flex;
     z-index: 999;
     color: #f1f1f1;
+    display: flex;
+    align-items: center;
 }
 
 .btm-nav .col1 {
@@ -17,11 +19,12 @@
     align-items: center;
     display: flex;
     font-size: 10px;
+    
 }
 
 .btm-nav .col2 {
     height: 100%;
-    width: 79%;
+    width: 100%;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -118,12 +121,20 @@
     background: transparent;
     border: none;
     outline: none;
+    padding:10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
 }
 
 .nextButton {
     background: transparent;
     border: none;
     outline: none;
+    padding:10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
 }
 
 
@@ -298,4 +309,182 @@ input[type="range"]:active::-ms-thumb {
     width: 15px;
     height: auto;
     padding-right: 10px;
+}
+
+@media all and (max-width: 1229px) {
+    .col1{    
+      display: none;
+      position: absolute;
+  
+    }
+}
+
+@media all and (max-width: 1229px) {
+    .subpart{    
+      display: none;
+      position: absolute;
+  
+    }
+}
+
+
+
+.col2{    
+    width: 100%;
+    background-color: transparent;
+    padding-left: 1.5%;
+    
+}
+
+@media all and (max-width: 1300px) {
+    .col2{    
+        width: 100%;
+        background-color: transparent;
+        padding-left: 2.9%;
+    }
+}
+
+@media all and (max-width: 1229px) {
+    .col2{    
+        width: 100%;
+        background-color: transparent;
+        padding-left: 8%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+  
+    }
+}
+
+
+@media all and (max-width: 654px) {
+    .col2{    
+        width: 100%;
+        background-color: transparent;
+        padding-left: 3%;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: inherit;
+  
+    }
+}
+
+
+.volumeScroller{
+    position: relative;
+    top:-6px;  
+}
+
+.timeBottomNav{
+    position: relative;
+    top:-6px;
+    left:10px;
+}
+
+.durationScroller{
+    position: relative;
+    top:-6px;
+}
+
+
+@media all and (max-width: 630px) {
+    .durationScroller{    
+        width: 50%;
+    }
+}
+
+.bottom-nav-icons{
+    position: relative;
+    top:-4px;  
+}
+
+@media all and (max-width: 630px) {
+    .bottom-nav-icons{    
+      display: none;
+      position: absolute;
+  
+    }
+}
+
+@media all and (max-width: 630px) {
+    .nextButton{    
+        display: none;
+  
+    }
+}
+
+@media all and (max-width: 630px) {
+    .volumeScroller{    
+        width: 17%;
+    }
+}
+
+
+@media all and (max-width: 475px) {
+    .durationScroller{    
+        width: 44%;
+    }
+}
+
+@media all and (max-width: 402px) {
+    .volumeScroller{  
+        display: none;  
+    }
+}
+
+@media all and (max-width: 402px) {
+    .durationScroller{    
+        width: 60%;
+    }
+}
+
+@media all and (max-width: 630px) {
+    .timeBottomNav{    
+        position: relative;
+        left:-1px;        
+    }
+}
+
+.songTitle{
+    color:white;
+    font-size: 0.85rem;
+    margin-left: 40px;
+}
+
+.artist{
+    color:gray;
+    font-size: 0.8rem;
+    margin-left: 40px;
+
+}
+
+.bottom-btn{
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+}
+
+.bottom-btn img{
+    position: relative;
+    top:6px;
+    left:5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+@media all and (max-width: 630px) {
+    .bottom-btn{    
+        display: none;
+    }
+}
+
+@media all and (max-width: 630px) {
+    .volumeScroller{    
+        width: 17%;
+    }
 }

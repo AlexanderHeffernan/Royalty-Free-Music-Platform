@@ -1,4 +1,4 @@
-    <link rel="stylesheet" href="css-includes/bottom-nav.css">
+<link rel="stylesheet" href="css-includes/bottom-nav.css">
     <!-- bottom navigation -->
     <section class="btm-nav">
         <div class="col1">
@@ -19,12 +19,11 @@
                     <span id="current-time" class="timeBottomNav">0:00</span>
                     <input class="durationScroller" type="range" id="seek-slider" max="100" value="0">
 
-                    <a onclick="downloadSong()" id="btm-nav_downloadButton" download><img class="bottom-nav-icons" src="resources/download-icon.png"></img></a>
-            
-                    <img class="bottom-nav-icons" src="resources/love.png"></img>
-                    <img class="bottom-nav-icons" src="resources/bookmark.png"></img>
-                    <img class="bottom-nav-icons" src="resources/notifications.png"></img>
-                    <img class="bottom-nav-icons" src="resources/share.png"></img>
+                    <a onclick="downloadSong()" id="btm-nav_downloadButton" class="bottom-btn"><img class="bottom-nav-icons" src="resources/download-icon.png"></img></a>
+                    <a class="bottom-btn"><img class="bottom-nav-icons" src="resources/love.png"></img></a>
+                    <a class="bottom-btn"><img class="bottom-nav-icons" src="resources/bookmark.png"></img></a>
+                    <a class="bottom-btn"><img class="bottom-nav-icons" src="resources/notifications.png"></img></a>
+                    <a class="bottom-btn"><img class="bottom-nav-icons" src="resources/share.png"></img></a>
 
                     <input class="volumeScroller" type="range" id="volume-slider" max="100" value="100">
                     <button id="mute-icon"></button>
