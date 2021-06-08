@@ -12,7 +12,7 @@
 
     <div class="sortingNavigation">
         <div class="exploretextcontainer">
-            <p class="exploretext">Explore – Test Version</p>
+            <p class="exploretext">Explore</p>
             <button class="hamburger" onclick="filterhamburger()"><i class="material-icons">menu</i></button>
         </div>
         <div class="sortresult">
