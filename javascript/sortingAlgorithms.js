@@ -295,6 +295,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID) {
 
         var listItem = document.createElement("li");
         listItem.setAttribute('onclick', "play(" + i + ", " + listID + ")");
+        listItem.id = "songItem" + i + "" + listID;
         if(ranked == "true")
             listItem.appendChild(ranking);
 
@@ -319,6 +320,7 @@ function play(songIdInput, listID) {
     if(songIdInput == "current" || ((songIdInput == songID) && (listID == currentList))) {
         if(playButtonPress == 0){
             document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
+            document.getElementById("songItem" + songID + "" + currentList).classList = "";
             songID = 0;
             audio.src = myAudio[sortingOrder[currentList][songID]];
             audio.play();
@@ -327,6 +329,7 @@ function play(songIdInput, listID) {
                 requestAnimationFrame(whilePlaying);
             }
             document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
+            document.getElementById("songItem" + songID + "" + currentList).classList = "selectedSong";
             document.getElementById('playPauseButton').src = "resources/pause.png";
             document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
             document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[currentList][songID]];
@@ -339,6 +342,7 @@ function play(songIdInput, listID) {
         else if(isPlaying == true) {
             audio.pause();
             document.getElementById('playPauseButton').src = "resources/play.png";
+            document.getElementById("songItem" + songID + "" + currentList).classList = "";
             document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
             isPlaying = false;
             document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
@@ -354,6 +358,7 @@ function play(songIdInput, listID) {
             }
             document.getElementById('playPauseButton').src = "resources/pause.png";
             document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
+            document.getElementById("songItem" + songID + "" + currentList).classList = "selectedSong";
             isPlaying = true;
 
             document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
@@ -366,6 +371,7 @@ function play(songIdInput, listID) {
         audio.pause();
         document.getElementById('playPauseButton').src = "resources/pause.png";
         document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
+        document.getElementById("songItem" + songID + "" + currentList).classList = "";
         if(songID == songIdInput && listID == currentList && isPlaying) {
             isPlaying = false;
             console.log("YAY AGAIN");
@@ -381,6 +387,7 @@ function play(songIdInput, listID) {
             }
             playButtonPress += 1;
             document.getElementById('playButton' + songID + "" + listID).src = "resources/pause.png";
+            document.getElementById("songItem" + songID + "" + listID).classList = "selectedSong";
             document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
             document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[listID][songID]];
             document.getElementById('songTitle').innerHTML = titles[sortingOrder[listID][songID]];

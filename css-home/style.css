@@ -264,8 +264,9 @@ body {
   position: relative;
   max-height: 60px;
   border-radius: 35px;
-  box-shadow: 6px 6px 3px rgb(96,15,101);
+  box-shadow: 3px 3px 1.5px rgb(96,15,101);
   margin-bottom: 15px;
+  transition-duration: 1s;
 }
 
 .musiclist .rightIcons {
@@ -665,4 +666,9 @@ img{
   text-align: center;
   font-size: 16px;
   left:100px;
+}
+
+.musiclist .selectedSong {
+  background-color: #000000;
+  box-shadow: 6px 6px 3px #62C8BA;
 }
