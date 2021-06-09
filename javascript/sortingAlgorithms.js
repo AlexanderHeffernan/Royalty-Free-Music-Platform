@@ -286,8 +286,7 @@ function play(songIdInput, listID) {
     if(listID == undefined) {
         listID = currentList;
     }
-    
-    if(songIdInput == "current" || songIdInput == songID) {
+    if(songIdInput == "current" || ((songIdInput == songID) && (listID == currentList))) {
         if(playButtonPress == 0){
             document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
             songID = 0;
@@ -337,8 +336,9 @@ function play(songIdInput, listID) {
         audio.pause();
         document.getElementById('playPauseButton').src = "resources/pause.png";
         document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
-        if(songID == songIdInput && isPlaying) {
+        if(songID == songIdInput && listID == currentList && isPlaying) {
             isPlaying = false;
+            console.log("YAY AGAIN");
         }
         else {
             songID = songIdInput;

@@ -652,4 +652,9 @@ img{
   -ms-user-select: none;
   }
 
+@media all and (max-width: 450px) {
+  .hero .search {
+    top: 28rem;
+  }
+}
 
