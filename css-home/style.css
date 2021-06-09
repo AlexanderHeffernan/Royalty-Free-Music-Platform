@@ -658,3 +658,11 @@ img{
   }
 }
 
+.nameText {
+  color: #5CBBAE;
+  margin-top: 25px;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  left:100px;
+}

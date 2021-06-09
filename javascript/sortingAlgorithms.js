@@ -8,6 +8,7 @@ var listens = [];
 var downloads = [];
 var duration = [];
 var genre = [];
+var dateRelease = [];
 var mood = [];
 var instrument = [];
 
@@ -59,6 +60,9 @@ for (i = 1; i < rowLength; i++){
         }
         else if(j == 10) {
             instrument.push(cellVal);
+        }
+        else if(j == 11) {
+            dateRelease.push(cellVal);
         }
     }
 }
@@ -192,8 +196,34 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID) {
         timeText.className = "time";
         timeText.innerHTML = duration[sortingOrder[listID][i]];
 
+        var releaseDate = dateRelease[sortingOrder[listID][i]];
+        var dateNumbers = releaseDate.split("-");
+        var today = new Date();
+
+        var newText = document.createElement("p");
+        newText.className = "nameText";
+        newText.innerHTML = "NEW";
+
         var tagsDiv = document.createElement("div");
         tagsDiv.className = "tagcont";
+
+        if(today.getDate() - 14 > 0) {
+            if(today.getDate() - 14 < dateNumbers[2] && today.getMonth()+1 == dateNumbers[1] && today.getFullYear() == dateNumbers[0]) {
+                tagsDiv.appendChild(newText);
+            }
+        }
+        else{
+            var extraDays = (today.getDate() - 14) * -1;
+            if(today.getMonth() == dateNumbers[1]) {
+                if(31 - extraDays < dateNumbers[2]) {
+                    tagsDiv.appendChild(newText);
+                }
+            }else if(today.getMonth()+1 == dateNumbers[1]) {
+                if(today.getDate() - 14 < dateNumbers[2] && today.getMonth()+1 == dateNumbers[1] && today.getFullYear() == dateNumbers[0]) {
+                    tagsDiv.appendChild(newText);
+                }
+            }
+        }
 
         if(genre[sortingOrder[listID][i]] !== "" && genre[sortingOrder[listID][i]] !== "None") {
             var tagsText1 = document.createElement("p");
@@ -203,14 +233,14 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID) {
         }
         
 
-        if(mood[sortingOrder[listID][i]] !== "" && genre[sortingOrder[listID][i]] !== "None") {
+        if(mood[sortingOrder[listID][i]] !== "" && mood[sortingOrder[listID][i]] !== "None") {
             var tagsText2 = document.createElement("p");
             tagsText2.className = "tags";
             tagsText2.innerHTML = mood[sortingOrder[listID][i]];
             tagsDiv.appendChild(tagsText2);
         }
 
-        if(instrument[sortingOrder[listID][i]] !== "" && genre[sortingOrder[listID][i]] !== "None") {
+        if(instrument[sortingOrder[listID][i]] !== "" && instrument[sortingOrder[listID][i]] !== "None") {
             var tagsText3 = document.createElement("p");
             tagsText3.className = "tags";
             tagsText3.innerHTML = instrument[sortingOrder[listID][i]];
@@ -452,6 +482,7 @@ let muteState = 'unmute';
 const durationContainer = document.getElementById('duration');
 const currentTimeContainer = document.getElementById('current-time');
 //const outputContainer = document.getElementById('volume-output');
+
 
 muteIconContainer.addEventListener('click', () => {
     if(muteState === 'unmute') {
