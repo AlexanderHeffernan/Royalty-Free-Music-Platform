@@ -1,34 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php 
+    session_start();
+    include 'includes/header.php';
+?>
     <title>RFM | Dashboard</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css-dashboard/style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="#"><h1>RFM</h1></a>
-        </div>
-        <div class="topnav-search">
-            <input type="text" placeholder="Search" id="search">
-        </div>
-        <div class="login">
-            <a class="flat-buttons" href="#">Signup</a>
-            <a href="#">Login</a>
-        </div>
-    </header>
+    <?php include 'includes/navbar.php';?>  
     <main>
         <div class="profile">
             <div class="profile-picture">
-                <img src="/media/img/defualt_profile_image_large_224px.png" alt="Default Profile Image">
+                <img src="resources/defualt_profile_image_large_224px.png" alt="Default Profile Image">
             </div>
             <h1>Upwards</h1>
             <p>account@gmail.com</p>
@@ -194,46 +176,6 @@
     </section>
 
     <!-- Javascript -->
-    <script>
-        const filterOne = document.querySelector(".filter-button-one");
-        const filterTwo = document.querySelector(".filter-button-two");
-
-        var clickOne = false
-        function filterClickOne() {
-            if (clickOne == false) {
-                filterOne.classList.add('material-icons-clicked')
-                clickOne = true;
-            } else {
-                filterOne.classList.remove('material-icons-clicked')
-                clickOne = false;
-            }
-        }
-        var clickTwo = false
-        function filterClickTwo() {
-            if (clickTwo == false) {
-                filterTwo.classList.add('material-icons-clicked')
-                clickTwo = true;
-            } else {
-                filterTwo.classList.remove('material-icons-clicked')
-                clickTwo = false;
-            }
-        }
-        
-        
-        const profileSettings = document.querySelector(".profile-settings");
-        var clickThree = false
-        function profileSettingsFunction() {
-            if (clickThree == false) {
-                profileSettings.classList.add('clicked')
-                clickThree = true;
-            }
-        }
-        function profileSettingsFunctionHide() {
-            if (clickThree == true) {
-                profileSettings.classList.remove('clicked')
-                clickThree = false;
-            }
-        }
-    </script>
+    <script src="javascript/script-dashboard.js"></script>
 </body>
 </html>

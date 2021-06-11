@@ -45,168 +45,6 @@ body {
   color: #fff;
 }
 
-header {
-  top: 0;
-  position: -webkit-sticky;
-  position: sticky;
-  z-index: 999;
-  width: 100%;
-  height: 3rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
-  background: #121212;
-}
-
-header a {
-  color: #f2f2f2;
-}
-
-.logo {
-  background: linear-gradient(45deg, rgba(143, 0, 153, 0.714), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0 2rem;
-}
-
-.logo h1 {
-  font-size: 1.6rem;
-}
-
-header .topnav-search {
-  background: rgba(255, 255, 255, 0.05);
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-header .topnav-search input {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  border: none;
-  background: transparent;
-  padding: 0.3rem 0.5rem;
-  height: 1rem;
-  width: 80%;
-  border-radius: 5px;
-  color: transparent;
-}
-
-header .topnav-search input:focus {
-  outline: none;
-}
-
-header .topnav-search input::-webkit-input-placeholder {
-  color: transparent;
-}
-
-header .topnav-search input:-ms-input-placeholder {
-  color: transparent;
-}
-
-header .topnav-search input::-ms-input-placeholder {
-  color: transparent;
-}
-
-header .topnav-search input::placeholder {
-  color: transparent;
-}
-
-header .topnav-search input.scrolled {
-  background: rgba(255, 255, 255, 0.07);
-  color: #f2f2f2;
-}
-
-header .topnav-search input.scrolled::-webkit-input-placeholder {
-  color: #f2f2f2;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-header .topnav-search input.scrolled:-ms-input-placeholder {
-  color: #f2f2f2;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-header .topnav-search input.scrolled::-ms-input-placeholder {
-  color: #f2f2f2;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-header .topnav-search input.scrolled::placeholder {
-  color: #f2f2f2;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.login {
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05), rgba(143, 0, 153, 0.714));
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  font-size: 0.75rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0 2rem;
-}
-
-.login a {
-  background: #8f0099;
-  margin: 0 0 0 1em;
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  -webkit-transition: background 0.5s;
-  transition: background 0.5s;
-  text-transform: uppercase;
-}
-
-.login a:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
-
 main {
   width: 100vw;
   min-height: 100vh;
@@ -217,7 +55,10 @@ main {
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: "profile profile profile" "recent recent recent" "playlist playlist playlist" "songs songs songs";
+      grid-template-areas: "profile profile profile"
+ "recent recent recent"
+ "playlist playlist playlist"
+ "songs songs songs";
   grid-gap: 1rem;
   grid-auto-rows: auto;
 }
@@ -226,7 +67,11 @@ main {
   main {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "profile recent" "profile playlist" "profile playlist" "songs songs" "songs songs";
+        grid-template-areas: "profile recent"
+ "profile playlist"
+ "profile playlist"
+ "songs songs"
+ "songs songs";
   }
 }
 
@@ -234,7 +79,9 @@ main {
   main {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "profile recent songs" "profile playlist songs" "profile playlist songs";
+        grid-template-areas: "profile recent songs"
+ "profile playlist songs"
+ "profile playlist songs";
     grid-auto-rows: 16rem;
   }
 }
