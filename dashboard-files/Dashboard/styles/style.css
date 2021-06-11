@@ -1,0 +1,744 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html > ::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #8f0099;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  width: 100vw;
+  height: 100%;
+  color: #fff;
+}
+
+header {
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 999;
+  width: 100%;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+  background: #121212;
+}
+
+header a {
+  color: #f2f2f2;
+}
+
+.logo {
+  background: linear-gradient(45deg, rgba(143, 0, 153, 0.714), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 2rem;
+}
+
+.logo h1 {
+  font-size: 1.6rem;
+}
+
+header .topnav-search {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .topnav-search input {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border: none;
+  background: transparent;
+  padding: 0.3rem 0.5rem;
+  height: 1rem;
+  width: 80%;
+  border-radius: 5px;
+  color: transparent;
+}
+
+header .topnav-search input:focus {
+  outline: none;
+}
+
+header .topnav-search input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+header .topnav-search input:-ms-input-placeholder {
+  color: transparent;
+}
+
+header .topnav-search input::-ms-input-placeholder {
+  color: transparent;
+}
+
+header .topnav-search input::placeholder {
+  color: transparent;
+}
+
+header .topnav-search input.scrolled {
+  background: rgba(255, 255, 255, 0.07);
+  color: #f2f2f2;
+}
+
+header .topnav-search input.scrolled::-webkit-input-placeholder {
+  color: #f2f2f2;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header .topnav-search input.scrolled:-ms-input-placeholder {
+  color: #f2f2f2;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header .topnav-search input.scrolled::-ms-input-placeholder {
+  color: #f2f2f2;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header .topnav-search input.scrolled::placeholder {
+  color: #f2f2f2;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.login {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05), rgba(143, 0, 153, 0.714));
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-size: 0.75rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 2rem;
+}
+
+.login a {
+  background: #8f0099;
+  margin: 0 0 0 1em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+  text-transform: uppercase;
+}
+
+.login a:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+main {
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  background: #121212;
+  padding: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "profile profile profile" "recent recent recent" "playlist playlist playlist" "songs songs songs";
+  grid-gap: 1rem;
+  grid-auto-rows: auto;
+}
+
+@media all and (min-width: 37.5625rem) {
+  main {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "profile recent" "profile playlist" "profile playlist" "songs songs" "songs songs";
+  }
+}
+
+@media all and (min-width: 84.6875rem) {
+  main {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "profile recent songs" "profile playlist songs" "profile playlist songs";
+    grid-auto-rows: 16rem;
+  }
+}
+
+main > div {
+  background: #202020;
+  -webkit-box-shadow: 3px 3px 3px rgba(230, 0, 255, 0.16);
+          box-shadow: 3px 3px 3px rgba(230, 0, 255, 0.16);
+  border-radius: 1rem;
+  padding: 1.75rem;
+}
+
+main .profile {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: profile;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+main .profile .profile-picture {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 12rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .profile > p {
+  color: #5b5d5c;
+  font-size: 0.8rem;
+}
+
+main .profile .analytics-header {
+  width: 100%;
+  font-size: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 0;
+}
+
+main .profile .analytics-header p {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+main .profile .profile-settings {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+}
+
+main .profile .profile-settings .profile-settings-card {
+  width: 30rem;
+  height: 20rem;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+main .profile .profile-settings.clicked {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: center;
+          flex-direction: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+main .profile .profile-settings.clicked .profile-settings-card {
+  background: #121212;
+}
+
+main .profile .profile-analytics {
+  padding: 1rem 0;
+}
+
+main .profile .profile-analytics > div {
+  padding: 0.5rem;
+}
+
+main .profile .profile-analytics > div h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+main .recent {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: recent;
+}
+
+main .recent > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .recent > div .song-cover {
+  width: 9.75rem;
+  height: 9.75rem;
+  background: url(/media/img/AlbumCover4.png) center no-repeat;
+  background-size: cover;
+  margin-right: 5%;
+}
+
+main .recent > div .song-details {
+  height: 100%;
+}
+
+main .recent > div .song-details h1 {
+  font-weight: 400;
+}
+
+main .recent > div .song-details h4 {
+  font-weight: 400;
+  color: #5b5d5c;
+}
+
+main .recent > div .song-details .statistics {
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .playlist {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: playlist;
+}
+
+main .playlist .container {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .playlist .container .playlist-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+main .playlist .container .playlist-container {
+  background: #171717;
+  -webkit-box-flex: 9;
+      -ms-flex: 9;
+          flex: 9;
+  overflow-y: scroll;
+  padding: 1rem;
+}
+
+main .playlist .container .playlist-container .playlist {
+  background: #000;
+  -webkit-box-shadow: 0px 0px 5px #f323c4;
+          box-shadow: 0px 0px 5px #f323c4;
+  width: 100%;
+  height: 4rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+main .playlist .container .playlist-container:last-child {
+  margin-bottom: 0;
+}
+
+main .songs {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: songs;
+}
+
+main .songs .container {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .songs .container .song-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+main .songs .container .song-container {
+  background: #171717;
+  -webkit-box-flex: 14;
+      -ms-flex: 14;
+          flex: 14;
+  overflow-y: scroll;
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-auto-rows: 4rem;
+  grid-row-gap: 0.5rem;
+}
+
+main .songs .song {
+  background: #000;
+  -webkit-box-shadow: 0px 0px 9px rgba(0, 195, 255, 0.16);
+          box-shadow: 0px 0px 9px rgba(0, 195, 255, 0.16);
+  width: 100%;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+main .filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  color: #63c8ba;
+}
+
+main .filter::-moz-selection {
+  background: none;
+}
+
+main .filter::selection {
+  background: none;
+}
+
+main .filter > .material-icons {
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
+  color: white;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  font-size: 1.2rem;
+}
+
+main .filter > .material-icons.material-icons-clicked {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+main .filter > .material-icons::-moz-selection {
+  background: none;
+}
+
+main .filter > .material-icons::selection {
+  background: none;
+}
+
+main .filter > .filter-content {
+  position: absolute;
+  display: block;
+  width: 50rem;
+  height: 89rem;
+  background: red;
+}
+
+.btm-nav {
+  display: none !important;
+  width: 100%;
+  height: 3rem;
+  background: #202020;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0rem;
+  -webkit-transition: 0.15s linear;
+  transition: 0.15s linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 999;
+  color: #f1f1f1;
+}
+
+.btm-nav.clicked {
+  bottom: 0;
+}
+
+.btm-nav .col1 {
+  height: 100%;
+  width: 15%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 10px;
+}
+
+.btm-nav .col2 {
+  height: 100%;
+  width: 40%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btm-nav .col2 .part {
+  margin: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btm-nav .col2 .part-last {
+  margin: 40px;
+}
+
+.btm-nav .col2 .part .subpart {
+  margin: 5px;
+}
+
+.btm-nav .col2 .part .subpart .songtime {
+  font-size: 12px;
+}
+
+.btm-nav .col2 .part-last .subpart .songTitle {
+  font-size: 15px;
+  width: 200px;
+  overflow-x: visible;
+}
+
+.btm-nav .col2 .part-last .subpart .artist {
+  font-size: 14px;
+  color: grey;
+}
+
+.btm-nav .col2 .song-cover {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem;
+}
+
+.btm-nav .col3 {
+  height: 100%;
+  width: 35%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btm-nav .col3 img {
+  margin: 10px;
+}
+
+.btm-nav .col4 {
+  height: 100%;
+  width: 10%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slider {
+  margin-left: 10px;
+  -webkit-appearance: none;
+  width: 50%;
+  height: 5px;
+  background: #7affed;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 5px;
+  height: 25px;
+  background: #7affed;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4caf50;
+  cursor: pointer;
+}
+
+.playButton {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.nextButton {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+/*# sourceMappingURL=style.css.map */

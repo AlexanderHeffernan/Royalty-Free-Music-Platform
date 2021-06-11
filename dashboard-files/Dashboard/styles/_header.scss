@@ -1,0 +1,80 @@
+header {
+  // position
+  top: 0;
+  position: sticky;
+  z-index: 999;
+
+  width: 100%;
+  height: 3rem;
+  //   background: white;
+  display: flex;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+  background: $primary1;
+  a {
+    color: $textColor;
+  }
+}
+
+.logo {
+  background: linear-gradient(45deg, $secondary2, $primary2, $primary2);
+  flex: 1;
+  @include alignCenter(row);
+  box-sizing: border-box;
+  padding: 0 2rem;
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+
+header .topnav-search {
+  background: $primary2;
+  flex: 3;
+  @include flexCenter(row);
+
+  input {
+    transition: 0.5s;
+    border: none;
+    background: transparent;
+    padding: 0.3rem 0.5rem;
+    height: 1rem;
+    width: 80%;
+    border-radius: 5px;
+    color: transparent;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: transparent;
+    }
+    &.scrolled {
+      background: $primary3;
+      color: $textColor;
+      &::placeholder {
+        color: $textColor;
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+.login {
+  background: linear-gradient(45deg, $primary2, $primary2, $secondary2);
+  flex: 1;
+  @include alignCenter(row);
+  justify-content: flex-end;
+  font-size: 0.75rem;
+  box-sizing: border-box;
+  padding: 0 2rem;
+
+  a {
+    background: $secondary;
+    margin: 0 0 0 1em;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background 0.5s;
+    text-transform: uppercase;
+    &:hover {
+      background: $primary2;
+    }
+  }
+}

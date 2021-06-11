@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFM | Dashboard</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"><h1>RFM</h1></a>
+        </div>
+        <div class="topnav-search">
+            <input type="text" placeholder="Search" id="search">
+        </div>
+        <div class="login">
+            <a class="flat-buttons" href="#">Signup</a>
+            <a href="#">Login</a>
+        </div>
+    </header>
+    <main>
+        <div class="profile">
+            <div class="profile-picture">
+                <img src="/media/img/defualt_profile_image_large_224px.png" alt="Default Profile Image">
+            </div>
+            <h1>Upwards</h1>
+            <p>account@gmail.com</p>
+            <div class="analytics-header">
+                <h2>Profile Analytics</h2>
+                <p onclick="profileSettingsFunction()">Profile Settings</p>
+            </div>
+            <div class="profile-settings" onclick="profileSettingsFunctionHide()">
+                <div class="profile-settings-card"></div>
+            </div>
+            <div class="profile-analytics">
+                <div>
+                    <h3>Total Listens:</h3>
+                    <h2>0</h2>
+                </div>
+                <div>
+                    <h3>Total Likes:</h3>
+                    <h2>0</h2>
+                </div>
+                <div>
+                    <h3>Total Downloads:</h3>
+                    <h2>0</h2>
+                </div>
+                <div>
+                    <h3>Total Uploads:</h3>
+                    <h2>0</h2>
+                </div>
+            </div>
+
+        </div>
+        <div class="recent">
+            <h1>Recent</h1>
+            <div>
+                <div class="song-cover"></div>
+                <div class="song-details">
+                    <h1>A New Song</h1>
+                    <h4>By Upwards.</h4>
+                    <div class="statistics">
+                        <div>
+                            <p>0 Listens</p>
+                            <p>0 Likes</p>
+                            <p>0 Downloads</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="playlist">
+            <div class="container">
+                <div class="playlist-header">
+                    <h2>Albums & Playlists</h2>
+                    <div class="filter" onclick="filterClickOne()">
+                        Filter <span class="material-icons filter-button-one">
+                            arrow_drop_down
+                            </span>
+                    </div>
+                </div>
+                <div class="playlist-container">
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                    <div class="playlist"></div>
+                </div>
+            </div>
+        </div>
+        <div class="songs">
+            <div class="container">
+                <div class="song-header">
+                    <h2>All Songs</h2>
+                    <div class="filter" onclick="filterClickTwo()">
+                        Filter 
+                        <span class="material-icons filter-button-two" id="filter">
+                            arrow_drop_down
+                        </span>
+                        <div class="filer-content">weofhwufh</div>
+                    </div>
+                </div>
+                <div class="song-container">
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                    <div class="song"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="btm-nav">
+        <div class="col1">
+            
+        </div>
+        <div class="col2">
+            <div class="part">
+                <img id="btm-nav_cover" class="cover">
+            </div>   
+            <div class="part">
+                
+                <div class="subpart">
+                    <button class="playButton" onclick="play('current')"><img src="../media/img/play.png" width="25px" height="25px"></img></button>
+                </div>
+                <div class="subpart">
+                    <button class="nextButton" onclick="next()"><img src="../media/img/fast-forward.png" width="25px" height="25px"></img></button>
+                </div>
+                <div class="subpart">
+                    <p class="songtime"></p>
+                </div>
+                
+            </div>
+            <div class="part-last">
+                <div class="subpart">
+                    <p id="songTitle" class="songTitle"></p>
+                    <p id="songArtist" class="artist"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col3">
+            <img src="../media/img/download-icon.png" width="25px" height="auto"></img>
+            <img src="../media/img/love.png" width="25px" height="auto"></img>
+            <img src="../media/img/bookmark.png" width="25px" height="auto"></img>
+            <img src="../media/img/notifications.png" width="25px" height="auto"></img>
+            <img src="../media/img/share.png" width="25px" height="auto"></img>
+        </div>
+        <div class="col4">
+            <img src="../media/img/volume.png" width="25px" height="auto"></img>
+            <input type="range" min="1" max="100" value="50" class="slider">
+        </div>
+    </section>
+
+    <!-- Javascript -->
+    <script>
+        const filterOne = document.querySelector(".filter-button-one");
+        const filterTwo = document.querySelector(".filter-button-two");
+
+        var clickOne = false
+        function filterClickOne() {
+            if (clickOne == false) {
+                filterOne.classList.add('material-icons-clicked')
+                clickOne = true;
+            } else {
+                filterOne.classList.remove('material-icons-clicked')
+                clickOne = false;
+            }
+        }
+        var clickTwo = false
+        function filterClickTwo() {
+            if (clickTwo == false) {
+                filterTwo.classList.add('material-icons-clicked')
+                clickTwo = true;
+            } else {
+                filterTwo.classList.remove('material-icons-clicked')
+                clickTwo = false;
+            }
+        }
+        
+        
+        const profileSettings = document.querySelector(".profile-settings");
+        var clickThree = false
+        function profileSettingsFunction() {
+            if (clickThree == false) {
+                profileSettings.classList.add('clicked')
+                clickThree = true;
+            }
+        }
+        function profileSettingsFunctionHide() {
+            if (clickThree == true) {
+                profileSettings.classList.remove('clicked')
+                clickThree = false;
+            }
+        }
+    </script>
+</body>
+</html>
