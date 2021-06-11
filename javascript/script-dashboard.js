@@ -51,7 +51,6 @@ function profileSettingsFunctionHide() {
     }
 }
 
-if()
 var recentSongName = myTitles[myTitles.length - 1];
 var recentSongCover = myCovers[myCovers.length - 1];
 var recentSongArtist = myArtists[myArtists.length - 1];
