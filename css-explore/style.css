@@ -9,9 +9,9 @@
 
 .musiclist{
   width: 85%;
-   /*height: 73vh;*/
-  height: 66vh;
-  margin-top: 20px;
+  height: 69vh;
+  margin-top: 9px;
+  padding-top: 9px;
   position: relative;
   left:14.5%;
   overflow: auto;
@@ -23,10 +23,8 @@
     margin-left:auto ;
     margin-right:auto ;
     width: 99%;
-    height: 66vh;
     text-align: center;
     overflow-x: hidden;
-    padding:1px;
     }
   }
 
@@ -318,7 +316,7 @@
     text-align: center;
     font-size: 16px;
     color:#707070;
-    left:100px;
+    left:150px;
   
   }
   
@@ -344,15 +342,15 @@
     margin-top: 22px;
     margin-left: 2px;
     position: relative;
-    background-color: #b6b6b6;
+    background-color: transparent;
     margin-left: 20px;
     margin-right: -12px;
     left:50px;
     text-align: center;
-    font-size: 13px;
-    color:black;
-    padding-left:10px ;
-    padding-right:10px ;
+    font-size: 14px;
+    color:#707070;
+    padding-left:1px ;
+    padding-right:1px ;
     padding-top:5px ;
     padding-bottom:2px ;
     height: 20px;
@@ -393,6 +391,10 @@
     width: 30%;
     background-color: transparent;
     display: flex;
+    left:150px;
+    text-transform: uppercase;
+
+
   }
   
   
