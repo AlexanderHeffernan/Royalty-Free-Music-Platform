@@ -5,6 +5,7 @@
     <title>RFM | Dashboard</title>
     <link rel="stylesheet" href="css-dashboard/style.css">
     <link rel="stylesheet" href="css-explore/waves.css"> 
+    <link rel="stylesheet" href="css-includes/songs-list-styling.css">
 </head>
 <body>
     <?php include 'includes/navbar.php';?>  
@@ -13,7 +14,7 @@
             <div class="profile-picture">
                 <img src="resources/defualt_profile_image_large_224px.png" alt="Default Profile Image">
             </div>
-            <h1>Upwards</h1>
+            <h1><?php echo htmlspecialchars($_SESSION["usersUsername"]); ?></h1>
             <p>account@gmail.com</p>
             <div class="analytics-header">
                 <h2>Profile Analytics</h2>
@@ -100,83 +101,22 @@
                         <div class="filer-content">weofhwufh</div>
                     </div>
                 </div>
-                <div class="song-container">
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
-                    <div class="song"></div>
+                <div id="AllSongsContainer" class="song-container">
+                    
                 </div>
             </div>
         </div>
     </main>
-    <section class="btm-nav">
-        <div class="col1">
-            
-        </div>
-        <div class="col2">
-            <div class="part">
-                <img id="btm-nav_cover" class="cover">
-            </div>   
-            <div class="part">
-                
-                <div class="subpart">
-                    <button class="playButton" onclick="play('current')"><img src="../media/img/play.png" width="25px" height="25px"></img></button>
-                </div>
-                <div class="subpart">
-                    <button class="nextButton" onclick="next()"><img src="../media/img/fast-forward.png" width="25px" height="25px"></img></button>
-                </div>
-                <div class="subpart">
-                    <p class="songtime"></p>
-                </div>
-                
-            </div>
-            <div class="part-last">
-                <div class="subpart">
-                    <p id="songTitle" class="songTitle"></p>
-                    <p id="songArtist" class="artist"></p>
-                </div>
-            </div>
-        </div>
-        <div class="col3">
-            <img src="../media/img/download-icon.png" width="25px" height="auto"></img>
-            <img src="../media/img/love.png" width="25px" height="auto"></img>
-            <img src="../media/img/bookmark.png" width="25px" height="auto"></img>
-            <img src="../media/img/notifications.png" width="25px" height="auto"></img>
-            <img src="../media/img/share.png" width="25px" height="auto"></img>
-        </div>
-        <div class="col4">
-            <img src="../media/img/volume.png" width="25px" height="auto"></img>
-            <input type="range" min="1" max="100" value="50" class="slider">
-        </div>
-    </section>
+
+    <?php include 'includes/bottom-nav.php';?>
+    <?php include 'includes/songsTable.php';?>
 
     <!-- Javascript -->
+    <script src="javascript/sortingAlgorithms.js"></script>
+    <script>
+        sortSongs("AllSongsContainer", "musiclist", 1, 10, "false", 0);
+    </script>
     <script src="javascript/script-dashboard.js"></script>
+    
 </body>
 </html>
