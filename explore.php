@@ -23,7 +23,7 @@
                 <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 1, 15, 'false', 0)">Popular</button>
                 <button class="sortbutton">Shortest</button>
                 <button class="sortbutton">Longest</button>
-                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 3, 15, 'false', 0)">Most downloaded</button>
+                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 3, 15, 'false', 0)">Most Downloaded</button>
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@
         <a href="index.php" id="homeLink">Home</a>
         <a href="explore.php" id="exploreLink">Explore</a>
         <a>Library</a>
-        <a>About</a>
+        <a href="documentation.php" id="documentationLink">About</a>
         <a id="searchIcon"><span class="material-icons">search</span></a>
     </div>
     <div>

@@ -1,0 +1,28 @@
+// colors
+$primary1: rgb(18, 18, 18);
+$primary2: rgba(255, 255, 255, 0.05);
+$primary3: rgba(255, 255, 255, 0.07);
+$primary4: rgba(255, 255, 255, 0.08);
+$primary5: rgba(255, 255, 255, 0.09);
+$primary6: rgba(255, 255, 255, 0.11);
+$primary7: rgba(255, 255, 255, 0.12);
+$primary8: rgba(255, 255, 255, 0.14);
+$primary9: rgba(255, 255, 255, 0.15);
+$primary10: rgba(255, 255, 255, 0.16);
+$secondary: rgb(143, 0, 153);
+$secondary2: rgba(143, 0, 153, 0.714);
+$textColor: rgb(242, 242, 242);
+
+// mixins
+@mixin flexCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin alignCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+}

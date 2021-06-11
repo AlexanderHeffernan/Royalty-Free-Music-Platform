@@ -1,0 +1,10 @@
+body {
+    /* background: linear-gradient(#00B2FF, #F600FF); */
+}
+
+.image {
+    background: url(../resources/about-page-img-1.png);
+    display: flex;
+    width: 10em;
+    height: 10em;
+}
