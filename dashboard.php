@@ -4,6 +4,7 @@
 ?>
     <title>RFM | Dashboard</title>
     <link rel="stylesheet" href="css-dashboard/style.css">
+    <link rel="stylesheet" href="css-explore/waves.css"> 
 </head>
 <body>
     <?php include 'includes/navbar.php';?>  

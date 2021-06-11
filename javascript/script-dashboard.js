@@ -1,3 +1,16 @@
+// WAVE EFFECTS //
+Waves.attach('button', ['waves-effect', 'waves-light']);
+Waves.attach('.bottom-btn', ['waves-effect', 'waves-light']);
+Waves.attach('.ripple', ['waves-effect', 'waves-light']);
+Waves.attach('.playmusic', ['waves-effect', 'waves-light']);
+Waves.attach('.active', ['waves-effect', 'waves-dark']);
+Waves.attach('#sort', ['waves-effect', 'waves-dark']);
+Waves.attach('#sort option', ['waves-effect', 'waves-dark']);
+
+Waves.init();
+
+
+
 const filterOne = document.querySelector(".filter-button-one");
 const filterTwo = document.querySelector(".filter-button-two");
 
