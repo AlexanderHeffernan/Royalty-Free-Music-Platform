@@ -55,10 +55,7 @@ main {
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: "profile profile profile"
- "recent recent recent"
- "playlist playlist playlist"
- "songs songs songs";
+      grid-template-areas: "profile profile profile" "recent recent recent" "playlist playlist playlist" "songs songs songs";
   grid-gap: 1rem;
   grid-auto-rows: auto;
 }
@@ -67,11 +64,7 @@ main {
   main {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "profile recent"
- "profile playlist"
- "profile playlist"
- "songs songs"
- "songs songs";
+        grid-template-areas: "profile recent" "profile playlist" "profile playlist" "songs songs" "songs songs";
   }
 }
 
@@ -79,9 +72,7 @@ main {
   main {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "profile recent songs"
- "profile playlist songs"
- "profile playlist songs";
+        grid-template-areas: "profile recent songs" "profile playlist songs" "profile playlist songs";
     grid-auto-rows: 16rem;
   }
 }
@@ -223,7 +214,7 @@ main .recent > div {
 main .recent > div .song-cover {
   width: 9.75rem;
   height: 9.75rem;
-  background: url(/media/img/AlbumCover4.png) center no-repeat;
+  background: url(../resources/AlbumCover4.png) center no-repeat;
   background-size: cover;
   margin-right: 5%;
 }
