@@ -226,7 +226,6 @@ main .recent > div {
 main .recent > div .song-cover {
   width: 9.75rem;
   height: 9.75rem;
-  background: url(../resources/AlbumCover4.png) center no-repeat;
   background-size: cover;
   margin-right: 5%;
 }

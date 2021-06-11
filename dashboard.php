@@ -26,7 +26,7 @@
             <div class="profile-analytics">
                 <div>
                     <h3>Total Listens:</h3>
-                    <h2>0</h2>
+                    <h2 id="totalListens">0</h2>
                 </div>
                 <div>
                     <h3>Total Likes:</h3>
@@ -34,11 +34,11 @@
                 </div>
                 <div>
                     <h3>Total Downloads:</h3>
-                    <h2>0</h2>
+                    <h2 id="totalDownloads">0</h2>
                 </div>
                 <div>
                     <h3>Total Uploads:</h3>
-                    <h2>0</h2>
+                    <h2 id="totalUploads">0</h2>
                 </div>
             </div>
 
@@ -46,15 +46,15 @@
         <div class="recent">
             <h1>Recent</h1>
             <div>
-                <div class="song-cover"></div>
+                <img class="song-cover" id="recentSongCover"></img>
                 <div class="song-details">
-                    <h1>A New Song</h1>
-                    <h4>By Upwards.</h4>
+                    <h2 id="recentSongName">A New Song</h1>
+                    <h4 id="recentSongArtist">By Upwards.</h4>
                     <div class="statistics">
                         <div>
-                            <p>0 Listens</p>
-                            <p>0 Likes</p>
-                            <p>0 Downloads</p>
+                            <p id="recentSongListens">0 Listens</p>
+                            <p id="recentSongLikes">0 Likes</p>
+                            <p id="recentSongDownloads">0 Downloads</p>
                         </div>
                     </div>
                 </div>
@@ -108,13 +108,15 @@
         </div>
     </main>
 
+    <p id="username"><?php echo htmlspecialchars($_SESSION["usersUsername"]); ?></p>
+
     <?php include 'includes/bottom-nav.php';?>
     <?php include 'includes/songsTable.php';?>
 
     <!-- Javascript -->
     <script src="javascript/sortingAlgorithms.js"></script>
     <script>
-        sortSongs("AllSongsContainer", "musiclist", 1, 10, "false", 0);
+        sortSongs("AllSongsContainer", "musiclist", 1, 10, "false", 0, 1);
     </script>
     <script src="javascript/script-dashboard.js"></script>
     

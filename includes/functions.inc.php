@@ -13,7 +13,7 @@ function emptyInputSignup($username, $email, $password, $passwordRepeat) {
 
 function invalidUsername($username) {
     $result;
-    if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+    if (preg_match('/[^A-Za-z0-9_ -]/', $username)) {
         $result = true;
     }
     else {

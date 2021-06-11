@@ -19,11 +19,11 @@
             <div class="sortresultbtn">    
                 <button class="sortbutton" id="defaultOpen" >A-Z</button>
                 <button class="sortbutton">Z-A</button>
-                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 2, 15, 'false', 0)">New</button>
-                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 1, 15, 'false', 0)">Popular</button>
+                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 2, 15, 'false', 0, 0)">New</button>
+                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 1, 15, 'false', 0, 0)">Popular</button>
                 <button class="sortbutton">Shortest</button>
                 <button class="sortbutton">Longest</button>
-                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 3, 15, 'false', 0)">Most Downloaded</button>
+                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 3, 15, 'false', 0, 0)">Most Downloaded</button>
             </div>
         </div>
     </div>
@@ -112,7 +112,7 @@
     <script src="javascript/script-explore.js"></script>
     <script src="javascript/sortingAlgorithms.js"></script>
     <script>
-        sortSongs("main-container", "musicList", 1, 15, "false", 0)
+        sortSongs("main-container", "musicList", 1, 15, "false", 0, 0)
     </script>
 </body>
 </html>

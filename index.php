@@ -67,9 +67,9 @@
     <script src="javascript/script-home.js"></script>
     <script src="javascript/sortingAlgorithms.js"></script>
     <script>
-        sortSongs("listensSection", "musiclist", 1, 10, "true", 0);
-        sortSongs("downloadsSection", "musiclist1", 3, 10, "true", 1);
-        sortSongs("newestSongs", "musiclist2", 2, 13, "false", 2);
+        sortSongs("listensSection", "musiclist", 1, 10, "true", 0, 0);
+        sortSongs("downloadsSection", "musiclist1", 3, 10, "true", 1, 0);
+        sortSongs("newestSongs", "musiclist2", 2, 13, "false", 2, 0);
     </script>
 
 
