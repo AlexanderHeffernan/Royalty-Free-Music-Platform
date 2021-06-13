@@ -21,7 +21,7 @@ html {
 
 body {
   /* background: linear-gradient(#00B2FF, #F600FF); */
-  background-image: url(../resources/About-Page-Background.png);
+  background-image: url(../resources/about-bg-image.jpg);
 }
 
 .main-title {
@@ -96,7 +96,7 @@ body {
     }
   }
 
-  
+
 
   @-webkit-keyframes arrow {
     25% {
