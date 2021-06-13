@@ -2,18 +2,43 @@
     session_start();
     include 'includes/header.php';
 ?>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css-about/style.css">
     <title>RFM</title>
+    <link rel="stylesheet" href="css-about/style.css">
+    <link rel="stylesheet" href="css-includes/waves.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-    <div class="main-p">
+    <?php include 'includes/navbar.php';?>
+
+    <div class="hero">
+        <div class="container">
+
+    <div class="Main-title">
+        <h1>WHO ARE WE?</h1>
+    </div>
+
+
+            <div class="header-container">
+            <div class="main-title">
+        <h1>WHO ARE WE?</h1>
+    </div>
+            </div>
+         
+            <div class="arrow">
+                <span class="material-icons">
+                    keyboard_arrow_down
+                </span>
+            </div>
+            
+            <div class="main-p">
         <p>With unlimited downloads, talented artists and a wide collection of genres, RFM is your one stop site for music</p>
     </div>
 
     <div class="image"></div>
     
+        </div>
+        </div>
+
+
 </body>
 </html>
