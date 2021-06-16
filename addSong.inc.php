@@ -17,7 +17,7 @@ if (isset($_POST["submit"])) {
     require_once 'includes/functions.inc.php';
 
     if (emptyInputSongUpload($title, $artist) !== false) {
-        header("location: ../dashboard.php?error=emptyinput");
+        header("location: dashboard.php?error=emptyinput");
         exit();
     }
 

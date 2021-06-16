@@ -14,7 +14,7 @@
             <div class="profile-picture">
                 <img src="resources/defualt_profile_image_large_224px.png" alt="Default Profile Image">
             </div>
-            <h1><?php echo htmlspecialchars($_SESSION["usersUsername"]); ?></h1>
+            <h1 id="artistText"><?php echo htmlspecialchars($_SESSION["usersUsername"]); ?></h1>
             <p>account@gmail.com</p>
             <div class="analytics-header">
                 <h2>Profile Analytics</h2>
@@ -67,7 +67,7 @@
                     <section class="signup-form">
                         <form action="addSong.inc.php" method="post" id="login" class="input-group" enctype="multipart/form-data">
                             <input type="text" name="title" class="input-field" placeholder="ENTER TITLE" required>
-                            <input type="text" name="artist" class="input-field" placeholder="ENTER ARTIST" required>
+                            <input id="artistInput" type="text" name="artist" class="input-field" placeholder="ENTER ARTIST" required readonly>
                             <label>Songs Audio file:</label>
                             <input type="file" accept="audio/*" name="audio" class="input-field" required>
                             <label>Songs Cover file:</label>

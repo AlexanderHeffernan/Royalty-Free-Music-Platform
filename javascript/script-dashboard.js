@@ -75,3 +75,5 @@ for (var i = 0; i < myDownloads.length; i++) {
 document.getElementById("totalDownloads").innerHTML = totalDownloads;
 
 document.getElementById("totalUploads").innerHTML = myDirectories.length;
+
+document.getElementById("artistInput").value = document.getElementById("artistText").innerHTML;
