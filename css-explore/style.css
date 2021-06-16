@@ -786,6 +786,8 @@ img {
   color: #707070;
   margin-left: 10px;
   position: relative;
+  left: 50%;
+
 }
 
 .time {

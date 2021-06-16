@@ -98,7 +98,6 @@
                         <span class="material-icons filter-button-two" id="filter">
                             arrow_drop_down
                         </span>
-                        <div class="filer-content">weofhwufh</div>
                     </div>
                 </div>
                 <div id="AllSongsContainer" class="song-container">
