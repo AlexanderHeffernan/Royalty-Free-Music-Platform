@@ -276,7 +276,7 @@ body {
   text-align: center;
   font-size: 16px;
   color: #707070;
-  left: 150px;
+  left: 50%;
 }
 
 @media all and (max-width: 870px) {
@@ -740,16 +740,93 @@ img {
   -ms-user-select: none;
 }
 
+
 .nameText {
   color: #5cbbae;
   margin-top: 25px;
   position: relative;
   text-align: center;
   font-size: 16px;
-  left: 100px;
+  left: 50%;
 }
+
+@media all and (max-width: 870px) {
+  .nameText {
+    color: #5cbbae;
+    margin-top: 25px;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    left: 22px;
+  }
+}
+
 
 .musiclist .selectedSong {
   background-color: #000000;
   box-shadow: 6px 6px 3px #62c8ba;
+}
+
+
+.title {
+  width: 200px;
+  margin-top: 20px;
+  margin-left: 10px;
+  position: relative;
+}
+
+@media all and (max-width: 870px) {
+  .title {
+    width: 100%;
+  }
+}
+
+.composer {
+  font-size: 16px;
+  color: #707070;
+  margin-left: 10px;
+  position: relative;
+}
+
+.time {
+  margin-top: 25px;
+  position: relative;
+  background-color: transparent;
+  margin-left: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #707070;
+  left: 50%;
+}
+
+@media all and (max-width: 870px) {
+  .time {
+    left: 0px;
+  }
+}
+
+.tags {
+  margin-top: 22px;
+  margin-left: 2px;
+  position: relative;
+  background-color: transparent;
+  margin-left: 20px;
+  margin-right: -12px;
+  left: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: #707070;
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  height: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+@media all and (max-width: 870px) {
+  .tags {
+    left: 0px;
+  }
 }
