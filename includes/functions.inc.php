@@ -136,7 +136,7 @@ function uploadSong($connection, $title, $artist, $audio, $cover, $listens, $dow
     $sql = "INSERT INTO songs (directory, title, artist, cover, listens, downloads, duration, genre, mood, instrument) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     $statement = mysqli_stmt_init($connection);
     if(!mysqli_stmt_prepare($statement, $sql)) {
-        header("location: add.php?errorstatementFailed");
+        header("location: dashboard.php?errorstatementFailed");
         exit();
     }
 
@@ -146,6 +146,6 @@ function uploadSong($connection, $title, $artist, $audio, $cover, $listens, $dow
     mysqli_stmt_bind_param($statement, "ssssssssss", $audioDir, $title, $artist, $coverDir, $listens, $downloads, $duration, $genre, $mood, $instrument);
     mysqli_stmt_execute($statement);
     mysqli_stmt_close($statement);
-    header("location: explore.php?error=none");
+    header("location: dashboard.php?error=none");
     exit();
 }

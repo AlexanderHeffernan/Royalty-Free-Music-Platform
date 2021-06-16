@@ -62,30 +62,40 @@
         </div>
         <div class="playlist">
             <div class="container">
-                <div class="playlist-header">
-                    <h2>Albums & Playlists</h2>
-                    <div class="filter" onclick="filterClickOne()">
-                        Filter <span class="material-icons filter-button-one">
-                            arrow_drop_down
-                            </span>
-                    </div>
-                </div>
-                <div class="playlist-container">
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
-                    <div class="playlist"></div>
+                <h1>Upload song:</h1>
+                <div class="form-box">              
+                    <section class="signup-form">
+                        <form action="addSong.inc.php" method="post" id="login" class="input-group" enctype="multipart/form-data">
+                            <input type="text" name="title" class="input-field" placeholder="ENTER TITLE" required>
+                            <input type="text" name="artist" class="input-field" placeholder="ENTER ARTIST" required>
+                            <label>Songs Audio file:</label>
+                            <input type="file" accept="audio/*" name="audio" class="input-field" required>
+                            <label>Songs Cover file:</label>
+                            <input type="file" accept="image/*" name="cover" class="input-field" required>
+                            <input type="text" name="duration" class="input-field" placeholder="ENTER DURATION" required>
+                            <select name="genre" class="input-field" placeholder="NONE">
+                                <option value="None">ENTER GENRE</option>
+                                <option value="Pop">Pop</option>
+                                <option value="Rock">Rock</option>
+                                <option value="Hip hop">Hip hop</option>
+                                <option value="Jazz">Jazz</option>
+                            </select>
+                            <select name="mood" class="input-field" placeholder="NONE">
+                                <option value="None">ENTER MOOD</option>
+                                <option value="Cheerful">Cheerful</option>
+                                <option value="Happy">Hapyy</option>
+                                <option value="Sad">Sad</option>
+                                <option value="Angry">Angry</option>
+                            </select>
+                            <select name="instrument" class="input-field">
+                                <option value="None">ENTER MAIN INSTRUMENT</option>
+                                <option value="Piano">Piano</option>
+                                <option value="Guitar">Guitar</option>
+                                <option value="Drum">Drum</option>
+                            </select>
+                            <button type="submit" name="submit" class="submit-btn">Upload</button>
+                        </form>
+                    </section>
                 </div>
             </div>
         </div>
@@ -115,7 +125,7 @@
     <!-- Javascript -->
     <script src="javascript/sortingAlgorithms.js"></script>
     <script>
-        sortSongs("AllSongsContainer", "musiclist", 1, 10, "false", 0, 1);
+        sortSongs("AllSongsContainer", "musiclist", 2, 10, "false", 0, 1);
     </script>
     <script src="javascript/script-dashboard.js"></script>
     
