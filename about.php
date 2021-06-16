@@ -29,15 +29,17 @@
                     keyboard_arrow_down
                 </span>
             </div>
-            
+            </div>
+        </div>
+
+        <div class="second-page">
+
             <div class="main-p">
         <p>With unlimited downloads, talented artists and a wide collection of genres, RFM is your one stop site for music</p>
-    </div>
+            </div>
+        <div class="image"><img src="../resources/about-page-img-1.png" alt=""></div>
+            </div>
 
-    <div class="image"></div>
-    
-        </div>
-        </div>
 
 
 </body>
