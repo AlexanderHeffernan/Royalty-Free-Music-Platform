@@ -54,13 +54,24 @@ var recentSongArtist = myArtists[myArtists.length - 1];
 var recentSongListen = myListens[myListens.length - 1];
 var recentSongDownloads = myDownloads[myDownloads.length - 1];
 
-document.getElementById("recentSongCover").src = recentSongCover;
-document.getElementById("recentSongName").innerHTML = recentSongName;
-document.getElementById("recentSongArtist").innerHTML = recentSongArtist;
-document.getElementById("recentSongListens").innerHTML =
-  recentSongListen + " Listens";
-document.getElementById("recentSongDownloads").innerHTML =
-  recentSongDownloads + " Downloads";
+if(recentSongCover != undefined) {
+  document.getElementById("recentSongCover").src = recentSongCover;
+
+  document.getElementById("recentSongName").innerHTML = recentSongName;
+  document.getElementById("recentSongArtist").innerHTML = recentSongArtist;
+  document.getElementById("recentSongListens").innerHTML = recentSongListen + " Listens";
+  document.getElementById("recentSongDownloads").innerHTML = recentSongDownloads + " Downloads";
+}
+else {
+  document.getElementById("recentSongCover").parentNode.removeChild(document.getElementById("recentSongCover"));
+  document.getElementById("recentSongName").innerHTML = "Upload your first song below...";
+  document.getElementById("recentHeader").parentNode.removeChild(document.getElementById("recentHeader"));
+  document.getElementById("recentSongArtist").parentNode.removeChild(document.getElementById("recentSongArtist"));
+  document.getElementById("recentSongListens").parentNode.removeChild(document.getElementById("recentSongListens"));
+  document.getElementById("recentSongDownloads").parentNode.removeChild(document.getElementById("recentSongDownloads"));
+  document.getElementById("recentSongLikes").parentNode.removeChild(document.getElementById("recentSongLikes"));
+
+}
 
 var totalListens = 0;
 for (var i = 0; i < myListens.length; i++) {
@@ -75,3 +86,5 @@ for (var i = 0; i < myDownloads.length; i++) {
 document.getElementById("totalDownloads").innerHTML = totalDownloads;
 
 document.getElementById("totalUploads").innerHTML = myDirectories.length;
+
+document.getElementById("artistInput").value = document.getElementById("artistText").innerHTML;
