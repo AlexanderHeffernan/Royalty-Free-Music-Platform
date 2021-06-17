@@ -297,6 +297,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
                 if(genre[sortingOrder[listID][i]] !== "" && genre[sortingOrder[listID][i]] !== "None") {
                     var tagsText1 = document.createElement("p");
                     tagsText1.className = "tags";
+                    tagsText1.id = "firstTag";
                     tagsText1.innerHTML = genre[sortingOrder[listID][i]];
                     tagsDiv.appendChild(tagsText1);
                 }
