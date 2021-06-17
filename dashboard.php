@@ -1,5 +1,10 @@
 <?php 
     session_start();
+
+    if(!isset($_SESSION['usersUserame'])){ //if login in session is not set
+        header("Location: index.php");
+    }
+
     include 'includes/header.php';
 ?>
     <title>RFM | Dashboard</title>
@@ -12,8 +17,17 @@
     <main>
         <div class="profile">
             <div class="profile-picture">
-                <?php echo '<img src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image"/>' ?>
+                <?php 
+                if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "") {
+                    
+                    echo '<img src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" width="150px" height="auto"/>';
+                } else {
+                    echo '<img src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image" width="150px" height="auto"/>';                  
+                }
+                ?>
+                
             </div>
+            <br>
             <h1 id="artistText"><?php echo htmlspecialchars($_SESSION["usersUsername"]); ?></h1>
             <p><?php echo htmlspecialchars($_SESSION["userEmail"]); ?></p>
             <div class="analytics-header">
@@ -44,7 +58,7 @@
 
         </div>
         <div class="recent">
-            <h1>Recent</h1>
+            <h1 id="recentHeader">Recent</h1>
             <div>
                 <img class="song-cover" id="recentSongCover"></img>
                 <div class="song-details">
