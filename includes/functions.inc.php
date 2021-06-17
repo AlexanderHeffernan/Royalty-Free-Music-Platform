@@ -11,6 +11,12 @@ function emptyInputSignup($username, $email, $password, $passwordRepeat) {
     return $result;
 }
 
+function emptyProfilePictureDirectory($profilePictureDirectory) {
+    if(empty($profilePictureDirectory)) {
+        return true;
+    }
+}
+
 function invalidUsername($username) {
     $result;
     if (preg_match('/[^A-Za-z0-9_ -]/', $username)) {
@@ -68,8 +74,8 @@ function usernameExists($connection, $username, $email) {
     mysqli_stmt_close($statement);
 }
 
-function createUser($connection, $username, $email, $password) {
-    $sql = "INSERT INTO users (usersUsername, usersEmail, usersPassword) VALUES (?, ?, ?);";
+function createUser($connection, $username, $email, $password, $profilePicture) {
+    $sql = "INSERT INTO users (usersUsername, usersEmail, usersPassword, usersPictureDirectory) VALUES (?, ?, ?, ?);";
     $statement = mysqli_stmt_init($connection);
     if(!mysqli_stmt_prepare($statement, $sql)) {
         header("location: ../login.php?error=statementFailed");
@@ -77,11 +83,12 @@ function createUser($connection, $username, $email, $password) {
     }
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $profilePictureDir = "resources/users/profilePicture/" . $profilePicture;
 
-    mysqli_stmt_bind_param($statement, "sss", $username, $email, $hashedPassword);
+    mysqli_stmt_bind_param($statement, "ssss", $username, $email, $hashedPassword, $profilePictureDir);
     mysqli_stmt_execute($statement);
     mysqli_stmt_close($statement);
-    header("location: ../login.php?error=none");
+    header("location: login.php?error=none");
     exit();
 }
 
@@ -114,7 +121,9 @@ function loginUser($connection, $username, $password) {
     else if($checkPassword === true) {
         session_start();
         $_SESSION["userid"] = $usernameExists["usersId"];
+        $_SESSION["userEmail"] = $usernameExists["usersEmail"];
         $_SESSION["usersUsername"] = $usernameExists["usersUsername"];
+        $_SESSION["usersProfilePicture"] = $usernameExists["usersPictureDirectory"];
         header("location: ../index.php");
         exit();
     }

@@ -12,10 +12,10 @@
     <main>
         <div class="profile">
             <div class="profile-picture">
-                <img src="resources/defualt_profile_image_large_224px.png" alt="Default Profile Image">
+                <?php echo '<img src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image"/>' ?>
             </div>
             <h1 id="artistText"><?php echo htmlspecialchars($_SESSION["usersUsername"]); ?></h1>
-            <p>account@gmail.com</p>
+            <p><?php echo htmlspecialchars($_SESSION["userEmail"]); ?></p>
             <div class="analytics-header">
                 <h2>Profile Analytics</h2>
                 <p onclick="profileSettingsFunction()">Profile Settings</p>
