@@ -1,8 +1,8 @@
 <?php 
     session_start();
 
-    if(!isset($_SESSION['usersUserame'])){ //if login in session is not set
-        header("Location: index.php");
+    if(!isset($_SESSION['usersUsername'])){ //if login in session is not set
+        header("Location: index.php ");
     }
 
     include 'includes/header.php';

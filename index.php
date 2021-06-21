@@ -20,10 +20,10 @@
                 <p> – that's free!</p>
             </div>
             <div class="search">
-                <span class="material-icons search-icon">
-                    search
-                </span>
-                <input type="text" placeholder="What mood are you looking for?...">
+                <form action="explore.php" method="POST">
+                    <input type="text" name="search" placeholder="What mood are you looking for?...">
+                    <button type="submit" name="submit-search" class="material-icons search-icon">search</button> 
+                </form>
             </div>
             <div class="arrow">
                 <span class="material-icons">
@@ -67,7 +67,8 @@
     <script src="javascript/script-home.js"></script>
     <script src="javascript/sortingAlgorithms.js"></script>
     <script>
-        sortSongs("listensSection", "musiclist", 1, 10, "true", 0, 0);
+        sortSongs("listensSection", "musiclist", 4, 10, "false", 0, 0, "upwards");
+        //sortSongs("listensSection", "musiclist", 1, 10, "true", 0, 0);
         sortSongs("downloadsSection", "musiclist1", 3, 10, "true", 1, 0);
         sortSongs("newestSongs", "musiclist2", 2, 13, "false", 2, 0);
     </script>

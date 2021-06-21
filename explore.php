@@ -15,7 +15,13 @@
             <p class="exploretext">Explore</p>
             <button class="hamburger" onclick="filterhamburger()"><i class="material-icons">menu</i></button>
         </div>
+        <?php
+            if(isset($_POST['submit-search'])) {
+                echo "<p class='showingResultsForText'>Showing results for: " . $_POST['search'] . ".";
+            }
+        ?>
         <div class="sortresult">
+            
             <div class="sortresultbtn">    
                 <button class="sortbutton" id="defaultOpen" >A-Z</button>
                 <button class="sortbutton">Z-A</button>

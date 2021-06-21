@@ -886,3 +886,8 @@ img {
 
   }
 }
+
+.showingResultsForText {
+  color: white;
+  font-size: 20px;
+}
