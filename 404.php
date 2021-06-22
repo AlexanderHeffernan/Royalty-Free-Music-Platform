@@ -16,7 +16,7 @@
         <p>404</p>
         <a class="tip">You're not supposed to be here.</a>
         <a class="backbuttoncontainer">
-            <a href="index.php" class="backbutton">go back</a>
+            <a href="index.php" class="backbutton">Go Back</a>
         </a>
     </div>
 
