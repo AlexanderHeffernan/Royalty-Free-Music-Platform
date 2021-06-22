@@ -163,6 +163,10 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   cursor: pointer;
+  background: transparent;
+  color: white;
+  outline: none;
+  border: none;
 }
 
 .hero .search input {
