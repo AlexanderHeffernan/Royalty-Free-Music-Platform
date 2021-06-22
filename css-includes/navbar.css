@@ -114,4 +114,9 @@ header {
   }
 }
 
-
+.profilePicture {
+  margin: 7px;
+  height: 80%;
+  width: auto;
+  border-radius: 100%;
+}

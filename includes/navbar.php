@@ -19,7 +19,13 @@
             echo "<button onclick=\"window.location.href='login.php'\" class='flat-buttons'><p>Login / Sign Up</p></button>";
         }
         else {
-            echo "<button onclick=\"window.location.href='includes/logout.inc.php';\" class='flat-buttons'><p>Log Out</p></button>";
+            if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "") {
+                    
+                echo '<img src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" width="150px" height="auto" class="profilePicture"/>';
+            } else {
+                echo '<img src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image" width="150px" height="auto" class="profilePicture"/>';                  
+            }
+            //echo "<button onclick=\"window.location.href='includes/logout.inc.php';\" class='flat-buttons'><p>Log Out</p></button>";
         }
     ?>
     </div>
