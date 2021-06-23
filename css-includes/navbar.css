@@ -1,21 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 header {
-  background: linear-gradient(90deg, #57015F, black, black, black, black, black, #57015F);
+  background: linear-gradient(
+    90deg,
+    #57015f,
+    black,
+    black,
+    black,
+    black,
+    black,
+    #57015f
+  );
   height: 65px;
   display: flex;
   text-align: center;
   width: 100%;
   position: fixed;
   z-index: 12;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .logo {
   width: 200px;
   height: 100%;
 }
-
-
 
 .logo a img {
   width: 80px;
@@ -26,13 +34,13 @@ header {
   display: inline-block;
   margin: 0 auto;
   position: relative;
-  left:-30px;
+  left: -30px;
 }
 
 .navlinks a {
   background-color: black;
   color: white;
-  border: 1px solid #8F0099;
+  border: 1px solid #8f0099;
   padding: 4px 4px;
   margin: 20px 10px;
   text-align: center;
@@ -50,32 +58,30 @@ header {
 .navlinks a span {
   font-size: 16px;
   cursor: pointer;
-
 }
 
 .navlinks a:hover {
-  background-color: #8F0099;
+  background-color: #8f0099;
   color: white;
   cursor: pointer;
-
 }
 
-#navBar-logo{
+#navBar-logo {
   position: relative;
-  left:-70px;
+  left: -70px;
 }
 
 .login {
   position: relative;
-  left:-30px;
+  left: -30px;
 }
 
 .login a {
   color: white;
-  background-color: #8F0099;
+  background-color: #8f0099;
   padding: 10px 10px;
   margin: 13px 10px;
-  width:120px;
+  width: 120px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -83,54 +89,43 @@ header {
 }
 
 @media all and (max-width: 920px) {
-  .logo{    
+  .logo {
     width: 22%;
     height: 100%;
-
-
   }
 }
 
 @media all and (max-width: 740px) {
-  .logo{    
+  .logo {
     width: 100px;
     height: 100%;
-
-
   }
 }
-
 
 @media all and (max-width: 740px) {
-  #navBar-logo{    
+  #navBar-logo {
     position: relative;
-    left:-60px;
+    left: -60px;
   }
 }
-
 
 @media all and (max-width: 740px) {
-  #navBar-logo{    
+  #navBar-logo {
     position: relative;
-    left:10px;
+    left: 10px;
   }
 }
-
-
 
 @media all and (max-width: 800px) {
-  .login{    
+  .login {
     position: relative;
-    left:0px;
+    left: 0px;
     width: 19%;
-
   }
 }
 
 @media all and (max-width: 740px) {
-  .navlinks{    
+  .navlinks {
     visibility: hidden;
   }
 }
-
-
