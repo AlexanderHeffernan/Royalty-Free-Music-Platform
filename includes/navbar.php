@@ -11,7 +11,7 @@
         <button onclick="window.location.href='explore.php';" id="exploreLink"><p>Explore</p></button>
         <button onclick="window.location.href='library.php';"><p>Library</p></button>
         <button onclick="window.location.href='documentation.php';" id="documentationLink"><p>About</p></button>
-        <button id="searchIcon"><span class="material-icons">search</span></button>
+        <button id="searchIcon" class="searchbartotal"><span class="material-icons">search</span></button>
     </div>
     <div class="rightlinks">
     <?php
@@ -31,9 +31,10 @@
     </div>
     
 </header>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="javascript/waves.js"></script>
     <script src="javascript/script-home.js"></script>
+    <script scr="javascript/script-navbar.js"></script>
     <script type="text/javascript">
     Waves.attach('button', ['waves-effect', 'waves-light']);
     Waves.attach('.navlinks a', ['waves-effect', 'waves-light']);
