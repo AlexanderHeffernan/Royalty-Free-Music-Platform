@@ -7,21 +7,28 @@
         </a>
     </div>
     <div class="navlinks">
-        <a href="index.php" id="homeLink">Home</a>
-        <a href="explore.php" id="exploreLink">Explore</a>
-        <a>Library</a>
-        <a href="documentation.php" id="documentationLink">About</a>
-        <a id="searchIcon"><span class="material-icons">search</span></a>
+        <button onclick="window.location.href='index.php';" id="homeLink"><p>Home</p></button>
+        <button onclick="window.location.href='explore.php';" id="exploreLink"><p>Explore</p></button>
+        <button onclick="window.location.href='library.php';"><p>Library</p></button>
+        <button onclick="window.location.href='documentation.php';" id="documentationLink"><p>About</p></button>
+        <button id="searchIcon"><span class="material-icons">search</span></button>
     </div>
-    <div>
+    <div class="rightlinks">
     <?php
         if (!isset($_SESSION["userid"])) {
-            echo "<div class='login'><a href='login.php' class='flat-buttons'>Login / Sign Up</a></div>";
+            echo "<button onclick=\"window.location.href='login.php'\" class='flat-buttons'><p>Login / Sign Up</p></button>";
         }
         else {
-            echo "<div class='login'><a href='includes/logout.inc.php' class='flat-buttons'>Log Out</a></div>";
+            if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "") {
+                    
+                echo '<img src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" width="150px" height="auto" class="profilePicture"/>';
+            } else {
+                echo '<img src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image" width="150px" height="auto" class="profilePicture"/>';                  
+            }
+            //echo "<button onclick=\"window.location.href='includes/logout.inc.php';\" class='flat-buttons'><p>Log Out</p></button>";
         }
     ?>
+    </div>
     
 </header>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

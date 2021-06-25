@@ -17,7 +17,7 @@ if (isset($_POST["submit"])) {
     require_once 'includes/functions.inc.php';
 
     if (emptyInputSongUpload($title, $artist) !== false) {
-        header("location: ../add.php?error=emptyinput");
+        header("location: dashboard.php?error=emptyinput");
         exit();
     }
 
@@ -93,6 +93,6 @@ if (isset($_POST["submit"])) {
     uploadSong($connection, $title, $artist, basename($audioName), basename($coverName), $listens, $downloads, $duration, $genre, $mood, $instrument);
 }
 else {
-    header("location: add.php");
+    header("location: dashboard.php");
     exit();
 }

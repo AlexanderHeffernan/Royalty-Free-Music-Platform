@@ -37,30 +37,40 @@ header {
   left: -30px;
 }
 
-.navlinks a {
+.navlinks button {
   background-color: black;
   color: white;
-  border: 1px solid #8f0099;
-  padding: 4px 4px;
-  margin: 20px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  height: 16px;
+  height: 99%;
+  text-align: center;
+  outline: none;
+  border: none;
+  width: 100px;
+  transition: 0.4s;
 }
 
-#searchIcon {
-  position: relative;
-  top: 2px;
+.rightlinks button {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  height: 99%;
+  outline: none;
+  border: none;
+  width: 100px;
+  transition: 0.4s;
 }
 
-.navlinks a span {
+.navlinks button span {
   font-size: 16px;
   cursor: pointer;
 }
 
-.navlinks a:hover {
+.navlinks button:hover,
+.rightlinks button:hover {
   background-color: #8f0099;
   color: white;
   cursor: pointer;
@@ -69,23 +79,6 @@ header {
 #navBar-logo {
   position: relative;
   left: -70px;
-}
-
-.login {
-  position: relative;
-  left: -30px;
-}
-
-.login a {
-  color: white;
-  background-color: #8f0099;
-  padding: 10px 10px;
-  margin: 13px 10px;
-  width: 120px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
 }
 
 @media all and (max-width: 920px) {
@@ -116,16 +109,15 @@ header {
   }
 }
 
-@media all and (max-width: 800px) {
-  .login {
-    position: relative;
-    left: 0px;
-    width: 19%;
-  }
-}
-
 @media all and (max-width: 740px) {
   .navlinks {
     visibility: hidden;
   }
+}
+
+.profilePicture {
+  margin: 7px;
+  height: 80%;
+  width: auto;
+  border-radius: 100%;
 }

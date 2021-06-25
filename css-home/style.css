@@ -163,6 +163,10 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   cursor: pointer;
+  background: transparent;
+  color: white;
+  outline: none;
+  border: none;
 }
 
 .hero .search input {
@@ -289,6 +293,8 @@ body {
 }
 
 
+
+
 @media all and (max-width: 870px) {
   .musiclist li{    
     padding-bottom: 30px;
@@ -300,6 +306,34 @@ body {
     margin-left:0px ;
     margin-right:0px ;
 
+  }
+}
+
+@media all and (max-width: 569px) {
+  .musiclist li {
+    padding-left: 5px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;    
+    width: 106%;
+    left:-25px;
+    position: relative;
+    
+  }
+}
+
+@media all and (max-width: 569px) {
+  .topSongsRanking {
+    display: none;
+    
+  }
+}
+
+@media all and (max-width: 569px) {
+  .playButton {
+    left:10px;
+    position: relative;
+    
   }
 }
 
@@ -468,6 +502,8 @@ body {
   width: 30%;
   background-color: transparent;
   display: flex;
+  text-transform: uppercase;
+
 }
 
 
@@ -665,10 +701,123 @@ img{
   position: relative;
   text-align: center;
   font-size: 16px;
-  left:100px;
+  left:30%;
 }
 
 .musiclist .selectedSong {
   background-color: #000000;
   box-shadow: 6px 6px 3px #62C8BA;
 }
+
+
+.title {
+  width: 200px;
+  margin-top: 20px;
+  margin-left: 10px;
+  position: relative;
+}
+
+@media all and (max-width: 870px) {
+  .title {
+    width: 100%;
+  }
+}
+
+.composer {
+  font-size: 16px;
+  color: #707070;
+  margin-left: 10px;
+  position: relative;
+
+}
+
+.time {
+  margin-top: 25px;
+  position: absolute;
+  background-color: transparent;
+  margin-left: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #707070;
+  left: 200%;
+}
+
+
+
+
+
+.tags {
+  position: relative;
+  background-color: transparent;
+  text-align: center;
+  font-size: 14px;
+  color: #707070;
+  cursor: pointer;
+  left: 40%;
+
+
+}
+
+
+@media all and (max-width: 870px) {
+  .tags {
+    left: 10px;
+    margin-right:-30px;
+    position: relative;
+    border-radius: 0px;
+    font-size: 16px;
+    padding-top:0px;
+    margin-top: 25px;
+
+  }
+}
+
+@media all and (max-width: 870px) {
+  #firstTag {
+    position: relative;  
+    background-color: transparent;
+    border-left: 1.5px solid #707070;
+    padding-left: 10px;
+    margin-left: -1px;
+    height: 15px;
+    padding-top:0px;
+    margin-top: 25px;
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width: 1122px) {
+  .time {
+    left:220%;
+  }
+}
+
+@media all and (max-width: 870px) {
+  .time {
+    left: 20px;
+    position: relative;  
+    border-left: 1.5px solid #707070;
+    padding-left: 10px;
+    margin-left: 20px;
+    height: 17px;
+    font-size: 16px;
+
+  }
+}
+
+@media all and (max-width: 870px) {
+  .nameText {
+    color: #5cbbae;
+    margin-top: 25px;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    left: 22px;
+    position: relative;
+    padding-right: 10px;
+    margin-right: 10px;
+    height: 17px;
+  }
+}
+
+

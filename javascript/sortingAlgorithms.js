@@ -145,7 +145,10 @@ for(var i = 0; i < myDirectories.length; i++) {
 
 var sortingOrder = [];
 var listNames = [];
-function sortSongs(containerName, listName, sortType, amount, ranked, listID, mode) {
+function sortSongs(containerName, listName, sortType, amount, ranked, listID, mode, searchInput) {
+
+    searchInput = searchInput || "";
+
     if(document.getElementById(listName))
         document.getElementById(listName).remove();
 
@@ -208,8 +211,26 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
                 newSortingOrder.push(largestNumberId);
             }
         }
+        else if(sortType == 4) {
+            for(var i = 0; i < titles.length; i++) {
+                if((titles[i].toLowerCase().includes(searchInput.toLowerCase()) || 
+                    artists[i].toLowerCase().includes(searchInput.toLowerCase()) || 
+                    genre[i].toLowerCase().includes(searchInput.toLowerCase()) || 
+                    mood[i].toLowerCase().includes(searchInput.toLowerCase()) || 
+                    instrument[i].toLowerCase().includes(searchInput.toLowerCase())
+                    ) && newSortingOrder.length < amount) {
+                    console.log("YAY");
+                    newSortingOrder.push(i);
+                }
+            }
+        }
 
         sortingOrder.push(newSortingOrder);
+        if(amount > newSortingOrder.length) {
+            amount = newSortingOrder.length;
+        }
+        console.log(amount + " and " + newSortingOrder.length);
+        
 
         for(var i = 0; i < amount; i++) {
             var ShareText = document.createElement("p");
@@ -297,6 +318,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
                 if(genre[sortingOrder[listID][i]] !== "" && genre[sortingOrder[listID][i]] !== "None") {
                     var tagsText1 = document.createElement("p");
                     tagsText1.className = "tags";
+                    tagsText1.id = "firstTag";
                     tagsText1.innerHTML = genre[sortingOrder[listID][i]];
                     tagsDiv.appendChild(tagsText1);
                 }

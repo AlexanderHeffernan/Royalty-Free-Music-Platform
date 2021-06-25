@@ -29,7 +29,7 @@
                         <br>
                         <button type="submit" name="submit" class="submit-btn">LOG IN</button>
                     </form>
-                    <form action="includes/signup.inc.php" method="post" id="register" class="input-group">
+                    <form action="signup.inc.php" method="post" id="register" class="input-group" enctype="multipart/form-data">
                         <br>
                         <br>
                         <br>
@@ -37,6 +37,8 @@
                         <input type="text" name="email" class="input-field" placeholder="ENTER EMAIL" required>
                         <input type="password" name="password" class="input-field" placeholder="ENTER PASSWORD" required>
                         <input type="password" name="passwordRepeat" class="input-field" placeholder="ENTER REPEATED PASSWORD" required>
+                        <label>Profile picture:</label>
+                        <input type="file" accept="image/*" name="profilePicture" class="input-field">
                         <br>
                         <br>
                         <br>

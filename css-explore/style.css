@@ -743,11 +743,24 @@ img {
 
 .nameText {
   color: #5cbbae;
-  margin-top: 25px;
-  position: relative;
+  margin-top: 26px;
+  position: absolute;
   text-align: center;
   font-size: 16px;
-  left: 50%;
+  left: -10%;
+  margin-right:5px;
+
+}
+
+@media all and (max-width: 1229px) {
+  .nameText {
+    color: #5cbbae;
+    margin-top: 26px;
+    position: absolute;
+    text-align: center;
+    font-size: 16px;
+    left: -40%;
+  }
 }
 
 @media all and (max-width: 870px) {
@@ -758,6 +771,10 @@ img {
     text-align: center;
     font-size: 16px;
     left: 22px;
+    position: relative;
+    padding-right: 10px;
+    margin-right: 10px;
+    height: 17px;
   }
 }
 
@@ -786,49 +803,91 @@ img {
   color: #707070;
   margin-left: 10px;
   position: relative;
-  left: 50%;
-
 }
 
 .time {
   margin-top: 25px;
-  position: relative;
+  position: absolute;
   background-color: transparent;
   margin-left: 20px;
   text-align: center;
   font-size: 16px;
   color: #707070;
-  left: 50%;
+  left: 160%;
+}
+
+
+
+
+
+.tags {
+  position: relative;
+  background-color: transparent;
+  text-align: center;
+  font-size: 14px;
+  color: #707070;
+  cursor: pointer;
+  left: 40%;
+
+
+}
+
+@media all and (max-width: 1229px) {
+  .tags {
+    position: relative;
+    background-color: transparent;
+    text-align: center;
+    font-size: 14px;
+    color: #707070;
+    cursor: pointer;
+    left: 20%;
+  
+  }
+}
+
+
+@media all and (max-width: 870px) {
+  .tags {
+    left: 10px;
+    margin-right:-10px;
+    position: relative;
+    border-radius: 0px;
+    font-size: 16px;
+    padding-top:0px;
+    margin-top: 25px;
+
+  }
+}
+
+@media all and (max-width: 870px) {
+  #firstTag {
+    position: relative;  
+    background-color: transparent;
+    border-left: 1.5px solid #707070;
+    padding-left: 10px;
+    margin-left: -1px;
+    height: 15px;
+    padding-top:0px;
+    margin-top: 25px;
+    font-size: 16px;
+  }
 }
 
 @media all and (max-width: 870px) {
   .time {
-    left: 0px;
+    left: 20px;
+    position: relative;  
+    border-left: 1.5px solid #707070;
+    padding-left: 10px;
+    margin-left: -1px;
+    height: 17px;
+    font-size: 16px;
+    margin-left:20px;
+
   }
 }
 
-.tags {
-  margin-top: 22px;
-  margin-left: 2px;
-  position: relative;
-  background-color: transparent;
-  margin-left: 20px;
-  margin-right: -12px;
-  left: 50px;
-  text-align: center;
-  font-size: 14px;
-  color: #707070;
-  padding-left: 1px;
-  padding-right: 1px;
-  padding-top: 5px;
-  padding-bottom: 2px;
-  height: 20px;
-  border-radius: 50px;
-  cursor: pointer;
-}
-
-@media all and (max-width: 870px) {
-  .tags {
-    left: 0px;
-  }
+.showingResultsForText {
+  color: white;
+  font-size: 20px;
 }
