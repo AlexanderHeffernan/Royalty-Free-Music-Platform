@@ -250,7 +250,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
 
             var DownloadText = document.createElement("p");
             DownloadText.innerHTML = "Download";
-
+            
             var DropdownDiv = document.createElement("div");
             DropdownDiv.className = "dropdown-content";
             DropdownDiv.appendChild(ShareText);
@@ -471,6 +471,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
             DownloadText.innerHTML = "Download";
 
             var DropdownDiv = document.createElement("div");
+
             DropdownDiv.className = "dropdown-content";
             DropdownDiv.appendChild(ShareText);
             DropdownDiv.appendChild(NotifyMeText);
@@ -478,6 +479,29 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
             DropdownDiv.appendChild(SaveText);
             DropdownDiv.appendChild(LikeText);
             DropdownDiv.appendChild(DownloadText);
+
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+
+            if(page == "dashboard.php") {
+                var DeleteTextForm = document.createElement("form");
+                DeleteTextForm.action = "deleteSong.inc.php";
+                DeleteTextForm.method = "post";
+                var DeleteTextID = document.createElement("input");
+                DeleteTextID.value = ids[sortingOrder[listID][i]];
+                DeleteTextID.setAttribute("readonly", "true");
+                DeleteTextID.setAttribute("required", "true");
+                DeleteTextID.style.display = "none";
+                DeleteTextID.name = "id";
+                DeleteTextID.type = "text";
+                var DeleteTextButton = document.createElement("button");
+                DeleteTextButton.innerHTML = "Delete";
+                DeleteTextButton.name = "submit";
+                DeleteTextButton.type = "submit";
+                DeleteTextForm.appendChild(DeleteTextID);
+                DeleteTextForm.appendChild(DeleteTextButton);
+                DropdownDiv.appendChild(DeleteTextForm);
+            }
 
             var moreIcon = document.createElement("i");
             moreIcon.className = "material-icons";

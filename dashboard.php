@@ -11,12 +11,19 @@
     <link rel="stylesheet" href="css-dashboard/style.css">
     <link rel="stylesheet" href="css-explore/waves.css"> 
     <link rel="stylesheet" href="css-includes/songs-list-styling.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="​stylesheet">
 </head>
 <body>
     <?php include 'includes/navbar.php';?>  
     <main>
         <div class="profile">
             <div class="profile-picture">
+                <div class="on-hover" title="Change Profile Picture">
+                <span class="material-icons">
+                    photo_camera
+                    </span>
+                </div>
+                
                 <?php 
                 if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "") {
                     
@@ -35,7 +42,34 @@
                 <p onclick="profileSettingsFunction()">Profile Settings</p>
             </div>
             <div class="profile-settings" onclick="profileSettingsFunctionHide()">
-                <div class="profile-settings-card"></div>
+                <div class="profile-settings-card">
+                    <div class="profile-settings-header">
+                        <h2>Profile Settings</h2>
+                        <span class="material-icons">
+                            close
+                        </span>
+                    </div>
+                    <div class="settings">
+                        <div>
+                            <h4>Change Profile Picture</h4>
+                            <div class="profile-picture"></div>
+                        </div>
+                        <div>
+                            <h4>Change Username</h4> 
+                            <p>Upwards.</p>
+                            <span class="material-icons">
+                                edit
+                            </span>
+                        </div>
+                        <div>
+                            <h4>Change Password</h4> 
+                            <h2>.........</h2>
+                            <span class="material-icons">
+                                vpn_key
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="profile-analytics">
                 <div>
