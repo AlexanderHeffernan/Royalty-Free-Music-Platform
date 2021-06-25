@@ -69,14 +69,8 @@ header {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
-.navlinks button:hover,
-.rightlinks button:hover {
+.navlinks button:hover{
   background-color: #8f0099;
-=======
-.navlinks button:hover, .rightlinks .logIn:hover {
-  background-color: #8F0099;
->>>>>>> 2cf24dd (Profile Picture as button top nav)
   color: white;
   cursor: pointer;
 }
