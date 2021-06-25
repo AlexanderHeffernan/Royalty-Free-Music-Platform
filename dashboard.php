@@ -27,9 +27,9 @@
                 <?php 
                 if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "") {
                     
-                    echo '<img src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" width="150px" height="auto"/>';
+                    echo '<img src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" width="196px" height="auto"/>';
                 } else {
-                    echo '<img src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image" width="150px" height="auto"/>';                  
+                    echo '<img src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image" width="196px" height="auto"/>';                  
                 }
                 ?>
                 

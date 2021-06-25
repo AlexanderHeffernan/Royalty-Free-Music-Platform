@@ -154,6 +154,7 @@ main .profile .profile-picture .on-hover {
 }
 
 main .profile .profile-picture .on-hover > span {
+  display: none;
   font-size: 5rem;
   filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.3));
   -webkit-filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.3));
@@ -162,6 +163,10 @@ main .profile .profile-picture .on-hover > span {
 main .profile .profile-picture .on-hover:hover {
   background: rgba(0, 0, 0, 0.3);
   color: #fff;
+}
+
+main .profile .profile-picture .on-hover:hover > span {
+  display: block;
 }
 
 main .profile > p {
@@ -250,8 +255,8 @@ main
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background: url(../resources/defualt_profile_image_large_224px.png) center
-    no-repeat;
+  background: url(../resources/users/profilePicture/defualt_profile_image_large_224px.png)
+    center no-repeat;
   background-size: cover;
 }
 
@@ -301,6 +306,7 @@ main .recent {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: recent;
+  font-size: 0.8rem;
 }
 
 main .recent > div {
@@ -564,55 +570,59 @@ main .filter > .filter-content {
 }
 /*# sourceMappingURL=style.css.map */
 
-*{
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
-	text-decoration: none;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-decoration: none;
 }
 
-.form-box{
+.form-box {
   width: 100%;
   height: 100%;
   overflow-y: scroll;
 }
 
-.input-group{
-	width: 100%;
+.input-group {
+  width: 100%;
 }
 
-.input-field{
-	width: 100%;
-	padding: 10px 0;
-	margin: 5px 0;
-	border-left: 0;
-	border-top: 0;
-	border-right: 0;
-	border-bottom: 2px solid rgb(105, 105, 105);
-	outline: none;
-	background: transparent;
-	color: white;
+.input-field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 2px solid rgb(105, 105, 105);
+  outline: none;
+  background: transparent;
+  color: white;
 }
 
-.input-field::placeholder{
-	color: rb(105, 105, 105);
+.input-field::placeholder {
+  color: rb(105, 105, 105);
 }
 
-.submit-btn{
-	width: 100%;
-	height: 40px;
-	padding: 10px 30px;
-	cursor: pointer;
-	display: block;
-	background: linear-gradient(to right, rgba(200, 0, 226, 0.75), rgb(86, 0, 95, 0.75));
-	border: 0;
-	outline: none;
-	border-radius: 30px;
-	color: white;
+.submit-btn {
+  width: 100%;
+  height: 40px;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  background: linear-gradient(
+    to right,
+    rgba(200, 0, 226, 0.75),
+    rgb(86, 0, 95, 0.75)
+  );
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  color: white;
 }
 
-.check-box{
-	margin: 30px 10px 30px 0;
+.check-box {
+  margin: 30px 10px 30px 0;
 }
 
 h1 {
