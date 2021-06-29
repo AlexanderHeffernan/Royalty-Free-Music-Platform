@@ -5,7 +5,7 @@ Then to clone this repository use the command: "git clone https://github.com/DTG
 
 **Repository configuration instructions**
 
-To setup up the database, import the "RFM-DB-Base.sql" file into PHPMyAdmin.
+To setup up the database, import the "RFM-DB-Base.sql" file (located in the repositories root folder) into PHPMyAdmin.
 
 **Information for currently setup accounts**
 
