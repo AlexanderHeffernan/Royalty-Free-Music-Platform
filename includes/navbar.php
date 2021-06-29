@@ -75,7 +75,7 @@
         else {
             echo "<div class='accountDropdown'>
                     <button onclick=\"accountDropDown()\" class='dropbtn'>";
-            if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "") {
+            if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "resources/users/profilePicture/") {
                     
                 echo '<img src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" width="150px" height="auto" class="profilePicture clickOff" id="profilePicture"/>';
             } else {
