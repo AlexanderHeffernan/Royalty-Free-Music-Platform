@@ -9,7 +9,7 @@ To setup up the database, import the "RFM-DB-Base.sql" file (located in the repo
 
 **Information for currently setup accounts**
 
-When using the website, you may wish to sign in to a pre-existing user. Below is the credentials for these accounts...
+When using the website, you may wish to sign in to a pre-existing user. Below are the credentials for these accounts...
 
 Username: Upwards
 Email: upwards@gmail.com
