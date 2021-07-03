@@ -1025,10 +1025,20 @@ function addSongToPlaylist(songID, playlistID) {
             if(playlistValues[playlistID].includes("."))
             {
                 newPlaylistString = newPlaylistString.concat("." + songID + ";");
+                playlistValues[i] = playlistValues[i].concat("." + songID);
             }
             else
             {
-                newPlaylistString = newPlaylistString.concat(songID + ";");
+                if(playlistValues[playlistID] == "") 
+                {
+                    newPlaylistString = newPlaylistString.concat(songID + ";");
+                    playlistValues[i] = playlistValues[i].concat(songID);
+                }
+                else {
+                    console.log("YAY");
+                    newPlaylistString = newPlaylistString.concat("." + songID + ";");
+                    playlistValues[i] = playlistValues[i].concat("." + songID);
+                }
             }
         }
     }
