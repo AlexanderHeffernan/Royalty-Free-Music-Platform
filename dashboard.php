@@ -41,30 +41,32 @@
                 <h2>Profile Analytics</h2>
                 <p onclick="profileSettingsFunction()">Profile Settings</p>
             </div>
-            <div class="profile-settings" onclick="profileSettingsFunctionHide()">
-                <div class="profile-settings-card">
+            <div class="profile-settings">
+                <div class="profile-settings-card" id="profile-settings-card">
                     <div class="profile-settings-header">
                         <h2>Profile Settings</h2>
-                        <span class="material-icons">
+                        <span class="material-icons" onclick="profileSettingsFunctionHide()">
                             close
                         </span>
                     </div>
                     <div class="settings">
                         <div>
                             <h4>Change Profile Picture</h4>
-                            <div class="profile-picture"></div>
+                            <p id="changeProfilePicture"><?php echo htmlspecialchars($_SESSION["usersProfilePicture"]); ?></p>
+                            <!--<input type="file" accept="image/*" name="profilePicture"> -->
+                            <div class="profile-picture" onclick="editProfilePicture()"></div>
                         </div>
                         <div>
                             <h4>Change Username</h4> 
-                            <p>Upwards.</p>
-                            <span class="material-icons">
+                            <p id="changeUsername"><?php echo htmlspecialchars($_SESSION["usersUsername"]); ?></p>
+                            <span class="material-icons" onclick="editUsername()">
                                 edit
                             </span>
                         </div>
                         <div>
                             <h4>Change Password</h4> 
-                            <h2>.........</h2>
-                            <span class="material-icons">
+                            <h2 id="changePassword">.........</h2>
+                            <span class="material-icons" onclick="editPassword()">
                                 vpn_key
                             </span>
                         </div>
