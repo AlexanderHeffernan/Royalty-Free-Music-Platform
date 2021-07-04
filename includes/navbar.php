@@ -64,7 +64,7 @@
         <button onclick="window.location.href='index.php';" id="homeLink"><p>Home</p></button>
         <button onclick="window.location.href='explore.php';" id="exploreLink"><p>Explore</p></button>
         <button onclick="window.location.href='library.php';" id="libraryLink"><p>Library</p></button>
-        <button onclick="window.location.href='documentation.php';" id="documentationLink"><p>About</p></button>
+        <button onclick="window.location.href='about.php';" id="aboutLink"><p>About</p></button>
         <button id="searchIcon"><span class="material-icons">search</span></button>
     </div>
     <div class="rightlinks">
