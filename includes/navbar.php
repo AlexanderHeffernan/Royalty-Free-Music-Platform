@@ -63,8 +63,8 @@
     <div class="navlinks">
         <button onclick="window.location.href='index.php';" id="homeLink"><p>Home</p></button>
         <button onclick="window.location.href='explore.php';" id="exploreLink"><p>Explore</p></button>
-        <button onclick="window.location.href='library.php';"><p>Library</p></button>
-        <button onclick="window.location.href='documentation.php';" id="documentationLink"><p>About</p></button>
+        <button onclick="window.location.href='library.php';" id="libraryLink"><p>Library</p></button>
+        <button onclick="window.location.href='about.php';" id="aboutLink"><p>About</p></button>
         <button id="searchIcon"><span class="material-icons">search</span></button>
     </div>
     <div class="rightlinks">
@@ -75,7 +75,7 @@
         else {
             echo "<div class='accountDropdown'>
                     <button onclick=\"accountDropDown()\" class='dropbtn'>";
-            if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "") {
+            if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "resources/users/profilePicture/") {
                     
                 echo '<img src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" width="150px" height="auto" class="profilePicture clickOff" id="profilePicture"/>';
             } else {

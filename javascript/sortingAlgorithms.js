@@ -86,7 +86,6 @@ for (i = 1; i < rowLength; i++){
     }
 
     for(var j = 0; j < cellLength; j++){
-
         var cellVal = songsCells.item(j).innerHTML;
         if(j == 0) {
             ids.push(cellVal);
@@ -143,11 +142,43 @@ for(var i = 0; i < myDirectories.length; i++) {
     myMyAudio.push("../rfm/" + myDirectories[i]);
 }
 
+var playlistString = document.getElementById("playlistString").innerText;
+
+var playlists = playlistString.split(";");
+
+var playlistNames = [];
+var playlistValues = [];
+
+for(var i = 0; i < playlists.length; i++) {
+    if (i % 2 == 0) {
+        playlistNames.push(playlists[i]);
+    }else{
+        playlistValues.push(playlists[i]);
+    }
+}
+
+if(window.location.pathname.toString() == "/rfm/library.php") {
+    for(var i = 0; i < playlistNames.length; i++) {
+        var button = document.createElement("button");
+        button.innerText = playlistNames[i];
+        button.setAttribute("onClick", "sortSongs('main-container', 'musicList', 5, 15, 'false', 0, 0, '', '" + playlistValues[i] + "', " + i + ")");
+
+        var breakElement = document.createElement("br");
+        
+        var panel = document.getElementById("panel");
+        panel.appendChild(button);
+        panel.appendChild(breakElement);
+        document.getElementById("filterContainer").appendChild(panel);
+    }
+}
+
 var sortingOrder = [];
 var listNames = [];
-function sortSongs(containerName, listName, sortType, amount, ranked, listID, mode, searchInput) {
-
+function sortSongs(containerName, listName, sortType, amount, ranked, listID, mode, searchInput, playlistIds, playlistID) {
+    
     searchInput = searchInput || "";
+    playlistIds = playlistIds || "";
+    playlistID = playlistID || "";
 
     if(document.getElementById(listName))
         document.getElementById(listName).remove();
@@ -157,6 +188,8 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
     var list = document.createElement("ul");
     list.className = "musiclist";
     list.id = listName;
+    
+    var idsPlaylist = playlistIds.toString().split(".");
 
     if(mode == 0) {
 
@@ -170,7 +203,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
         else {
             listNames.push(listName);
         }
-
+        
         if(sortType == 0)
         {
             for(var i = 0; i < amount; i++) {
@@ -219,17 +252,31 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
                     mood[i].toLowerCase().includes(searchInput.toLowerCase()) || 
                     instrument[i].toLowerCase().includes(searchInput.toLowerCase())
                     ) && newSortingOrder.length < amount) {
-                    console.log("YAY");
                     newSortingOrder.push(i);
                 }
             }
         }
+        if(playlistIds != "")
+        {
+            for(var i = 0; i < amount; i++) {
+                for(var j = 0; j < ids.length; j++) {
+                    if(idsPlaylist.includes(ids[j]) && !newSortingOrder.includes(j)) {
+                        newSortingOrder.push(j);
+                    }
+                }
+            }
+            if(playlistNames[playlistID] == undefined) {
+                playlistID = 0;
+            }
+            document.getElementById("playlistText").innerHTML = playlistNames[playlistID];
+            console.log(playlistID);
+        }
+        
 
         sortingOrder.push(newSortingOrder);
         if(amount > newSortingOrder.length) {
             amount = newSortingOrder.length;
         }
-        console.log(amount + " and " + newSortingOrder.length);
         
 
         for(var i = 0; i < amount; i++) {
@@ -247,6 +294,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
 
             var LikeText = document.createElement("p");
             LikeText.innerHTML = "Like";
+            LikeText.setAttribute("onClick", "addSongToPlaylist(" + ids[sortingOrder[listID][i]] + ", 0)");
 
             var DownloadText = document.createElement("p");
             DownloadText.innerHTML = "Download";
@@ -965,3 +1013,40 @@ volumeSlider.addEventListener('input', (e) => {
     //outputContainer.textContent = value;
     audio.volume = value / 100;
 });
+
+function addSongToPlaylist(songID, playlistID) {
+    var newPlaylistString = "";
+    for(var i = 0; i < playlistNames.length; i++) {
+        newPlaylistString = newPlaylistString.concat(playlistNames[i] + ";");
+        newPlaylistString = newPlaylistString.concat(playlistValues[i]);
+
+        if(playlistID == i){
+
+            if(playlistValues[playlistID].includes("."))
+            {
+                newPlaylistString = newPlaylistString.concat("." + songID + ";");
+                playlistValues[i] = playlistValues[i].concat("." + songID);
+            }
+            else
+            {
+                if(playlistValues[playlistID] == "") 
+                {
+                    newPlaylistString = newPlaylistString.concat(songID + ";");
+                    playlistValues[i] = playlistValues[i].concat(songID);
+                }
+                else {
+                    console.log("YAY");
+                    newPlaylistString = newPlaylistString.concat("." + songID + ";");
+                    playlistValues[i] = playlistValues[i].concat("." + songID);
+                }
+            }
+        }
+    }
+    
+    $.ajax({
+        url: "includes/updatePlaylists.inc.php",
+        type: 'post',
+        data: 'newPlaylistString='+newPlaylistString
+    })
+    console.log("Uploading... " + newPlaylistString);
+}

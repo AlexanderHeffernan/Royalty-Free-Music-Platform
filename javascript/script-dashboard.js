@@ -51,6 +51,22 @@ function profileSettingsFunctionHide() {
   }
 }
 
+window.onload = function() {
+  var reloading = sessionStorage.getItem("reloading");
+  if (reloading) {
+      sessionStorage.removeItem("reloading");
+      profileSettingsFunction();
+  }
+}
+
+function reloadP() {
+  setTimeout(function(){
+    sessionStorage.setItem("reloading", "true");
+    document.location.reload();
+  },500);
+  
+}
+
 var recentSongName = myTitles[myTitles.length - 1];
 var recentSongCover = myCovers[myCovers.length - 1];
 var recentSongArtist = myArtists[myArtists.length - 1];
@@ -91,3 +107,153 @@ document.getElementById("totalDownloads").innerHTML = totalDownloads;
 document.getElementById("totalUploads").innerHTML = myDirectories.length;
 
 document.getElementById("artistInput").value = document.getElementById("artistText").innerHTML;
+
+
+var oldUsername = document.getElementById("changeUsername").innerText;
+var newPassword;
+var newProfilePicture;
+var usernameChanged = false;
+var passwordChanged = false;
+var profilePictureChanged = false;
+
+function editUsername() {
+
+  var changeUsernamePreElement = document.getElementById("changeUsername");
+  var inputUsernameElement = document.getElementById("inputUsernameElement");
+
+  if(changeUsernamePreElement) {
+    changeUsernamePreElement.style.display = "none";
+    inputUsernameElement = document.createElement("input");
+    inputUsernameElement.id = "inputUsernameElement";
+    changeUsernamePreElement.parentNode.replaceChild(inputUsernameElement, changeUsernamePreElement);
+    inputUsernameElement.value = changeUsernamePreElement.innerHTML;
+  }
+  else {
+    usernameChanged = true;
+    changeUsernamePreElement = document.createElement("p");
+    changeUsernamePreElement.id = "changeUsername";
+
+    changeUsernamePreElement.innerHTML = inputUsernameElement.value;
+
+    inputUsernameElement.parentNode.replaceChild(changeUsernamePreElement, inputUsernameElement);
+
+    $.ajax({
+      url: "includes/changeUsername.inc.php",
+      type: 'post',
+      data: 'oldUsername='+oldUsername+'&newUsername='+document.getElementById("changeUsername").innerText
+    })
+    reloadP();
+  }
+}
+
+function editPassword() {
+
+  var changePasswordPreElement = document.getElementById("changePassword");
+  var inputPasswordElement = document.getElementById("inputPasswordElement");
+
+  if(changePasswordPreElement) {
+    changePasswordPreElement.style.display = "none";
+    inputPasswordElement = document.createElement("input");
+    inputPasswordElement.id = "inputPasswordElement";
+    inputPasswordElement.type = "password";
+    changePasswordPreElement.parentNode.replaceChild(inputPasswordElement, changePasswordPreElement);
+    inputPasswordElement.value = changePasswordPreElement.innerHTML;
+  }
+  else {
+    passwordChanged = true;
+    newPassword = inputPasswordElement.value;
+    changePasswordPreElement = document.createElement("p");
+    changePasswordPreElement.id = "changePassword";
+
+    changePasswordPreElement.innerHTML = ".........";
+
+    inputPasswordElement.parentNode.replaceChild(changePasswordPreElement, inputPasswordElement);
+
+    $.ajax({
+      url: "includes/changePassword.inc.php",
+      type: 'post',
+      data: 'username='+oldUsername+'&newPassword='+newPassword
+    })
+    reloadP();
+  }
+}
+
+var fullPath = document.getElementById("changeProfilePicture").innerText;
+if (fullPath) {
+    var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+    var filename = fullPath.substring(startIndex);
+    if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+        filename = filename.substring(1);
+    }
+    newProfilePicture = filename;
+    document.getElementById("changeProfilePicture").innerText = filename;
+}
+  
+function editProfilePicture() {
+
+  var changeProfilePicturePreElement = document.getElementById("changeProfilePicture");
+  var inputProfilePictureElement = document.getElementById("inputProfilePictureElement");
+
+  if(changeProfilePicturePreElement) {
+    changeProfilePicturePreElement.style.display = "none";
+    inputProfilePictureElement = document.createElement("input");
+    inputProfilePictureElement.id = "inputProfilePictureElement";
+    inputProfilePictureElement.type = "file";
+    inputProfilePictureElement.setAttribute("accept", "image/*");
+    changeProfilePicturePreElement.parentNode.replaceChild(inputProfilePictureElement, changeProfilePicturePreElement);
+  }
+  else {
+    profilePictureChanged = true;
+
+    changeProfilePicturePreElement = document.createElement("p");
+    changeProfilePicturePreElement.id = "changeProfilePicture";
+
+    var fullPath = inputProfilePictureElement.value;
+    if (fullPath) {
+        var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+        var filename = fullPath.substring(startIndex);
+        if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+            filename = filename.substring(1);
+        }
+        newProfilePicture = filename;
+        changeProfilePicturePreElement.innerHTML = filename;
+    }
+
+    var inputClone = inputProfilePictureElement.cloneNode(true);
+    inputClone.style.display = "none";
+    inputProfilePictureElement.parentNode.appendChild(inputClone);
+
+    inputProfilePictureElement.parentNode.replaceChild(changeProfilePicturePreElement, inputProfilePictureElement);
+
+    var fd = new FormData();
+    var files = $('#inputProfilePictureElement')[0].files;
+        
+    // Check file selected or not
+    if(files.length > 0 ){
+      fd.append('file',files[0]);
+      $.ajax({
+        url: 'addNewProfilePicture.inc.php',
+        type: 'post',
+        data: fd,
+        contentType: false,
+        processData: false,
+        success: function(response){
+           if(response != 0){
+              $("#img").attr("src",response); 
+              $(".preview img").show(); // Display image element
+           }else{
+              alert('file not uploaded');
+           }
+        },
+      });
+    }
+
+    $.ajax({
+      url: "includes/changeProfilePicture.inc.php",
+      type: 'post',
+      data: 'profilePicture='+newProfilePicture+'&username='+oldUsername
+    })
+
+    reloadP();
+  }
+}
