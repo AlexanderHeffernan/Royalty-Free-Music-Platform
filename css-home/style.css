@@ -157,9 +157,10 @@ body {
 
 .hero .search .search-icon {
   position: absolute;
-  font-size: 2rem;
+  font-size: 1.7rem;
   top: 50%;
   left: 0.5rem;
+  top:32px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   cursor: pointer;
