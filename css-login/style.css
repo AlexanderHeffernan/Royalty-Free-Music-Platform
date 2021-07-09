@@ -42,15 +42,16 @@
 .form-box{
 	width: 90%;
 	max-width: 450px;
-	height: 500px;
-	position: center;
-	margin: 6% auto;
+	height: 600px;
+	margin: auto;
 	background: rgba(8, 8, 8, 0.8);
     border-color: #ff0077;
     box-shadow: 0 0 20px #ff0077;
 	padding: 2px;
 	overflow-x: hidden;
 	border-radius: 5px;
+	position: relative;
+	top: 100px;
 }
 
 /*Login Register button design*/
@@ -59,7 +60,8 @@
 	width: 70%;
 	max-width: 280px;
 	height: 50px;
-	margin: 35px auto;
+	margin: auto;
+	margin-top: 35px;
 	position: relative;
 	border-color: #ff0077;
     box-shadow: 0 0 5px #ff0077;
@@ -80,6 +82,13 @@
 	font-weight: bold;
 }
 
+@media all and (max-width: 320px) {
+	.toggle-btn {
+	  font-size: 12px;
+	  width: 47%;
+	}
+  }
+
 #btn{
 	top: 0;
 	left: 0;
@@ -92,7 +101,7 @@
 }
 
 .input-group{
-	top: 180px;
+	top: 120px;
 	position: absolute;
 	width: 70%;
 	max-width: 280px;

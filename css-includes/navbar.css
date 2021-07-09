@@ -164,7 +164,6 @@ header {
 }
 
 .accountDropdown {
-  float: right;
   position: relative;
   display: inline-block;
   height: 100%;
