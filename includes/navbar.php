@@ -37,26 +37,8 @@
                         </form>
                         <button title=\"Close\" id=\"closesearch\" class=\"material-icons searchbartoggle\">clear</button> 
                     </div>
-                </div>
-                <script>
-                $(\"document\").ready(function() { 
-                    $( \".navbtn\" ).toggleClass(\"blind\")
-                    $( \".navsearchbar\" ).toggleClass(\"show\")
-                    $( \".navsearch\" ).toggleClass(\"expand\")
-                    $( \".navlinks\" ).toggleClass(\"expand2\")
-                    $( \".searchbartoggleorigin\" ).toggleClass(\"smol\")
-                </script>
-                <script>
-                $(\"document\").ready(function() { 
-                    $(\".logo\").toggleClass(\"gtfo\")
-                    $(\".mobile-nav-btn\").toggleClass(\"gtfo\")
-                    $(\".rightlinks\").toggleClass(\"gtfo\")
-                    $(\".accountDropdown\").toggleClass(\"gtfo\")
-                    $(\".mobilesearchtoggle\").toggleClass(\"gtfo\")
-                    $(\".navlinks\").toggleClass(\"fillnav\")
-                    $(\".mobile-sidenav\").toggleClass(\"gtfo\")
-                </script>";
-            };
+                </div>";
+            }
         ?>
 
 
@@ -152,6 +134,33 @@
 
     });
 </script>
+<?php
+    if(isset($_POST['submit-search'])) {
+        echo "
+            <script>
+            jQuery(function(){
+                    $( \".navbtn\" ).toggleClass(\"blind\");
+                    $( \".navsearchbar\" ).toggleClass(\"show\")
+                    $( \".navsearch\" ).toggleClass(\"expand\")
+                    $( \".navlinks\" ).toggleClass(\"expand2\")
+                    $( \".searchbartoggleorigin\" ).toggleClass(\"smol\")
+            });
+            </script>
+            <script>
+            jQuery(function(){
+                    $(\".logo\").toggleClass(\"gtfo\")
+                    $(\".mobile-nav-btn\").toggleClass(\"gtfo\")
+                    $(\".rightlinks\").toggleClass(\"gtfo\")
+                    $(\".accountDropdown\").toggleClass(\"gtfo\")
+                    $(\".mobilesearchtoggle\").toggleClass(\"gtfo\")
+                    $(\".navlinks\").toggleClass(\"fillnav\")
+                    $(\".mobile-sidenav\").toggleClass(\"gtfo\")
+
+                });
+            </script>";
+    }
+?>
+
 <script>
     $(".mobile-nav-btn").click(function(){
         $(".mobile-sidenav").toggleClass("show-mobile-sidenav")
