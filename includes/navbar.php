@@ -13,6 +13,8 @@
         <button onclick="window.location.href='library.php';" id="libraryLink" class="navbtn"><p>Library</p></button>
         <button onclick="window.location.href='documentation.php';" id="documentationLink" class="navbtn"><p>About</p></button>
         <button title="Search" id="searchIcon" class="searchbartoggle searchbartoggleorigin material-icons">search</button>
+
+
         <div class="navsearch">
             <div class="navsearchbar">
                 <form class="topnavform" action="explore.php" method="POST">
@@ -20,9 +22,44 @@
                     <button title="Search" type="submit" name="submit-search" class="material-icons searchbutton">search</button>
                 </form>
                 <button title="Close" id="closesearch" class="material-icons searchbartoggle">clear</button> 
-
             </div>
         </div>
+
+
+        <?php
+            if(isset($_POST['submit-search'])) {
+                echo "
+                <div class=\"navsearch\">
+                    <div class=\"navsearchbar\">
+                        <form class=\"topnavform\" action=\"explore.php\" method=\"POST\">
+                            <input type=\"text\" name=\"search\" placeholder=\"Search\" value=\"" . $_POST['search'] . "\">
+                            <button title=\"Search\" type=\"submit\" name=\"submit-search\" class=\"material-icons searchbutton\">search</button>
+                        </form>
+                        <button title=\"Close\" id=\"closesearch\" class=\"material-icons searchbartoggle\">clear</button> 
+                    </div>
+                </div>
+                <script>
+                $(\"document\").ready(function() { 
+                    $( \".navbtn\" ).toggleClass(\"blind\")
+                    $( \".navsearchbar\" ).toggleClass(\"show\")
+                    $( \".navsearch\" ).toggleClass(\"expand\")
+                    $( \".navlinks\" ).toggleClass(\"expand2\")
+                    $( \".searchbartoggleorigin\" ).toggleClass(\"smol\")
+                </script>
+                <script>
+                $(\"document\").ready(function() { 
+                    $(\".logo\").toggleClass(\"gtfo\")
+                    $(\".mobile-nav-btn\").toggleClass(\"gtfo\")
+                    $(\".rightlinks\").toggleClass(\"gtfo\")
+                    $(\".accountDropdown\").toggleClass(\"gtfo\")
+                    $(\".mobilesearchtoggle\").toggleClass(\"gtfo\")
+                    $(\".navlinks\").toggleClass(\"fillnav\")
+                    $(\".mobile-sidenav\").toggleClass(\"gtfo\")
+                </script>";
+            };
+        ?>
+
+
     </div>
     <div class="rightlinks">
     <?php
@@ -101,14 +138,7 @@
         $( ".navsearch" ).toggleClass("expand")
         $( ".navlinks" ).toggleClass("expand2")
         $( ".searchbartoggleorigin" ).toggleClass("smol")
-
     });  
-</script>
-<script>
-    $(".mobile-nav-btn").click(function(){
-        $(".mobile-sidenav").toggleClass("show-mobile-sidenav")
-
-    });
 </script>
 <script>
     $(".searchbartoggle").click(function(){
@@ -118,6 +148,13 @@
         $(".accountDropdown").toggleClass("gtfo")
         $(".mobilesearchtoggle").toggleClass("gtfo")
         $(".navlinks").toggleClass("fillnav")
+        $(".mobile-sidenav").toggleClass("gtfo")
+
+    });
+</script>
+<script>
+    $(".mobile-nav-btn").click(function(){
+        $(".mobile-sidenav").toggleClass("show-mobile-sidenav")
 
     });
 </script>
