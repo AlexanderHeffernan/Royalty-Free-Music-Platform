@@ -214,6 +214,7 @@ header {
   margin-right:auto;
   position: absolute;
   left:2%;
+  overflow: none;
 }
 
 .topnavform{
@@ -221,6 +222,7 @@ header {
   margin-left:auto;
   margin-right:auto;
   overflow: hidden;
+
 }
 
 
