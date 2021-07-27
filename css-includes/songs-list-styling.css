@@ -181,10 +181,10 @@
   }
 }
 .cover {
-  height: 60px;
-  width: 60px;
+  height: 3.75rem;
+  width: 3.75rem;
   background-color: white;
-  top: 50px;
+  top: 3.125rem;
   margin-left: 0px;
 }
 

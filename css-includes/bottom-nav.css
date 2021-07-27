@@ -311,6 +311,7 @@ input[type="range"]:active::-ms-thumb {
 
 .bottom-nav-icons {
   width: 0.9375rem;
+  font-size: 1rem;
   height: auto;
   padding-right: 0.9375rem;
 }
