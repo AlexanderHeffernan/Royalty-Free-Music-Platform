@@ -2,7 +2,7 @@
     session_start();
 
     if(!isset($_SESSION['usersUsername'])){ //if login in session is not set
-        header("Location: index.php ");
+        header("Location: 404.php ");
     }
 
     include 'includes/header.php';

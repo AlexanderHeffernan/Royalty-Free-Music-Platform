@@ -1,71 +1,47 @@
-<link rel="stylesheet" href="css-includes/navbar.css">
-
-<style>
-.dropbtn {
-  background-color: transparent;
-  color: white;
-  padding: 5px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  height: 100%;
-}
-
-.accountDropdown {
-  float: right;
-  position: relative;
-  display: inline-block;
-  height: 100%;
-}
-
-.dropdown-content {
-    margin: 0;
-    display: none;
-    position: absolute;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    right: 0;
-    z-index: 1;
-    background-color: black;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    outline: none;
-    border: none;
-    width: 100px;
-    transition: 0.4s;
-}
-
-
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-    text-decoration: underline;
-    text-decoration-color: #8F0099;
-    text-decoration-thickness: 4px;
-}
-
-.show {display: block;}
-</style>
- 
+<link rel="stylesheet" href="css-includes/navbar.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <header>
+    <button class="mobile-nav-btn"><i class="material-icons">menu</i></button>
     <div class="logo">
         <a href="index.php">
             <img id="navBar-logo" src="resources/STRIGHTFRM.png"></img>
         </a>
     </div>
     <div class="navlinks">
-        <button onclick="window.location.href='index.php';" id="homeLink"><p>Home</p></button>
-        <button onclick="window.location.href='explore.php';" id="exploreLink"><p>Explore</p></button>
-        <button onclick="window.location.href='library.php';" id="libraryLink"><p>Library</p></button>
-        <button onclick="window.location.href='about.php';" id="aboutLink"><p>About</p></button>
-        <button id="searchIcon"><span class="material-icons">search</span></button>
+        <button onclick="window.location.href='index.php';" id="homeLink" class="navbtn"><p>Home</p></button>
+        <button onclick="window.location.href='explore.php';" id="exploreLink" class="navbtn"><p>Explore</p></button>
+        <button onclick="window.location.href='library.php';" id="libraryLink" class="navbtn"><p>Library</p></button>
+        <button onclick="window.location.href='documentation.php';" id="documentationLink" class="navbtn"><p>About</p></button>
+        <button title="Search" id="searchIcon" class="searchbartoggle searchbartoggleorigin material-icons">search</button>
+
+
+        <div class="navsearch">
+            <div class="navsearchbar">
+                <form class="topnavform" action="explore.php" method="POST">
+                    <input type="text" name="search" placeholder="Search">
+                    <button title="Search" type="submit" name="submit-search" class="material-icons searchbutton">search</button>
+                </form>
+                <button title="Close" id="closesearch" class="material-icons searchbartoggle">clear</button> 
+            </div>
+        </div>
+
+
+        <?php
+            if(isset($_POST['submit-search'])) {
+                echo "
+                <div class=\"navsearch\">
+                    <div class=\"navsearchbar\">
+                        <form class=\"topnavform\" action=\"explore.php\" method=\"POST\">
+                            <input type=\"text\" name=\"search\" placeholder=\"Search\" value=\"" . $_POST['search'] . "\">
+                            <button title=\"Search\" type=\"submit\" name=\"submit-search\" class=\"material-icons searchbutton\">search</button>
+                        </form>
+                        <button title=\"Close\" id=\"closesearch\" class=\"material-icons searchbartoggle\">clear</button> 
+                    </div>
+                </div>";
+            }
+        ?>
+
+
     </div>
     <div class="rightlinks">
     <?php
@@ -75,7 +51,7 @@
         else {
             echo "<div class='accountDropdown'>
                     <button onclick=\"accountDropDown()\" class='dropbtn'>";
-            if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "resources/users/profilePicture/") {
+            if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "") {
                     
                 echo '<img src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" width="150px" height="auto" class="profilePicture clickOff" id="profilePicture"/>';
             } else {
@@ -90,7 +66,14 @@
         }
     ?>
     </div>
-    
+
+    <div class="mobile-sidenav">
+        <button onclick="window.location.href='index.php';" id="homeLink" class="sidebtn"><p>Home</p></button>
+        <button onclick="window.location.href='explore.php';" id="exploreLink" class="sidebtn"><p>Explore</p></button>
+        <button onclick="window.location.href='library.php';" id="libraryLink" class="sidebtn"><p>Library</p></button>
+        <button onclick="window.location.href='documentation.php';" id="documentationLink" class="sidebtn"><p>About</p></button>
+    </div>
+
 </header>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="javascript/waves.js"></script>
@@ -129,5 +112,68 @@
     Waves.attach('.navlinks a', ['waves-effect', 'waves-light']);
     Waves.attach('.flat-buttons', ['waves-effect', 'waves-light']);
     Waves.init();
+</script>
+<script>
+    $(".searchbartoggle").click(function(){
+        $( ".navbtn" ).toggleClass("blind");
+        $( ".navsearchbar" ).toggleClass("show")
+        $( ".navsearch" ).toggleClass("expand")
+        $( ".navlinks" ).toggleClass("expand2")
+        $( ".searchbartoggleorigin" ).toggleClass("smol")
+    });  
+</script>
+<script>
+    $(".searchbartoggle").click(function(){
+        $(".logo").toggleClass("gtfo")
+        $(".mobile-nav-btn").toggleClass("gtfo")
+        $(".rightlinks").toggleClass("gtfo")
+        $(".accountDropdown").toggleClass("gtfo")
+        $(".mobilesearchtoggle").toggleClass("gtfo")
+        $(".navlinks").toggleClass("fillnav")
+        $(".mobile-sidenav").toggleClass("gtfo")
 
+    });
+</script>
+<?php
+    if(isset($_POST['submit-search'])) {
+        echo "
+            <script>
+            jQuery(function(){
+                    $( \".navbtn\" ).toggleClass(\"blind\");
+                    $( \".navsearchbar\" ).toggleClass(\"show\")
+                    $( \".navsearch\" ).toggleClass(\"expand\")
+                    $( \".navlinks\" ).toggleClass(\"expand2\")
+                    $( \".searchbartoggleorigin\" ).toggleClass(\"smol\")
+            });
+            </script>
+            <script>
+            jQuery(function(){
+                    $(\".logo\").toggleClass(\"gtfo\")
+                    $(\".mobile-nav-btn\").toggleClass(\"gtfo\")
+                    $(\".rightlinks\").toggleClass(\"gtfo\")
+                    $(\".accountDropdown\").toggleClass(\"gtfo\")
+                    $(\".mobilesearchtoggle\").toggleClass(\"gtfo\")
+                    $(\".navlinks\").toggleClass(\"fillnav\")
+                    $(\".mobile-sidenav\").toggleClass(\"gtfo\")
+
+                });
+            </script>";
+    }
+?>
+
+<script>
+    $(".mobile-nav-btn").click(function(){
+        $(".mobile-sidenav").toggleClass("show-mobile-sidenav")
+
+    });
+</script>
+
+<script>
+/* 
+$(document).ready(function(){
+    $(".searchbartoggle").click(function(){
+        $(this).text($(this).text() == 'search' ? 'clear' : 'search');
+    });
+});
+*/
 </script>
