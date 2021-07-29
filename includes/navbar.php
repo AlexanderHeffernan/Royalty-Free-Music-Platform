@@ -57,12 +57,24 @@
             } else {
                 echo '<img src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image" width="150px" height="auto" class="profilePicture clickedOff" id="profilePicture"/>';                  
             }
-            echo "</button>
-            <div id='myDropdown' class='dropdown-content'>
-                <a href='dashboard.php'>Dashboard</a>
-                <a href='includes/logout.inc.php'>Logout</a>
-            </div>
-            </div>";
+            if($_SESSION["artist"] === 1) {
+                echo "</button>
+                <div id='myDropdown' class='dropdown-content'>
+                    <a href='dashboard.php'>Dashboard</a>
+                    <a href='#'>Account Settings</a>
+                    <a href='includes/logout.inc.php'>Logout</a>
+                </div>
+                </div>";
+            }
+            else {
+                echo "</button>
+                <div id='myDropdown' class='dropdown-content'>
+                    <a href='dashboard.php'>Become an Artist</a>
+                    <a href='#'>Account Settings</a>
+                    <a href='includes/logout.inc.php'>Logout</a>
+                </div>
+                </div>";
+            }
         }
     ?>
     </div>
