@@ -158,6 +158,9 @@ for(var i = 0; i < playlists.length; i++) {
 }
 
 if(window.location.pathname.toString() == "/rfm/library.php") {
+    
+    var panel = document.getElementById("panel");
+
     for(var i = 0; i < playlistNames.length; i++) {
         var button = document.createElement("button");
         button.innerText = playlistNames[i];
@@ -166,11 +169,19 @@ if(window.location.pathname.toString() == "/rfm/library.php") {
 
         var breakElement = document.createElement("br");
         
-        var panel = document.getElementById("panel");
         panel.appendChild(button);
         panel.appendChild(breakElement);
         document.getElementById("filterContainer").appendChild(panel);
     }
+
+    var newPlaylistButton = document.createElement("button");
+    newPlaylistButton.innerText = "+";
+    newPlaylistButton.setAttribute("onClick", "createPlaylist()");
+    var breakElement = document.createElement("br");
+
+    panel.appendChild(newPlaylistButton);
+    panel.appendChild(breakElement);
+    document.getElementById("filterContainer").appendChild(panel);
 }
 
 var sortingOrder = [];
@@ -1050,4 +1061,29 @@ function addSongToPlaylist(songID, playlistID) {
         data: 'newPlaylistString='+newPlaylistString
     })
     console.log("Uploading... " + newPlaylistString);
+}
+
+function createPlaylist(playlistName) {
+    if(playlistName == undefined) {
+        playlistName = "New Playlist";
+    }
+
+    var newPlaylistString = "";
+    for(var i = 0; i < playlistNames.length; i++) {
+        newPlaylistString = newPlaylistString.concat(playlistNames[i] + ";");
+        newPlaylistString = newPlaylistString.concat(playlistValues[i] + ";");
+    }
+    newPlaylistString = newPlaylistString.concat(playlistName + ";");
+    
+    $.ajax({
+        url: "includes/updatePlaylists.inc.php",
+        type: 'post',
+        data: 'newPlaylistString='+newPlaylistString
+    })
+    console.log("Uploading... " + newPlaylistString);
+
+    setTimeout(function(){
+        sessionStorage.setItem("reloading", "true");
+        document.location.reload();
+    },500);
 }
