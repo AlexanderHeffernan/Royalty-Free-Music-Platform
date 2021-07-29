@@ -162,6 +162,7 @@ if(window.location.pathname.toString() == "/rfm/library.php") {
         var button = document.createElement("button");
         button.innerText = playlistNames[i];
         button.setAttribute("onClick", "sortSongs('main-container', 'musicList', 5, 15, 'false', 0, 0, '', '" + playlistValues[i] + "', " + i + ")");
+        button.classList = "playlistbtn";
 
         var breakElement = document.createElement("br");
         
