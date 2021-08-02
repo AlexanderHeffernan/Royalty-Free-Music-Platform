@@ -62,7 +62,7 @@ if (isset($_POST["submit"])) {
 
     $audioErrors = []; // Store errors here
 
-    $audioExtensionsAllowed = ['mp3','aac','wav']; // These will be the only file extensions allowed 
+    $audioExtensionsAllowed = ['mp3','aac','wav', 'm4a', 'FLAC', 'wma']; // These will be the only file extensions allowed 
 
     $audioName = $_FILES["audio"]["name"];
     $audioSize = $_FILES["audio"]["size"];

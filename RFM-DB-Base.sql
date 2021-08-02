@@ -71,17 +71,19 @@ CREATE TABLE `users` (
   `usersUsername` varchar(128) NOT NULL,
   `usersEmail` varchar(128) NOT NULL,
   `usersPassword` varchar(128) NOT NULL,
-  `usersPictureDirectory` varchar(1000) NOT NULL
+  `usersPictureDirectory` varchar(1000) NOT NULL,
+  `Playlists` varchar(111) NOT NULL,
+  `artist` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`usersId`, `usersUsername`, `usersEmail`, `usersPassword`, `usersPictureDirectory`) VALUES
-(27, 'Upwards', 'upwards@gmail.com', '$2y$10$xEJvFVFVRPNqeRi4l2Q3OOv0w1cgO1xXiYvTzei.0vGAk.gMfQ2Wi', 'resources/users/profilePicture/Upwards.jpg'),
-(29, 'Redman Games', 'redmangamesstudio@gmail.com', '$2y$10$8WTbF0LNxcGlxGf32wmUAOXNJYiV6BlSvJ6WXN8LdKi0GvXQlD7Hq', 'resources/users/profilePicture/redmangames.jpg'),
-(30, 'Blank_Account', 'blank@gmail.com', '$2y$10$MHWnhgUzcot9PNzoh4ayoO2Aq/iWFvMYAFA6yMyswjkpKwaZ4agim', 'resources/users/profilePicture/');
+INSERT INTO `users` (`usersId`, `usersUsername`, `usersEmail`, `usersPassword`, `usersPictureDirectory`, `Playlists`, `artist`) VALUES
+(27, 'Upwards', 'upwards@gmail.com', '$2y$10$Z8DvkXb054DRAgMX8ggt9uCX0DyEOHTo3ikp23lza36nVCKGp7mMO', 'resources/users/profilePicture/Upwards.jpg', 'Liked Songs;60;Loved Songs;;New Playlist;', 1),
+(29, 'Redman Games', 'redmangamesstudio@gmail.com', '$2y$10$Z8DvkXb054DRAgMX8ggt9uCX0DyEOHTo3ikp23lza36nVCKGp7mMO', 'resources/users/profilePicture/Cloud Computing.jpg', '', 1),
+(30, 'Blank_Account', 'blank@gmail.com', '$2y$10$MHWnhgUzcot9PNzoh4ayoO2Aq/iWFvMYAFA6yMyswjkpKwaZ4agim', 'resources/users/profilePicture/Avatar-2.png', '', 0);
 
 --
 -- Indexes for dumped tables

@@ -901,11 +901,11 @@ img {
 #playlistText{
   color: #ffffff;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 30px;
   height: 100%;
   width: 100%;
   padding-top:45px ;
-  left: 10px;
+  left: 20px;
   z-index: 30;
   position: relative;
 

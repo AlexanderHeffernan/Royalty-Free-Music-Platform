@@ -93,6 +93,7 @@ $(".musiclist").click(function(){
 
 
 
+<<<<<<< HEAD
 $(document).ready(function(){
     $(".playlistbtn").click(function(){
     if($(".main-container").hasClass("colorchange")){
@@ -122,4 +123,34 @@ $(document).ready(function(){
     }
     });
     });
+=======
+//$(document).ready(function(){
+//    $(".playlistbtn").click(function(){
+//    if($(".main-container").hasClass("colorchange")){
+//    $(".main-container").removeClass("colorchange")
+//    }else{
+//    $(".main-container").addClass("colorchange")
+//    }
+//    });
+//    });
+
+//    $(document).ready(function(){
+//        $(".playlistbtn").click(function(){
+//        if($(".sortingNavigation").hasClass("colorchange")){
+//        $(".sortingNavigation").removeClass("colorchange")
+//        }else{
+//        $(".sortingNavigation").addClass("colorchange")
+//        }
+//        });
+//        });
+      
+ //$(document).ready(function(){
+   // $(".playlistbtn").click(function(){
+ //   if($("#playlistText").hasClass("colorchangeheader")){
+//    }else{
+//    $("#playlistText").addClass("colorchangeheader")
+//    }
+//    });
+//    });
+>>>>>>> 13b705329816202134284206f08e27db3496ab3d
  
