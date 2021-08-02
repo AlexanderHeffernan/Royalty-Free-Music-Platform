@@ -105,10 +105,10 @@ $(document).ready(function(){
 
     $(document).ready(function(){
         $(".playlistbtn").click(function(){
-        if($(".sortingNavigation").hasClass("colorchange")){
-        $(".sortingNavigation").removeClass("colorchange")
+        if($(".sortingNavigation").hasClass("colorchangeheader")){
+        $(".sortingNavigation").removeClass("colorchangeheader")
         }else{
-        $(".sortingNavigation").addClass("colorchange")
+        $(".sortingNavigation").addClass("colorchangeheader+")
         }
         });
         });

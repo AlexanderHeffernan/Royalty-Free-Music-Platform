@@ -917,7 +917,7 @@ img {
   background: linear-gradient(
     180deg,
     #18574e,
-    #18574e
+    #121616
   );
 }
 
@@ -927,8 +927,19 @@ img {
 }
 
 @media all and (max-width: 1228px) {
-  .time {
-
-
+  .sortingNavigation .exploretextcontainer {
+    background: transparent;
+    width: 10%;
   }
 }
+
+@media all and (max-width: 1228px) {
+  .sortingNavigation .exploretextcontainer .exploretext{
+    color: #8d0096;
+    font-weight: bold;
+    font-size: 25px;
+    left: 150px;
+    position: relative;
+  }
+}
+
