@@ -58,11 +58,11 @@ header {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  height: 100%;
   outline: none;
   border: none;
-  width: 200px;
+  margin-right: 50px;
   transition: 0.4s;
+  border-radius: 100%;
 }
 
 .navlinks button span {
@@ -133,6 +133,9 @@ header {
 
 .profilePicture {
   height: 100%;
+  margin: 0;
+  position: relative;
+  top: -1px;
   width: auto;
   border-radius: 100%;
   transition: 0.5s;
@@ -410,9 +413,8 @@ input{
 @media all and (max-width: 925px) {
   .rightlinks button {
     position: relative;
-    width: 200px;
     text-align: center;
-    padding-right:50px;
+    margin-right:50px;
   }
 }
 
