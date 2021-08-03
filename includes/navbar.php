@@ -50,7 +50,7 @@
         }
         else {
             echo "<div class='accountDropdown'>
-                    <button onclick=\"accountDropDown()\" class='dropbtn'>";
+                    <button onclick=\"accountDropDown()\" class='waves-disable dropbtn'>";
             if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "") {
                     
                 echo '<img src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" width="150px" height="auto" class="profilePicture clickOff" id="profilePicture"/>';

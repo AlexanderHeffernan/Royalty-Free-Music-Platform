@@ -180,6 +180,7 @@ header {
     outline: none;
     border: none;
     width: 200px;
+    top:65px;
     transition: 0.4s;
 }
 
