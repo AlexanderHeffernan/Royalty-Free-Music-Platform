@@ -156,8 +156,10 @@ for(var i = 0; i < playlists.length; i++) {
         playlistValues.push(playlists[i]);
     }
 }
+console.log(playlistNames);
+console.log(playlistValues);
 
-if(window.location.pathname.toString() == "/rfm/library.php") {
+if(window.location.pathname.toString() == "/RFM/library.php") {
     
     var panel = document.getElementById("panel");
 
@@ -299,10 +301,22 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
                 }
                 previousPlaylistID = playlistID;
                 previousLibraryColor = randomLinearGradient;
-                console.log(randomLinearGradient + ", " + linearGradients[randomLinearGradient])
                 //document.getElementsByClassName("sortingNavigation")[0].style.background = linearGradients[randomLinearGradient];
-                document.getElementsByClassName("main-container")[0].style.removeProperty('background');
-                document.getElementsByClassName("main-container")[0].style.background = linearGradients[randomLinearGradient];
+                //document.getElementsByClassName("main-container")[0].style.removeProperty('background');
+                
+                //document.getElementsByClassName("main-container")[0].style.background = linearGradients[randomLinearGradient];
+
+                //console.log(document.documentElement.style.getProperty('--backgroundColorOpacity'));
+                if(document.documentElement.style.getPropertyValue('--backgroundColorOpacity') == 0) {
+                    document.documentElement.style.setProperty('--backgroundColor', linearGradients[randomLinearGradient]);
+                    document.documentElement.style.setProperty('--backgroundColorOpacity', 1);
+                    document.getElementsByClassName("main-container")[0].style.opacity = 1;
+                }
+                else {
+                    document.getElementsByClassName("main-container")[0].style.backgroundImage = linearGradients[randomLinearGradient];
+                    document.documentElement.style.setProperty('--backgroundColorOpacity', 0);
+                    document.getElementsByClassName("main-container")[0].style.opacity = 1;
+                }
             }
         }
         
