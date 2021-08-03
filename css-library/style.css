@@ -12,6 +12,10 @@
 }
 
 
+button:hover{
+  cursor: pointer;
+}
+
 
 #libraryLink {
   background-color: #8f0099;

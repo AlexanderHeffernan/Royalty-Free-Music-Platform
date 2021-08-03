@@ -278,7 +278,7 @@ body {
   background: transparent;
   height: 100%;   
   position: relative;
-  right: -30px;
+  right: -15px;
   top:0px;
 }
 
@@ -610,6 +610,9 @@ body {
   border-radius: 2px;
   padding-top:10px;
   padding-bottom: 10px;
+  color: white;
+  top:60px;
+  
 
 
 }
@@ -632,13 +635,10 @@ body {
   }
 
 
-@media all and (max-width: 1139px) {
-  .dropdown-content{  
-    position: absolute;  
-    right:10px;
-
+  @media all and (max-width: 924px) {
+    .dropdown-content {
+    }
   }
-}
 
 .dropdown:hover .dropdown-content {
   display: block;

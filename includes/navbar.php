@@ -102,7 +102,7 @@
     // Close the dropdown if the user clicks outside of it
     window.onclick = function(event) {
     if (!event.target.matches('.profilePicture')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content-nav");
+        var dropdowns = document.getElementsByClassName("dropdown-content");
         var dropdownButton = document.getElementById("profilePicture");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
@@ -123,6 +123,7 @@
     Waves.attach('button', ['waves-effect', 'waves-light']);
     Waves.attach('.navlinks a', ['waves-effect', 'waves-light']);
     Waves.attach('.flat-buttons', ['waves-effect', 'waves-light']);
+    Waves.attach('.dropbtn', ['waves-effect', 'waves-light']);
     Waves.init();
 </script>
 <script>

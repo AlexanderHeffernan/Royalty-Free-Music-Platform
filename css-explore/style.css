@@ -560,7 +560,6 @@ background-color: rgb(54, 54, 54);
 @media all and (max-width: 924px) {
   .dropdown-content {
     right: -100px;
-    width: 100px;
   }
 }
 
