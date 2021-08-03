@@ -23,7 +23,10 @@
 </div>
     <?php include 'includes/bottom-nav.php';?>
     <?php include 'includes/songsTable.php';?>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascript/waves.js"></script>
+    <script src="javascript/script-home.js"></script>
+    <script src="javascript/sortingAlgorithms.js"></script>
 
     </body>
 </html>

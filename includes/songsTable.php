@@ -15,4 +15,5 @@
         }
         echo "</table>";
     }
+    echo "<p style=\"display='none'\" id=\"playlistString\">" . htmlspecialchars($_SESSION["usersPlaylists"]) . "</p>";
 ?>

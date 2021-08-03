@@ -15,11 +15,6 @@ html {
     scroll-behavior: smooth;
 }
 
-#documentationLink {
-    background-color: #8F0099;
-    color: white;
-}
-
 .body-container{
     padding:20px ;
     position: relative;

@@ -42,5 +42,4 @@
                 -->
             </div>
         </div>
-        <p style="display='none'" id="playlistString"><?php echo htmlspecialchars($_SESSION["usersPlaylists"]); ?></p>
     </section>

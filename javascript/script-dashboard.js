@@ -11,6 +11,7 @@ Waves.init();
 
 const filterOne = document.querySelector(".filter-button-one");
 const filterTwo = document.querySelector(".filter-button-two");
+const accordion = document.querySelector(".accordion");
 
 var clickOne = false;
 function filterClickOne() {
@@ -26,9 +27,11 @@ var clickTwo = false;
 function filterClickTwo() {
   if (clickTwo == false) {
     filterTwo.classList.add("material-icons-clicked");
+    accordion.classList.add("clicked")
     clickTwo = true;
   } else {
     filterTwo.classList.remove("material-icons-clicked");
+    accordion.classList.remove("clicked")
     clickTwo = false;
   }
 }
