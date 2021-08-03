@@ -178,7 +178,7 @@
         </div>
     </main>
 
-    <p id="username"><?php echo htmlspecialchars($_SESSION["usersUsername"]); ?></p>
+    <p id="username" style="display:none;"><?php echo htmlspecialchars($_SESSION["usersUsername"]); ?></p>
 
     <?php include 'includes/bottom-nav.php';?>
     <?php include 'includes/songsTable.php';?>

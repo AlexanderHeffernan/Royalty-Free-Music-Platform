@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-*{
-  z-index: 10;
-
-}
-
 header {
   background: linear-gradient(
     90deg,
@@ -16,6 +11,8 @@ header {
     black,
     #57015f
   );
+
+  z-index: 10;
   height: 65px;
   display: flex;
   text-align: center;
@@ -56,8 +53,6 @@ header {
   transition: 0.4s;
 }
 
-
-
 .rightlinks button {
   background-color: rgba(0, 0, 0, 0);
   color: white;
@@ -75,7 +70,7 @@ header {
   cursor: pointer;
 }
 
-.navlinks button:hover{
+.navlinks button:hover {
   background-color: #8f0099;
   color: white;
   cursor: pointer;
@@ -86,21 +81,18 @@ header {
   left: -70px;
 }
 
-.rightlinks{
+.rightlinks {
   position: relative;
-  left:0px;
+  left: 0px;
 }
-
 
 @media all and (max-width: 925px) {
   .rightlinks {
     width: 160px;
     position: relative;
-    left:30px;
-
+    left: 30px;
   }
 }
-
 
 @media all and (max-width: 920px) {
   .logo {
@@ -152,7 +144,6 @@ header {
   border: rgb(255, 255, 255) solid 2px;
 }
 
-
 .dropbtn {
   background-color: transparent;
   color: white;
@@ -170,24 +161,23 @@ header {
 }
 
 .dropdown-content {
-    margin: 0;
-    display: none;
-    position: absolute;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    right: 0;
-    z-index: 1;
-    background-color: black;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    outline: none;
-    border: none;
-    width: 100px;
-    transition: 0.4s;
+  margin: 0;
+  display: none;
+  position: absolute;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  right: 0;
+  z-index: 1;
+  background-color: black;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  width: 100px;
+  transition: 0.4s;
 }
-
 
 .dropdown-content a {
   color: white;
@@ -197,92 +187,86 @@ header {
 }
 
 .dropdown-content a:hover {
-    text-decoration: underline;
-    text-decoration-color: #8F0099;
+  text-decoration: underline;
+  text-decoration-color: #8f0099;
 }
 
-.show {display: block;}
+.show {
+  display: block;
+}
 
-
-.navsearchbar{
+.navsearchbar {
   display: none;
   width: 90%;
   background-color: transparent;
   height: 100%;
-  text-align:right ;
-  margin-left:auto;
-  margin-right:auto;
+  text-align: right;
+  margin-left: auto;
+  margin-right: auto;
   position: absolute;
-  left:2%;
+  left: 2%;
 }
 
-.topnavform{
-  text-align:left ;
-  margin-left:auto;
-  margin-right:auto;
+.topnavform {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
 }
 
-
 @media all and (max-width: 1218px) {
   .topnavform {
-    width: auto;  
-
+    width: auto;
   }
 }
 
-
-form{
+form {
   height: 100%;
   width: 100%;
 }
 
-.navsearch{
+.navsearch {
   display: flex;
-  
 }
 
-.show{
+.show {
   display: block;
 }
 
-.navsearchbar button{
-    width:40px;
-    top:-52px;
-    margin-top:12px;
-    height: 40px;
-    background-color:transparent ;
-
+.navsearchbar button {
+  width: 40px;
+  top: -52px;
+  margin-top: 12px;
+  height: 40px;
+  background-color: transparent;
 }
 
-input{
+input {
   background-color: #1b1b1b;
-  width:92%;
-  padding:10px;
+  width: 92%;
+  padding: 10px;
   height: 20px;
-  margin-top:12px;
-  padding-left:45px;
-  outline:none;
-  border:none;
-  color:white;
+  margin-top: 12px;
+  padding-left: 45px;
+  outline: none;
+  border: none;
+  color: white;
 }
 
-.expand2{
+.expand2 {
   background-color: transparent;
   width: 50%;
   position: relative;
-  left:15px;
-  transition:0.5;
+  left: 15px;
+  transition: 0.5;
 }
 
-.expand{
+.expand {
   background-color: transparent;
   width: 80%;
-
 }
 
-
-.searchbartoggle{
+.searchbartoggle {
   background-color: transparent;
   color: white;
   text-align: center;
@@ -297,7 +281,7 @@ input{
   transition: 0.4s;
 }
 
-.searchbutton{
+.searchbutton {
   background-color: transparent;
   color: white;
   text-align: center;
@@ -312,34 +296,27 @@ input{
   transition: 0.4s;
 }
 
-.smol{
+.smol {
   display: none;
-
 }
 
-#closesearch{
+#closesearch {
   position: relative;
-  top:-65px;
-  left:-13px;
+  top: -65px;
+  left: -13px;
 }
 
 @media all and (max-width: 1820px) {
   #closesearch {
-    left:-0%;
-
+    left: -0%;
   }
 }
 
 @media all and (max-width: 455px) {
   .searchbartoggleorigin {
     display: none;
-
   }
 }
-
-
-
-
 
 @media all and (max-width: 925px) {
   .navbtn {
@@ -347,17 +324,16 @@ input{
   }
 }
 
-
-.mobile-nav-btn{
+.mobile-nav-btn {
   position: absolute;
-  left:15px;
+  left: 15px;
   display: none;
   width: 50px;
-  height:50px;
+  height: 50px;
   background-color: transparent;
   outline: none;
   border: none;
-  top:7px;
+  top: 7px;
   border-radius: 50px;
   color: white;
   z-index: 20;
@@ -366,11 +342,10 @@ input{
 @media all and (max-width: 925px) {
   .mobile-nav-btn {
     display: block;
-    
   }
 }
 
-.mobile-sidenav{
+.mobile-sidenav {
   height: 100vh;
   width: 250px;
   background-color: #0f0f0f;
@@ -379,7 +354,7 @@ input{
   transform: translateX(-260px);
   display: none;
   transition-duration: 0.3s;
-  margin-top:60px;
+  margin-top: 60px;
   display: none;
 }
 
@@ -389,17 +364,16 @@ input{
   }
 }
 
-.mobile-sidenav button{
+.mobile-sidenav button {
   font-size: 14px;
 }
 
-.show-mobile-sidenav{
-    transform: translateX(0px);
-    transition-duration: 0.3s;
-
+.show-mobile-sidenav {
+  transform: translateX(0px);
+  transition-duration: 0.3s;
 }
 
-.sidebtn{
+.sidebtn {
   width: 100%;
   border: none;
   outline: none;
@@ -414,47 +388,44 @@ input{
     position: relative;
     width: 200px;
     text-align: center;
-    padding-right:50px;
+    padding-right: 50px;
   }
 }
 
 @media all and (max-width: 925px) {
   .logo {
     position: relative;
-    left:50px;
+    left: 50px;
   }
 }
 
 @media all and (max-width: 925px) {
   .searchbartoggle {
-    left:35px;
+    left: 35px;
     position: relative;
   }
 }
 
-
-
 @media all and (max-width: 925px) {
-  .navsearchbar{
+  .navsearchbar {
     width: 90%;
     position: relative;
-    left:0px;
-    
+    left: 0px;
   }
 }
 
 @media all and (max-width: 925px) {
-  .navsearch{
+  .navsearch {
     position: absolute;
-    left:0px;
+    left: 0px;
     width: 100%;
   }
 }
 
 @media all and (max-width: 925px) {
-  .fillnav{
+  .fillnav {
     position: absolute;
-    left:0px;
+    left: 0px;
     width: 100%;
     height: 100%;
     background-color: transparent;
@@ -462,83 +433,68 @@ input{
 }
 
 @media all and (max-width: 925px) {
-  #closesearch{
+  #closesearch {
     position: relative;
-    top:-104px;
-    left:0px;
+    top: -104px;
+    left: 0px;
     margin-right: auto;
     margin-left: auto;
     background-color: transparent;
-
   }
 }
 
-
-
-
-.mobilesearchtoggle{
+.mobilesearchtoggle {
   display: none;
 }
 
 @media all and (max-width: 925px) {
-  .mobilesearchtoggle{
+  .mobilesearchtoggle {
     display: block;
-    
   }
 }
 
-
 @media all and (max-width: 925px) {
-  .rightlinks{
+  .rightlinks {
     display: flex;
-
   }
 }
 
 @media all and (max-width: 925px) {
-  .accountDropdown{
-    left:20px;
-
+  .accountDropdown {
+    left: 20px;
   }
 }
-
 
 @media all and (max-width: 925px) {
-  .dropdown-content{
-    left:-70px;
-
+  .dropdown-content {
+    left: -70px;
   }
 }
 
- 
-.navsearchbar{
-  animation:Fadein;
+.navsearchbar {
+  animation: Fadein;
   animation-duration: 0.5s;
-
 }
-
 
 @keyframes Fadein {
-  0% { 
+  0% {
     transform: translate(100px, 0px);
-    opacity:0;
+    opacity: 0;
   }
-  100% { 
-    transform: translate(0px, 0px); 
-    opacity:1 ;
-
-
+  100% {
+    transform: translate(0px, 0px);
+    opacity: 1;
   }
 }
 
-.blind{
-  opacity:0;
+.blind {
+  opacity: 0;
   transition: 0.3s ease-in-out;
-  transform: translateX(-100px);  
+  transform: translateX(-100px);
 }
 
 @media all and (max-width: 925px) {
-  .gtfo{
+  .gtfo {
     display: none;
   }
 }

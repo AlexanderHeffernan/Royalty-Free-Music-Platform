@@ -13,24 +13,22 @@
                 <div id="audio-player-container">
                     <audio src=" " preload="metadata" loop></audio>
                     <!-- swaps with pause icon -->
-                    <button class="playButton" id="play-icon" onclick="play('current')"><img id="playPauseButton" src="resources/play.png" style="width:1.625rem;height:1.625rem;margin-right:7.3px;"></img></button>
-                    <button class="nextButton" id="skip-icon" onclick="next()"><img src="resources/fast-forward.png" style="width:1.625rem;height:1.625rem"></img></button>
+                    <button class="playButton" id="play-icon" onclick="play('current')"><img id="playPauseButton" src="resources/play.png" style="width:1.8rem;height:1.8rem;margin-right:7.3px;"></img></button>
+                    <button class="nextButton" id="skip-icon" onclick="next()"><img src="resources/fast-forward.png" style="width:1.8rem;height:1.8rem"></img></button>
                     
                     <span id="current-time" class="timeBottomNav" style="margin-left:7.3px;">0:00</span>
                     <input class="durationScroller" type="range" id="seek-slider" max="100" value="0">
 
-                    <a onclick="downloadSong()" id="btm-nav_downloadButton" class="bottom-btn"><img class="bottom-nav-icons" src="resources/download_white_24dp.svg"></img></a>
+                    <a onclick="downloadSong()" id="btm-nav_downloadButton" class="bottom-btn"><img class="bottom-nav-icons" src="resources/download-icon.png"></img></a>
                     <a class="bottom-btn"><img class="bottom-nav-icons" src="resources/love.png"></img></a>
-                    <a class="bottom-btn"><img class="bottom-nav-icons" src="resources/bookmark.png"></img></a>
-                    <a class="bottom-btn"><img class="bottom-nav-icons" src="resources/notifications.png"></img></a>
+                    <a class="bottom-btn"><img class="bottom-nav-icons" style="color: white;" src="resources/bookmark.png" />
                     <a class="bottom-btn"><img class="bottom-nav-icons" src="resources/share.png"></img></a>
 
                     <input class="volumeScroller" type="range" id="volume-slider" max="100" value="100">
                     <button id="mute-icon"></button>
                 </div>
 
-                <!--
-                <div class="subpart">
+                <!-- <div class="subpart">
                     <button class="playButton" onclick="play('current')"><img id="playPauseButton" src="resources/play.png" width="25px" height="25px"></img></button>
                 </div>
                 <div class="subpart">
@@ -38,8 +36,7 @@
                 </div>
                 <div class="subpart">
                     <p class="songtime"></p>
-                </div
-                -->
+                </div> -->
             </div>
         </div>
     </section>
