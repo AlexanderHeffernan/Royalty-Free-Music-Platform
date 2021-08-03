@@ -159,7 +159,7 @@ for(var i = 0; i < playlists.length; i++) {
 console.log(playlistNames);
 console.log(playlistValues);
 
-if(window.location.pathname.toString() == "/RFM/library.php") {
+if(window.location.pathname.toString() == "/rfm/library.php") {
     
     var panel = document.getElementById("panel");
 
