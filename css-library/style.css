@@ -1,3 +1,12 @@
+:root {
+  --backgroundColor: linear-gradient(
+    to right,
+    hsl(288, 100%, 50%),
+    hsl(54, 100%, 30%)
+  );
+  --backgroundColorOpacity: 0;
+}
+
 #songsTable {
   display: none;
 }
@@ -62,7 +71,34 @@ body {
   width: 100%;
   top: 130px;
   position: relative;
+  background-image: linear-gradient(
+    to right,
+    #121212,
+    #121212
+  );
+  z-index: 1;
 }
+
+.main-container::before {
+  color: #f1f1f1;
+  display: flex;
+  width: 100%;
+  top: 130px;
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: var(--backgroundColor);
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: var(--backgroundColorOpacity);
+}
+
+/*.main-container:hover::before {
+  opacity: 1;
+}*/
 
 @media all and (max-width: 1229px) {
   .main-container {
