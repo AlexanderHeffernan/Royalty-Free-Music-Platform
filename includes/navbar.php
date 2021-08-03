@@ -11,7 +11,7 @@
         <button onclick="window.location.href='index.php';" id="homeLink" class="navbtn"><p>Home</p></button>
         <button onclick="window.location.href='explore.php';" id="exploreLink" class="navbtn"><p>Explore</p></button>
         <button onclick="window.location.href='library.php';" id="libraryLink" class="navbtn"><p>Library</p></button>
-        <button onclick="window.location.href='documentation.php';" id="documentationLink" class="navbtn"><p>About</p></button>
+        <button onclick="window.location.href='about.php';" id="aboutLink" class="navbtn"><p>About</p></button>
         <button title="Search" id="searchIcon" class="searchbartoggle searchbartoggleorigin material-icons">search</button>
 
 

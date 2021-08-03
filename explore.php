@@ -19,13 +19,9 @@
         <div class="sortresult">
             
             <div class="sortresultbtn">    
-                <button class="sortbutton" id="defaultOpen" >A-Z</button>
-                <button class="sortbutton">Z-A</button>
-                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 2, 15, 'false', 0, 0)">New</button>
-                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 1, 15, 'false', 0, 0)">Popular</button>
-                <button class="sortbutton">Shortest</button>
-                <button class="sortbutton">Longest</button>
-                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 3, 15, 'false', 0, 0)">Most Downloaded</button>
+                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 2, 15, 'false', 0, 0)">NEW</button>
+                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 1, 15, 'false', 0, 0)">POPULAR</button>
+                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 3, 15, 'false', 0, 0)">MOST DOWNLOADED</button>
             </div>
         </div>
     </div>
