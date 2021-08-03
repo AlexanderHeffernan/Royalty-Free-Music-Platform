@@ -59,7 +59,7 @@
             }
             if($_SESSION["artist"] === 1) {
                 echo "</button>
-                <div id='myDropdown' class='dropdown-content'>
+                <div id='myDropdown' class='dropdown-content-nav'>
                     <a href='dashboard.php'>Dashboard</a>
                     <a href='#'>Account Settings</a>
                     <a href='includes/logout.inc.php'>Logout</a>
@@ -68,7 +68,7 @@
             }
             else {
                 echo "</button>
-                <div id='myDropdown' class='dropdown-content'>
+                <div id='myDropdown' class='dropdown-content-nav'>
                     <a href='dashboard.php'>Become an Artist</a>
                     <a href='#'>Account Settings</a>
                     <a href='includes/logout.inc.php'>Logout</a>
@@ -102,7 +102,7 @@
     // Close the dropdown if the user clicks outside of it
     window.onclick = function(event) {
     if (!event.target.matches('.profilePicture')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var dropdowns = document.getElementsByClassName("dropdown-content-nav");
         var dropdownButton = document.getElementById("profilePicture");
         var i;
         for (i = 0; i < dropdowns.length; i++) {

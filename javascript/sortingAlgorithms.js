@@ -317,14 +317,8 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
             var ShareText = document.createElement("p");
             ShareText.innerHTML = "Share";
 
-            var NotifyMeText = document.createElement("p");
-            NotifyMeText.innerHTML = "Notify Me";
-
-            var NotificationsText = document.createElement("p");
-            NotificationsText.innerHTML = "Notifications";
-
             var SaveText = document.createElement("p");
-            SaveText.innerHTML = "Save";
+            SaveText.innerHTML = "Add To Playlist";
 
             var LikeText = document.createElement("p");
             LikeText.innerHTML = "Like";
@@ -336,8 +330,6 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
             var DropdownDiv = document.createElement("div");
             DropdownDiv.className = "dropdown-content";
             DropdownDiv.appendChild(ShareText);
-            DropdownDiv.appendChild(NotifyMeText);
-            DropdownDiv.appendChild(NotificationsText);
             DropdownDiv.appendChild(SaveText);
             DropdownDiv.appendChild(LikeText);
             DropdownDiv.appendChild(DownloadText);

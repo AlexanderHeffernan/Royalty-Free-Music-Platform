@@ -6,6 +6,8 @@ Waves.attach('.playmusic', ['waves-effect', 'waves-light']);
 Waves.attach('.active', ['waves-effect', 'waves-dark']);
 Waves.attach('#sort', ['waves-effect', 'waves-dark']);
 Waves.attach('#sort option', ['waves-effect', 'waves-dark']);
+Waves.attach(".dropdown-content p", ["waves-effect", "waves-dark"]);
+
 
 Waves.init();
 
@@ -93,37 +95,6 @@ $(".musiclist").click(function(){
 
 
 
-<<<<<<< HEAD
-$(document).ready(function(){
-    $(".playlistbtn").click(function(){
-    if($(".main-container").hasClass("colorchange")){
-    $(".main-container").removeClass("colorchange")
-    }else{
-    $(".main-container").addClass("colorchange")
-    }
-    });
-    });
-
-    $(document).ready(function(){
-        $(".playlistbtn").click(function(){
-        if($(".sortingNavigation").hasClass("colorchangeheader")){
-        $(".sortingNavigation").removeClass("colorchangeheader")
-        }else{
-        $(".sortingNavigation").addClass("colorchangeheader+")
-        }
-        });
-        });
-    
-    
- $(document).ready(function(){
-    $(".playlistbtn").click(function(){
-    if($("#playlistText").hasClass("colorchangeheader")){
-    }else{
-    $("#playlistText").addClass("colorchangeheader")
-    }
-    });
-    });
-=======
 //$(document).ready(function(){
 //    $(".playlistbtn").click(function(){
 //    if($(".main-container").hasClass("colorchange")){
@@ -152,5 +123,4 @@ $(document).ready(function(){
 //    }
 //    });
 //    });
->>>>>>> 13b705329816202134284206f08e27db3496ab3d
  
