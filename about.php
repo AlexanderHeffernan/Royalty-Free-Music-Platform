@@ -9,38 +9,45 @@
 </head>
 <body>
     <?php include 'includes/navbar.php';?>
+    <!--
+    <div class="container">
+    <div class="main-title1"><h1>Who are we?</h1></div>
+    </div>
 
-    <div class="hero">
+    <div class="main-title"><h1>Who are we?</h1></div>
+-->
+
+    <section class="herocontainer">
+        <div class="hero">
         <div class="container">
-
-    <div class="Main-title">
-        <h1>WHO ARE WE?</h1>
-    </div>
-
-
             <div class="header-container">
-            <div class="main-title">
-        <h1>WHO ARE WE?</h1>
-    </div>
+                <h1>
+                Who are we?
+                </h1>
             </div>
-         
             <div class="arrow">
                 <span class="material-icons">
                     keyboard_arrow_down
                 </span>
             </div>
-            </div>
+        </div>
+        </div>
+    </section>
+<div class="container"></div>
+        <div class="first-section">
+            <p class="text-content">With unlimited downloads, talented artists and a wide collection of genres, RFM is your one stop site for music</p>
+            <img class="images" src="resources/about-page-img-1.png" alt="Piano">
         </div>
 
-        <div class="second-page">
+    <?php include 'includes/bottom-nav.php';?>
+    <?php include 'includes/songsTable.php';?>
 
-            <div class="main-p">
-        <p>With unlimited downloads, talented artists and a wide collection of genres, RFM is your one stop site for music</p>
-            </div>
-        <div class="image"><img src="../resources/about-page-img-1.png" alt=""></div>
-            </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascript/waves.js"></script>
+    <script src="javascript/script-home.js"></script>
+    <script src="javascript/sortingAlgorithms.js"></script>
 
-
+    
 
 </body>
 </html>
