@@ -4,6 +4,7 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4 ,h5, h6, p{
@@ -93,6 +94,7 @@ body {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   padding: 14px;
+  color: white;
 }
 
 .hero .container .arrow:hover {
@@ -106,21 +108,13 @@ body {
 
 @-webkit-keyframes arrow {
   25% {
-    bottom: 3.25rem;
+    bottom: 1.5rem;
   }
   50% {
-    bottom: 1.75rem;
+    bottom: 1.6rem;
   }
 }
 
-@keyframes arrow {
-  25% {
-    bottom: 3.25rem;
-  }
-  50% {
-    bottom: 1.75rem;
-  }
-}
 
 .hero .header-container {
   overflow: hidden;
