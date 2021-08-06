@@ -32,34 +32,48 @@
             <div class="filtercontainer">
                 <button class="accordion showfilter1">Genres <i class="material-icons ddarrow1 arrowicon">chevron_right</i></button>
                 <div class="panel">
-                    <button>JAZZ</button><br>
-                    <button>ELECTRONIC</button><br>
-                    <button>HIP HOP</button><br>
-                    <button>COUNTRY</button><br>
-                    <button>POP</button><br>
-                    <button>ROCK</button><br>
-                    <button>CINEMATIC</button>        
+                    <button onclick="filter('JAZZ', 'genre')">JAZZ</button>
+                    <button onclick="filter('ELECTRONIC', 'genre')">ELECTRONIC</button>
+                    <button onclick="filter('HIP HOP', 'genre')">HIP HOP</button>
+                    <button onclick="filter('COUNTRY', 'genre')">COUNTRY</button>
+                    <button onclick="filter('POP', 'genre')">POP</button>
+                    <button onclick="filter('ROCK', 'genre')">ROCK</button>
+                    <button onclick="filter('CINEMATIC', 'genre')">CINEMATIC</button>    
+                    <button onclick="filter('CLASSICAL', 'genre')">CLASSICAL</button>
+                    <button onclick="filter('FUTURE BASS', 'genre')">FUTURE BASS</button>    
                 </div>
 
                 <button class="accordion showfilter2">Mood <i class="material-icons ddarrow2 arrowicon">chevron_right</i></button>
                 <div class="panel">
-                    <button>HAPPY</button><br>
-                    <button>SAD</button><br>
-                    <button>JOYFUL</button><br>
-                    <button>NOSTALGIA</button><br>
+                    <button>HAPPY</button>
+                    <button>SAD</button>
+                    <button>JOYFUL</button>
+                    <button>NOSTALGIA</button>
                     <button>PEACEFUL</button>
+                    <button>ANGRY</button>
+                    <button>INTENSE</button>
+                    <button>SLEEP</button>
+                    <button>WORKOUT</button>
                 </div>
 
+                <!--
                 <button class="accordion showfilter3">Theme <i class="material-icons ddarrow3 arrowicon">chevron_right</i>
                 </button>
                 <div class="panel">
                     <button>UNKNOWN</button>
                 </div>
-
+-->
                 <button class="accordion showfilter4">Instruments <i class="material-icons ddarrow4 arrowicon">chevron_right</i>
                 </button>
                 <div class="panel">
-                    <button>UNKNOWN</button>
+                    <button>DRUMS</button>
+                    <button>GUITAR</button>
+                    <button>PIANO</button>
+                    <button>WOODWIND</button>
+                    <button>STRING</button>
+                    <button>BRASS</button>
+                    <button>PRECUSSION</button>
+                    <button>SYNTH</button>
                 </div>
                 <div class="sortresult sidesrb">
                     <div class="sortresultbtn">    

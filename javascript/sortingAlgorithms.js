@@ -1148,3 +1148,46 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
+var activeGenreFilters = [];
+var activeMoodFilters = [];
+var activeInstrumentFilters = [];
+var allGenreFilters = ["JAZZ", "ELECTRONIC", "HIP HOP", "COUNTRY", "POP", "ROCK", "CINEMATIC", "CLASSICAL", "FUTURE BASS"];
+var allMoodFilters = ["HAPPY", "SAD", "JOYFUL", "NOSTALGIA", "PEACEFUL", "ANGRY", "INTENSE", "SLEEP", "WORKOUT"];
+var allInstrumentFilters = ["DRUMS", "GUITAR", "PIANO", "WOODWIND", "STRING", "BRASS", "PRECUSSION", "SYNTH"];
+
+function filter(filterName, category) {
+    if(category == "genre") {
+        if(!activeGenreFilters.includes(filterName)) {
+            activeGenreFilters.push(filterName);
+        }
+        else {
+            for(var i = 0; i < activeGenreFilters.length; i++) {
+                console.log(activeGenreFilters[i] + " and " + filterName);
+                if(activeGenreFilters[i] == filterName){
+                    delete activeGenreFilters[i];
+                }
+            }
+        }
+    }
+    else if(category == "mood") {
+        if(!activeMoodFilters.includes(filterName)) {
+            activeMoodFilters.push(filterName);
+        }
+        else {
+            activeMoodFilters.remove(filterName);
+        }
+    }
+    if(category == "instrument") {
+        if(!activeInstrumentFilters.includes(filterName)) {
+            activeInstrumentFilters.push(filterName);
+        }
+        else {
+            activeInstrumentFilters.remove(filterName);
+        }
+    }
+    console.log(activeGenreFilters);
+    console.log(activeMoodFilters);
+    console.log(activeInstrumentFilters);
+}
