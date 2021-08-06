@@ -18,7 +18,7 @@
 
         <div class="sortresult">
             
-            <div class="sortresultbtn">    
+            <div class="sortresultbtn topsrb">    
                 <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 2, 15, 'false', 0, 0)">NEW</button>
                 <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 1, 15, 'false', 0, 0)">POPULAR</button>
                 <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 3, 15, 'false', 0, 0)">MOST DOWNLOADED</button>
@@ -61,6 +61,14 @@
                 <div class="panel">
                     <button>UNKNOWN</button>
                 </div>
+                <div class="sortresult sidesrb">
+                    <div class="sortresultbtn">    
+                        <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 2, 15, 'false', 0, 0)">NEW</button>
+                        <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 1, 15, 'false', 0, 0)">POPULAR</button>
+                        <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 3, 15, 'false', 0, 0)">MOST DOWNLOADED</button>
+                    </div>
+                </div>
+
             </div>
         </ul>
         <div id="ONE" class="tabcontent"></div><div id="TWO" class="tabcontent"></div><div id="THREE" class="tabcontent"></div><div id="FOUR" class="tabcontent"></div><div id="FIVE" class="tabcontent"></div><div id="SIX" class="tabcontent"></div><div id="SEVEN" class="tabcontent"></div>
