@@ -46,7 +46,7 @@
     <div class="rightlinks">
     <?php
         if (!isset($_SESSION["userid"])) {
-            echo "<button onclick=\"window.location.href='login.php'\" class='flat-buttons logIn'><p>Login / Sign Up</p></button>";
+            echo "<button onclick=\"window.location.href='login.php'\" class='flat-buttons logIn' id=\"loggedOutButton\"><p>Login / Sign Up</p></button>";
         }
         else {
             echo "<div class='accountDropdown'>
@@ -83,7 +83,7 @@
         <button onclick="window.location.href='index.php';" id="homeLink" class="sidebtn"><p>Home</p></button>
         <button onclick="window.location.href='explore.php';" id="exploreLink" class="sidebtn"><p>Explore</p></button>
         <button onclick="window.location.href='library.php';" id="libraryLink" class="sidebtn"><p>Library</p></button>
-        <button onclick="window.location.href='documentation.php';" id="documentationLink" class="sidebtn"><p>About</p></button>
+        <button onclick="window.location.href='about.php';" id="documentationLink" class="sidebtn"><p>About</p></button>
     </div>
 
 </header>

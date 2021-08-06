@@ -65,6 +65,13 @@ header {
   border-radius: 100%;
 }
 
+#loggedOutButton {
+  border-radius: 0%;
+  height:100%; 
+}
+
+
+
 .navlinks button span {
   font-size: 16px;
   cursor: pointer;
