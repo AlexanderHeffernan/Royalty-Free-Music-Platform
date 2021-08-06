@@ -45,15 +45,15 @@
 
                 <button class="accordion showfilter2">Mood <i class="material-icons ddarrow2 arrowicon">chevron_right</i></button>
                 <div class="panel">
-                    <button>HAPPY</button>
-                    <button>SAD</button>
-                    <button>JOYFUL</button>
-                    <button>NOSTALGIA</button>
-                    <button>PEACEFUL</button>
-                    <button>ANGRY</button>
-                    <button>INTENSE</button>
-                    <button>SLEEP</button>
-                    <button>WORKOUT</button>
+                    <button onclick="filter('HAPPY', 'mood')">HAPPY</button>
+                    <button onclick="filter('SAD', 'mood')">SAD</button>
+                    <button onclick="filter('JOYFUL', 'mood')">JOYFUL</button>
+                    <button onclick="filter('NOSTALGIA', 'mood')">NOSTALGIA</button>
+                    <button onclick="filter('PEACEFUL', 'mood')">PEACEFUL</button>
+                    <button onclick="filter('ANGRY', 'mood')">ANGRY</button>
+                    <button onclick="filter('INTENSE', 'mood')">INTENSE</button>
+                    <button onclick="filter('SLEEP', 'mood')">SLEEP</button>
+                    <button onclick="filter('WORKOUT', 'mood')">WORKOUT</button>
                 </div>
 
                 <!--
@@ -66,14 +66,14 @@
                 <button class="accordion showfilter4">Instruments <i class="material-icons ddarrow4 arrowicon">chevron_right</i>
                 </button>
                 <div class="panel">
-                    <button>DRUMS</button>
-                    <button>GUITAR</button>
-                    <button>PIANO</button>
-                    <button>WOODWIND</button>
-                    <button>STRING</button>
-                    <button>BRASS</button>
-                    <button>PRECUSSION</button>
-                    <button>SYNTH</button>
+                    <button onclick="filter('DRUMS', 'instrument')">DRUMS</button>
+                    <button onclick="filter('GUITAR', 'instrument')">GUITAR</button>
+                    <button onclick="filter('PIANO', 'instrument')">PIANO</button>
+                    <button onclick="filter('WOODWIND', 'instrument')">WOODWIND</button>
+                    <button onclick="filter('STRING', 'instrument')">STRING</button>
+                    <button onclick="filter('BRASS', 'instrument')">BRASS</button>
+                    <button onclick="filter('PRECUSSION', 'instrument')">PRECUSSION</button>
+                    <button onclick="filter('SYNTH', 'instrument')">SYNTH</button>
                 </div>
                 <div class="sortresult sidesrb">
                     <div class="sortresultbtn">    

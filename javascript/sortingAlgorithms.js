@@ -1099,7 +1099,12 @@ function addSongToPlaylist(songID, playlistID) {
 
 function createPlaylist(playlistName) {
     if(playlistName == undefined) {
-        playlistName = "New Playlist";
+        var playlistNameInput = document.getElementById("newPlaylistName");
+        if(playlistNameInput != null) {
+            playlistName = playlistNameInput.value;
+        } else {
+            playlistName = "New Playlist";
+        }
     }
 
     var newPlaylistString = "";
@@ -1133,22 +1138,19 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
+if(btn != null) {
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 }
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
 
 var activeGenreFilters = [];
 var activeMoodFilters = [];
@@ -1176,7 +1178,12 @@ function filter(filterName, category) {
             activeMoodFilters.push(filterName);
         }
         else {
-            activeMoodFilters.remove(filterName);
+            for(var i = 0; i < activeMoodFilters.length; i++) {
+                console.log(activeMoodFilters[i] + " and " + filterName);
+                if(activeMoodFilters[i] == filterName){
+                    delete activeMoodFilters[i];
+                }
+            }
         }
     }
     if(category == "instrument") {
@@ -1184,10 +1191,39 @@ function filter(filterName, category) {
             activeInstrumentFilters.push(filterName);
         }
         else {
-            activeInstrumentFilters.remove(filterName);
+            for(var i = 0; i < activeInstrumentFilters.length; i++) {
+                console.log(activeInstrumentFilters[i] + " and " + filterName);
+                if(activeInstrumentFilters[i] == filterName){
+                    delete activeInstrumentFilters[i];
+                }
+            }
         }
     }
-    console.log(activeGenreFilters);
-    console.log(activeMoodFilters);
-    console.log(activeInstrumentFilters);
+
+    activeGenreFilters = activeGenreFilters.filter(function(x) {
+        return x !== undefined;
+    });
+    activeMoodFilters = activeMoodFilters.filter(function(x) {
+        return x !== undefined;
+    });
+    activeInstrumentFilters = activeInstrumentFilters.filter(function(x) {
+        return x !== undefined;
+    });
+
+    var allSongs = document.getElementsByClassName("musiclist")[0];
+
+    for(var i = 0; i < allSongs.childElementCount; i++) {
+        var tags = allSongs.childNodes[i].childNodes[0].childNodes[2].childNodes[1];
+        var tagsMatched = 0;
+        for(var j = 0; j < tags.childElementCount; j++) {
+            if(activeGenreFilters.includes(tags.childNodes[j].innerText) || activeInstrumentFilters.includes(tags.childNodes[j].innerText) || activeMoodFilters.includes(tags.childNodes[j].innerText)) {
+                tagsMatched += 1;
+            }
+        }
+        if(tagsMatched == 0 && (activeGenreFilters.length != 0 || activeMoodFilters.length != 0 || activeInstrumentFilters.length != 0)) {
+            allSongs.childNodes[i].style.display = "none";
+        } else {
+            allSongs.childNodes[i].style.display = "block";
+        }
+    }
 }

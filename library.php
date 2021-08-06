@@ -92,10 +92,8 @@
         <button class="close"><i class="material-icons">close</i></button>
         <p>Create A New Playlist</p>
     </div>
-        <input type="text" name="Name" placeholder="Name" class="inputplname">
-        <button>Create</button>
-    
-
+        <input id="newPlaylistName" type="text" name="Name" placeholder="Name" class="inputplname">
+        <button onclick="createPlaylist()">Create</button>
   </div>
 </div>
 
