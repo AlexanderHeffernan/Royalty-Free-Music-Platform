@@ -6,6 +6,8 @@ Waves.attach('.playmusic', ['waves-effect', 'waves-light']);
 Waves.attach('.active', ['waves-effect', 'waves-dark']);
 Waves.attach('#sort', ['waves-effect', 'waves-dark']);
 Waves.attach('#sort option', ['waves-effect', 'waves-dark']);
+Waves.attach(".dropdown-content p", ["waves-effect", "waves-dark"]);
+
 
 Waves.init();
 
@@ -88,3 +90,37 @@ $(".musiclist").click(function(){
     $(".filters").removeClass('showsidenav');
  });
 
+
+
+
+
+
+//$(document).ready(function(){
+//    $(".playlistbtn").click(function(){
+//    if($(".main-container").hasClass("colorchange")){
+//    $(".main-container").removeClass("colorchange")
+//    }else{
+//    $(".main-container").addClass("colorchange")
+//    }
+//    });
+//    });
+
+//    $(document).ready(function(){
+//        $(".playlistbtn").click(function(){
+//        if($(".sortingNavigation").hasClass("colorchange")){
+//        $(".sortingNavigation").removeClass("colorchange")
+//        }else{
+//        $(".sortingNavigation").addClass("colorchange")
+//        }
+//        });
+//        });
+      
+ //$(document).ready(function(){
+   // $(".playlistbtn").click(function(){
+ //   if($("#playlistText").hasClass("colorchangeheader")){
+//    }else{
+//    $("#playlistText").addClass("colorchangeheader")
+//    }
+//    });
+//    });
+ 

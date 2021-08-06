@@ -1,8 +1,9 @@
 <?php
-    require_once 'dbh.inc.php';
-    require_once 'functions.inc.php';
 
     session_start();
+    
+    require_once 'dbh.inc.php';
+    require_once 'functions.inc.php';
 
     $userID = $_SESSION["userid"];
     $newPlaylistString = $_POST['newPlaylistString'];

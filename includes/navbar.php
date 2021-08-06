@@ -57,12 +57,24 @@
             } else {
                 echo '<img src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image" width="150px" height="auto" class="profilePicture clickedOff" id="profilePicture"/>';                  
             }
-            echo "</button>
-            <div id='myDropdown' class='dropdown-content'>
-                <a href='dashboard.php'>Dashboard</a>
-                <a href='includes/logout.inc.php'>Logout</a>
-            </div>
-            </div>";
+            if($_SESSION["artist"] === 1) {
+                echo "</button>
+                <div id='myDropdown' class='dropdown-content-nav'>
+                    <a href='dashboard.php'>Dashboard</a>
+                    <a href='#'>Account Settings</a>
+                    <a href='includes/logout.inc.php'>Logout</a>
+                </div>
+                </div>";
+            }
+            else {
+                echo "</button>
+                <div id='myDropdown' class='dropdown-content-nav'>
+                    <a href='dashboard.php'>Become an Artist</a>
+                    <a href='#'>Account Settings</a>
+                    <a href='includes/logout.inc.php'>Logout</a>
+                </div>
+                </div>";
+            }
         }
     ?>
     </div>
@@ -90,7 +102,7 @@
     // Close the dropdown if the user clicks outside of it
     window.onclick = function(event) {
     if (!event.target.matches('.profilePicture')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var dropdowns = document.getElementsByClassName("dropdown-content-nav");
         var dropdownButton = document.getElementById("profilePicture");
         var i;
         for (i = 0; i < dropdowns.length; i++) {

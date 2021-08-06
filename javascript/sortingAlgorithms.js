@@ -156,24 +156,44 @@ for(var i = 0; i < playlists.length; i++) {
         playlistValues.push(playlists[i]);
     }
 }
+console.log(playlistNames);
+console.log(playlistValues);
 
 if(window.location.pathname.toString() == "/rfm/library.php") {
+    
+    var panel = document.getElementById("panel");
+
     for(var i = 0; i < playlistNames.length; i++) {
         var button = document.createElement("button");
         button.innerText = playlistNames[i];
         button.setAttribute("onClick", "sortSongs('main-container', 'musicList', 5, 15, 'false', 0, 0, '', '" + playlistValues[i] + "', " + i + ")");
+        button.classList = "playlistbtn";
 
         var breakElement = document.createElement("br");
         
-        var panel = document.getElementById("panel");
         panel.appendChild(button);
         panel.appendChild(breakElement);
         document.getElementById("filterContainer").appendChild(panel);
     }
+
+    var newPlaylistButton = document.createElement("button");
+    newPlaylistButton.innerText = "+";
+    newPlaylistButton.setAttribute("onClick", "createPlaylist()");
+    var breakElement = document.createElement("br");
+
+    panel.appendChild(newPlaylistButton);
+    panel.appendChild(breakElement);
+    document.getElementById("filterContainer").appendChild(panel);
 }
 
 var sortingOrder = [];
 var listNames = [];
+
+var previousLibraryColor;
+var linearGradients = ["linear-gradient(180deg, rgba(60,221,211,1) 0%, rgba(37,44,73,1) 100%)", "linear-gradient(180deg, rgba(60,160,221,1) 0%, rgba(37,44,73,1) 100%)", "linear-gradient(180deg, rgba(162,60,221,1) 0%, rgba(37,44,73,1) 100%)"];
+var randomLinearGradient = Math.floor(Math.random() * (linearGradients.length - 0) + 0);
+var previousPlaylistID;
+
 function sortSongs(containerName, listName, sortType, amount, ranked, listID, mode, searchInput, playlistIds, playlistID) {
     
     searchInput = searchInput || "";
@@ -256,7 +276,9 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
                 }
             }
         }
-        if(playlistIds != "")
+        var path = window.location.pathname;
+        var page = path.split("/").pop();
+        if((playlistID != '' || playlistID == 0) && page == "library.php")
         {
             for(var i = 0; i < amount; i++) {
                 for(var j = 0; j < ids.length; j++) {
@@ -268,8 +290,34 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
             if(playlistNames[playlistID] == undefined) {
                 playlistID = 0;
             }
-            document.getElementById("playlistText").innerHTML = playlistNames[playlistID];
-            console.log(playlistID);
+            if(document.getElementById("playlistText")) {
+                document.getElementById("playlistText").innerHTML = playlistNames[playlistID];
+            }
+
+            
+            if(previousPlaylistID != playlistID) {
+                while(randomLinearGradient == previousLibraryColor){
+                    randomLinearGradient = Math.floor(Math.random() * (linearGradients.length - 0) + 0);
+                }
+                previousPlaylistID = playlistID;
+                previousLibraryColor = randomLinearGradient;
+                //document.getElementsByClassName("sortingNavigation")[0].style.background = linearGradients[randomLinearGradient];
+                //document.getElementsByClassName("main-container")[0].style.removeProperty('background');
+                
+                //document.getElementsByClassName("main-container")[0].style.background = linearGradients[randomLinearGradient];
+
+                //console.log(document.documentElement.style.getProperty('--backgroundColorOpacity'));
+                if(document.documentElement.style.getPropertyValue('--backgroundColorOpacity') == 0) {
+                    document.documentElement.style.setProperty('--backgroundColor', linearGradients[randomLinearGradient]);
+                    document.documentElement.style.setProperty('--backgroundColorOpacity', 1);
+                    document.getElementsByClassName("main-container")[0].style.opacity = 1;
+                }
+                else {
+                    document.getElementsByClassName("main-container")[0].style.backgroundImage = linearGradients[randomLinearGradient];
+                    document.documentElement.style.setProperty('--backgroundColorOpacity', 0);
+                    document.getElementsByClassName("main-container")[0].style.opacity = 1;
+                }
+            }
         }
         
 
@@ -283,14 +331,8 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
             var ShareText = document.createElement("p");
             ShareText.innerHTML = "Share";
 
-            var NotifyMeText = document.createElement("p");
-            NotifyMeText.innerHTML = "Notify Me";
-
-            var NotificationsText = document.createElement("p");
-            NotificationsText.innerHTML = "Notifications";
-
             var SaveText = document.createElement("p");
-            SaveText.innerHTML = "Save";
+            SaveText.innerHTML = "Add To Playlist";
 
             var LikeText = document.createElement("p");
             LikeText.innerHTML = "Like";
@@ -302,8 +344,6 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
             var DropdownDiv = document.createElement("div");
             DropdownDiv.className = "dropdown-content";
             DropdownDiv.appendChild(ShareText);
-            DropdownDiv.appendChild(NotifyMeText);
-            DropdownDiv.appendChild(NotificationsText);
             DropdownDiv.appendChild(SaveText);
             DropdownDiv.appendChild(LikeText);
             DropdownDiv.appendChild(DownloadText);
@@ -1049,4 +1089,29 @@ function addSongToPlaylist(songID, playlistID) {
         data: 'newPlaylistString='+newPlaylistString
     })
     console.log("Uploading... " + newPlaylistString);
+}
+
+function createPlaylist(playlistName) {
+    if(playlistName == undefined) {
+        playlistName = "New Playlist";
+    }
+
+    var newPlaylistString = "";
+    for(var i = 0; i < playlistNames.length; i++) {
+        newPlaylistString = newPlaylistString.concat(playlistNames[i] + ";");
+        newPlaylistString = newPlaylistString.concat(playlistValues[i] + ";");
+    }
+    newPlaylistString = newPlaylistString.concat(playlistName + ";");
+    
+    $.ajax({
+        url: "includes/updatePlaylists.inc.php",
+        type: 'post',
+        data: 'newPlaylistString='+newPlaylistString
+    })
+    console.log("Uploading... " + newPlaylistString);
+
+    setTimeout(function(){
+        sessionStorage.setItem("reloading", "true");
+        document.location.reload();
+    },500);
 }

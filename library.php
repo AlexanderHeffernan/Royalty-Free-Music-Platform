@@ -21,7 +21,6 @@
             }
         ?>
         <div class="sortresult">
-            
             <div class="sortresultbtn" style="display: none">    
                 <button class="sortbutton" id="defaultOpen" >A-Z</button>
                 <button class="sortbutton">Z-A</button>

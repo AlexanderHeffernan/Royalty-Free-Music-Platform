@@ -125,6 +125,7 @@ function loginUser($connection, $username, $password) {
         $_SESSION["usersUsername"] = $usernameExists["usersUsername"];
         $_SESSION["usersProfilePicture"] = $usernameExists["usersPictureDirectory"];
         $_SESSION["usersPlaylists"] = $usernameExists["Playlists"];
+        $_SESSION["artist"] = $usernameExists["artist"];
         header("location: ../index.php");
         exit();
     }
