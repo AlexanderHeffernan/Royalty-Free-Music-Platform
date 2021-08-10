@@ -1223,7 +1223,7 @@ function filter(filterName, category) {
         if(tagsMatched == 0 && (activeGenreFilters.length != 0 || activeMoodFilters.length != 0 || activeInstrumentFilters.length != 0)) {
             allSongs.childNodes[i].style.display = "none";
         } else {
-            allSongs.childNodes[i].style.display = "block";
+            allSongs.childNodes[i].style.display = "flex";
         }
     }
 }

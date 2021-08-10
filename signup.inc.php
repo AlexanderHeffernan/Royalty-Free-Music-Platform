@@ -10,7 +10,12 @@ if (isset($_POST["submit"])) {
     $password = $_POST['password'];
     $passwordRepeat = $_POST['passwordRepeat'];
     $profilePictureDirectory = $_POST['profilePicture'];
-
+    $artist = $_POST['artist'];
+    if($artist === "on") {
+        $artist = "1";
+    }else {
+        $artist = "0";
+    }
     
     if (emptyInputSignup($username, $email, $password, $passwordRepeat) !== false) {
         header("location: login.php?error=emptyinput");
@@ -53,38 +58,41 @@ if (isset($_POST["submit"])) {
 
     $profilePictureExtensionsAllowed = ['jpeg','jpg','png']; // These will be the only file extensions allowed 
 
-    $profilePictureName = $_FILES["profilePicture"]["name"];
-    $profilePictureSize = $_FILES["profilePicture"]["size"];
-    $profilePictureTmpName  = $_FILES["profilePicture"]["tmp_name"];
-    $profilePictureType = $_FILES["profilePicture"]["type"];
+    if($profilePictureDirectory !== 'defualt_profile_image_large_224px.png') {
 
-    $profilePictureExtension = strtolower(end(explode('.',$profilePictureName)));
-    
-    $uploadPath = $currentDirectory . $uploadDirectoryProfilePicture . basename($profilePictureName); 
+        $profilePictureName = $_FILES["profilePicture"]["name"];
+        $profilePictureSize = $_FILES["profilePicture"]["size"];
+        $profilePictureTmpName  = $_FILES["profilePicture"]["tmp_name"];
+        $profilePictureType = $_FILES["profilePicture"]["type"];
 
-    if (!in_array($profilePictureExtension,$profilePictureExtensionsAllowed)) {
-        $profilePictureErrors[] = "This file extension is not allowed. Please upload a JPEG or PNG file." . $profilePictureName;
-    }
+        $profilePictureExtension = strtolower(end(explode('.',$profilePictureName)));
+        
+        $uploadPath = $currentDirectory . $uploadDirectoryProfilePicture . basename($profilePictureName); 
 
-    if ($profilePictureSize > 4000000) {
-        $profilePictureErrors[] = "File exceeds maximum size (4MB)";
-    }
+        echo $profilePictureName;
+        if (!in_array($profilePictureExtension,$profilePictureExtensionsAllowed)) {
+            $profilePictureErrors[] = "This file extension is not allowed. Please upload a JPEG or PNG file." . $profilePictureName;
+        }
 
-    if (empty($profilePictureErrors)) {
-        $didUpload = move_uploaded_file($profilePictureTmpName, $uploadPath);
+        if ($profilePictureSize > 4000000) {
+            $profilePictureErrors[] = "File exceeds maximum size (4MB)";
+        }
 
-        if ($didUpload) {
-            echo "The file " . basename($profilePictureName) . " has been uploaded";
+        if (empty($profilePictureErrors)) {
+            $didUpload = move_uploaded_file($profilePictureTmpName, $uploadPath);
+
+            if ($didUpload) {
+                echo "The file " . basename($profilePictureName) . " has been uploaded";
+            } else {
+                echo "An error occurred. Please contact the administrator. " . $profilePictureTmpName . " and " . $uploadPath;
+            }
         } else {
-            echo "An error occurred. Please contact the administrator. " . $profilePictureTmpName . " and " . $uploadPath;
-        }
-    } else {
-        foreach ($profilePictureErrors as $error) {
-            echo $error . "These are the errors" . "\n";
+            foreach ($profilePictureErrors as $error) {
+                echo $error . "These are the errors" . "\n";
+            }
         }
     }
-    
-    createUser($connection, $username, $email, $password, basename($profilePictureName));
+    createUser($connection, $username, $email, $password, basename($profilePictureName), $artist);
 }
 else {
     header("location: login.php");
