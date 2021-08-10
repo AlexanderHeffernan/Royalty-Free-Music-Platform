@@ -74,8 +74,8 @@ function usernameExists($connection, $username, $email) {
     mysqli_stmt_close($statement);
 }
 
-function createUser($connection, $username, $email, $password, $profilePicture) {
-    $sql = "INSERT INTO users (usersUsername, usersEmail, usersPassword, usersPictureDirectory) VALUES (?, ?, ?, ?);";
+function createUser($connection, $username, $email, $password, $profilePicture, $artist) {
+    $sql = "INSERT INTO users (usersUsername, usersEmail, usersPassword, usersPictureDirectory, Playlists, artist) VALUES (?, ?, ?, ?, ?, ?);";
     $statement = mysqli_stmt_init($connection);
     if(!mysqli_stmt_prepare($statement, $sql)) {
         header("location: ../login.php?error=statementFailed");
@@ -85,9 +85,12 @@ function createUser($connection, $username, $email, $password, $profilePicture) 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     $profilePictureDir = "resources/users/profilePicture/" . $profilePicture;
 
-    mysqli_stmt_bind_param($statement, "ssss", $username, $email, $hashedPassword, $profilePictureDir);
+    $playlists = "Liked Songs;";
+
+    mysqli_stmt_bind_param($statement, "ssssss", $username, $email, $hashedPassword, $profilePictureDir, $playlists, $artist);
     mysqli_stmt_execute($statement);
     mysqli_stmt_close($statement);
+    
     header("location: login.php?error=none");
     exit();
 }
