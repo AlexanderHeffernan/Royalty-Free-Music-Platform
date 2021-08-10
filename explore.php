@@ -18,14 +18,10 @@
 
         <div class="sortresult">
             
-            <div class="sortresultbtn">    
-                <button class="sortbutton" id="defaultOpen" >A-Z</button>
-                <button class="sortbutton">Z-A</button>
-                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 2, 15, 'false', 0, 0)">New</button>
-                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 1, 15, 'false', 0, 0)">Popular</button>
-                <button class="sortbutton">Shortest</button>
-                <button class="sortbutton">Longest</button>
-                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 3, 15, 'false', 0, 0)">Most Downloaded</button>
+            <div class="sortresultbtn topsrb">    
+                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 2, 15, 'false', 0, 0)">NEW</button>
+                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 1, 15, 'false', 0, 0)">POPULAR</button>
+                <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 3, 15, 'false', 0, 0)">MOST DOWNLOADED</button>
             </div>
         </div>
     </div>
@@ -36,35 +32,57 @@
             <div class="filtercontainer">
                 <button class="accordion showfilter1">Genres <i class="material-icons ddarrow1 arrowicon">chevron_right</i></button>
                 <div class="panel">
-                    <button>JAZZ</button><br>
-                    <button>ELECTRONIC</button><br>
-                    <button>HIP HOP</button><br>
-                    <button>COUNTRY</button><br>
-                    <button>POP</button><br>
-                    <button>ROCK</button><br>
-                    <button>CINEMATIC</button>        
+                    <button onclick="filter('JAZZ', 'genre')">JAZZ</button>
+                    <button onclick="filter('ELECTRONIC', 'genre')">ELECTRONIC</button>
+                    <button onclick="filter('HIP HOP', 'genre')">HIP HOP</button>
+                    <button onclick="filter('COUNTRY', 'genre')">COUNTRY</button>
+                    <button onclick="filter('POP', 'genre')">POP</button>
+                    <button onclick="filter('ROCK', 'genre')">ROCK</button>
+                    <button onclick="filter('CINEMATIC', 'genre')">CINEMATIC</button>    
+                    <button onclick="filter('CLASSICAL', 'genre')">CLASSICAL</button>
+                    <button onclick="filter('FUTURE BASS', 'genre')">FUTURE BASS</button>    
                 </div>
 
                 <button class="accordion showfilter2">Mood <i class="material-icons ddarrow2 arrowicon">chevron_right</i></button>
                 <div class="panel">
-                    <button>HAPPY</button><br>
-                    <button>SAD</button><br>
-                    <button>JOYFUL</button><br>
-                    <button>NOSTALGIA</button><br>
-                    <button>PEACEFUL</button>
+                    <button onclick="filter('HAPPY', 'mood')">HAPPY</button>
+                    <button onclick="filter('SAD', 'mood')">SAD</button>
+                    <button onclick="filter('JOYFUL', 'mood')">JOYFUL</button>
+                    <button onclick="filter('NOSTALGIA', 'mood')">NOSTALGIA</button>
+                    <button onclick="filter('PEACEFUL', 'mood')">PEACEFUL</button>
+                    <button onclick="filter('ANGRY', 'mood')">ANGRY</button>
+                    <button onclick="filter('INTENSE', 'mood')">INTENSE</button>
+                    <button onclick="filter('SLEEP', 'mood')">SLEEP</button>
+                    <button onclick="filter('WORKOUT', 'mood')">WORKOUT</button>
                 </div>
 
+                <!--
                 <button class="accordion showfilter3">Theme <i class="material-icons ddarrow3 arrowicon">chevron_right</i>
                 </button>
                 <div class="panel">
                     <button>UNKNOWN</button>
                 </div>
-
+-->
                 <button class="accordion showfilter4">Instruments <i class="material-icons ddarrow4 arrowicon">chevron_right</i>
                 </button>
                 <div class="panel">
-                    <button>UNKNOWN</button>
+                    <button onclick="filter('DRUMS', 'instrument')">DRUMS</button>
+                    <button onclick="filter('GUITAR', 'instrument')">GUITAR</button>
+                    <button onclick="filter('PIANO', 'instrument')">PIANO</button>
+                    <button onclick="filter('WOODWIND', 'instrument')">WOODWIND</button>
+                    <button onclick="filter('STRING', 'instrument')">STRING</button>
+                    <button onclick="filter('BRASS', 'instrument')">BRASS</button>
+                    <button onclick="filter('PRECUSSION', 'instrument')">PRECUSSION</button>
+                    <button onclick="filter('SYNTH', 'instrument')">SYNTH</button>
                 </div>
+                <div class="sortresult sidesrb">
+                    <div class="sortresultbtn">    
+                        <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 2, 15, 'false', 0, 0)">NEW</button>
+                        <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 1, 15, 'false', 0, 0)">POPULAR</button>
+                        <button class="sortbutton" onclick="sortSongs('main-container', 'musicList', 3, 15, 'false', 0, 0)">MOST DOWNLOADED</button>
+                    </div>
+                </div>
+
             </div>
         </ul>
         <div id="ONE" class="tabcontent"></div><div id="TWO" class="tabcontent"></div><div id="THREE" class="tabcontent"></div><div id="FOUR" class="tabcontent"></div><div id="FIVE" class="tabcontent"></div><div id="SIX" class="tabcontent"></div><div id="SEVEN" class="tabcontent"></div>

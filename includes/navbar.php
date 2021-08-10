@@ -11,7 +11,7 @@
         <button onclick="window.location.href='index.php';" id="homeLink" class="navbtn"><p>Home</p></button>
         <button onclick="window.location.href='explore.php';" id="exploreLink" class="navbtn"><p>Explore</p></button>
         <button onclick="window.location.href='library.php';" id="libraryLink" class="navbtn"><p>Library</p></button>
-        <button onclick="window.location.href='documentation.php';" id="documentationLink" class="navbtn"><p>About</p></button>
+        <button onclick="window.location.href='about.php';" id="aboutLink" class="navbtn"><p>About</p></button>
         <button title="Search" id="searchIcon" class="searchbartoggle searchbartoggleorigin material-icons">search</button>
 
 
@@ -46,11 +46,11 @@
     <div class="rightlinks">
     <?php
         if (!isset($_SESSION["userid"])) {
-            echo "<button onclick=\"window.location.href='login.php'\" class='flat-buttons logIn'><p>Login / Sign Up</p></button>";
+            echo "<button onclick=\"window.location.href='login.php'\" class='flat-buttons logIn' id=\"loggedOutButton\"><p>Login / Sign Up</p></button>";
         }
         else {
             echo "<div class='accountDropdown'>
-                    <button onclick=\"accountDropDown()\" class='dropbtn'>";
+                    <button onclick=\"accountDropDown()\" class='waves-disable dropbtn'>";
             if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "") {
                     
                 echo '<img src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" width="150px" height="auto" class="profilePicture clickOff" id="profilePicture"/>';
@@ -83,7 +83,7 @@
         <button onclick="window.location.href='index.php';" id="homeLink" class="sidebtn"><p>Home</p></button>
         <button onclick="window.location.href='explore.php';" id="exploreLink" class="sidebtn"><p>Explore</p></button>
         <button onclick="window.location.href='library.php';" id="libraryLink" class="sidebtn"><p>Library</p></button>
-        <button onclick="window.location.href='documentation.php';" id="documentationLink" class="sidebtn"><p>About</p></button>
+        <button onclick="window.location.href='about.php';" id="documentationLink" class="sidebtn"><p>About</p></button>
     </div>
 
 </header>
@@ -102,7 +102,7 @@
     // Close the dropdown if the user clicks outside of it
     window.onclick = function(event) {
     if (!event.target.matches('.profilePicture')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content-nav");
+        var dropdowns = document.getElementsByClassName("dropdown-content");
         var dropdownButton = document.getElementById("profilePicture");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
@@ -123,6 +123,7 @@
     Waves.attach('button', ['waves-effect', 'waves-light']);
     Waves.attach('.navlinks a', ['waves-effect', 'waves-light']);
     Waves.attach('.flat-buttons', ['waves-effect', 'waves-light']);
+    Waves.attach('.dropbtn', ['waves-effect', 'waves-light']);
     Waves.init();
 </script>
 <script>

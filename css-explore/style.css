@@ -560,7 +560,6 @@ background-color: rgb(54, 54, 54);
 @media all and (max-width: 924px) {
   .dropdown-content {
     right: -100px;
-    width: 100px;
   }
 }
 
@@ -615,6 +614,10 @@ background-color: rgb(54, 54, 54);
   }
 }
 
+
+
+
+
 @media all and (max-width: 669px) {
   .exploretextcontainer {
     background: transparent;
@@ -622,18 +625,24 @@ background-color: rgb(54, 54, 54);
 }
 
 .sortresultbtn button {
-  color: #fff;
+  color: rgb(255, 255, 255);
   outline: none;
-  background-color: #9fbdb85b;
+  background-color: #175e52;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   border: none;
   border-radius: 2px;
-  margin-right: 1px;
+  margin-right: 20px;
+  margin-left: 20px;
   margin-bottom: 4px;
+  width: 175px;
 }
+
+
+
+
 
 /* Create an active/current tablink class */
 .sortresultbtn button.active {
@@ -649,6 +658,32 @@ background-color: rgb(54, 54, 54);
   margin-right: 1px;
   margin-bottom: 4px;
 }
+
+
+
+@media all and (max-width: 1228px) {
+  .sortresultbtn {
+    margin-top: 20px;
+  }
+}
+
+@media all and (max-width: 1228px) {
+  .topsrb {
+    display: none;
+  }
+}
+
+.sidesrb{
+  display: none;
+}
+
+@media all and (max-width: 1228px) {
+  .sidesrb {
+    display: block;
+  }
+}
+
+
 
 #btm-nav_downloadButton {
   background: transparent;
@@ -918,3 +953,5 @@ img {
   color: white;
   font-size: 20px;
 }
+
+

@@ -4,6 +4,7 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4 ,h5, h6, p{
@@ -36,7 +37,7 @@ body {
 
 
 .hero {
-  background: url(https://www.rd.com/wp-content/uploads/2017/10/These-Funny-Dog-Videos-Are-the-Break-You-Need-Right-Now_493370860-Jenn_C.jpg) center;
+  background: url(https://mforum.ist/media/isnt-he-cute.3251/full) center;
   background-size:cover;
   background-position: center;
   color: #f2f2f2;
@@ -93,6 +94,7 @@ body {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   padding: 14px;
+  color: white;
 }
 
 .hero .container .arrow:hover {
@@ -106,21 +108,13 @@ body {
 
 @-webkit-keyframes arrow {
   25% {
-    bottom: 3.25rem;
+    bottom: 1.5rem;
   }
   50% {
-    bottom: 1.75rem;
+    bottom: 1.6rem;
   }
 }
 
-@keyframes arrow {
-  25% {
-    bottom: 3.25rem;
-  }
-  50% {
-    bottom: 1.75rem;
-  }
-}
 
 .hero .header-container {
   overflow: hidden;
@@ -278,7 +272,7 @@ body {
   background: transparent;
   height: 100%;   
   position: relative;
-  right: -30px;
+  right: -15px;
   top:0px;
 }
 
@@ -610,6 +604,9 @@ body {
   border-radius: 2px;
   padding-top:10px;
   padding-bottom: 10px;
+  color: white;
+  top:60px;
+  
 
 
 }
@@ -632,13 +629,10 @@ body {
   }
 
 
-@media all and (max-width: 1139px) {
-  .dropdown-content{  
-    position: absolute;  
-    right:10px;
-
+  @media all and (max-width: 924px) {
+    .dropdown-content {
+    }
   }
-}
 
 .dropdown:hover .dropdown-content {
   display: block;

@@ -1,8 +1,8 @@
 /* bottom navigation */
 .btm-nav {
   left: 0;
-  bottom: -5rem;
-  /* bottom: 0rem; */
+  /* bottom: -5rem; */
+  bottom: 0rem;
   position: fixed;
   background: rgb(0, 0, 0);
   height: 5rem;

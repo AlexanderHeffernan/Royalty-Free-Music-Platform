@@ -12,6 +12,10 @@
 }
 
 
+button:hover{
+  cursor: pointer;
+}
+
 
 #libraryLink {
   background-color: #8f0099;
@@ -1010,3 +1014,67 @@ img {
   }
 }
 
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding-top: 12%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.39); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #121212;
+  margin: auto;
+  padding: 20px;
+  width: 40%;
+  height:40%;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 100px;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header{
+  position: relative;
+  top:0px;
+  width: 100%;
+  padding-bottom: 5px;
+  background-color: transparent;
+  border-bottom: solid 1px white;
+  
+}
+
+.modal-header p{
+  text-align: left;
+}
+
+
+.inputplname{
+  margin-bottom:20px ;
+}

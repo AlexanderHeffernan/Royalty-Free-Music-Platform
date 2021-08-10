@@ -25,11 +25,11 @@
                     <button type="submit" name="submit-search" class="material-icons search-icon">search</button> 
                 </form>
             </div>
-            <div class="arrow">
+            <a class="arrow" href="#content">
                 <span class="material-icons">
                     keyboard_arrow_down
                 </span>
-            </div>
+            </a>
         </div>
         </div>
     </section>

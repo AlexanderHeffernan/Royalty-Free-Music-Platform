@@ -96,6 +96,36 @@ $(".musiclist").click(function(){
 
 
 //$(document).ready(function(){
+$(document).ready(function(){
+    $(".playlistbtn").click(function(){
+    if($(".main-container").hasClass("colorchange")){
+    $(".main-container").removeClass("colorchange")
+    }else{
+    $(".main-container").addClass("colorchange")
+    }
+    });
+    });
+
+    $(document).ready(function(){
+        $(".playlistbtn").click(function(){
+        if($(".sortingNavigation").hasClass("colorchangeheader")){
+        $(".sortingNavigation").removeClass("colorchangeheader")
+        }else{
+        $(".sortingNavigation").addClass("colorchangeheader+")
+        }
+        });
+        });
+    
+    
+ $(document).ready(function(){
+    $(".playlistbtn").click(function(){
+    if($("#playlistText").hasClass("colorchangeheader")){
+    }else{
+    $("#playlistText").addClass("colorchangeheader")
+    }
+    });
+    });
+//$(docgiment).ready(function(){
 //    $(".playlistbtn").click(function(){
 //    if($(".main-container").hasClass("colorchange")){
 //    $(".main-container").removeClass("colorchange")
@@ -124,3 +154,4 @@ $(".musiclist").click(function(){
 //    });
 //    });
  
+

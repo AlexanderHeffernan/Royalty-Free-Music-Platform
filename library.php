@@ -34,12 +34,15 @@
         </div>
     </div>
 
+
+
     <!-- content -->
     <div class="main-container" id="main-container"> 
         <ul class="filters" id="filters">
             <div class="filtercontainer" id="filterContainer">
                 <button class="accordion showfilter1">Playlists<i class="material-icons ddarrow1 arrowicon">chevron_right</i></button>
                 <div class="panel" id="panel">     
+
                 </div>
             </div>
         </ul>
@@ -82,9 +85,21 @@
             -->
         </ul> 
     </div>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+        <button class="close"><i class="material-icons">close</i></button>
+        <p>Create A New Playlist</p>
+    </div>
+        <input id="newPlaylistName" type="text" name="Name" placeholder="Name" class="inputplname">
+        <button onclick="createPlaylist()">Create</button>
+  </div>
+</div>
+
+
     <?php include 'includes/bottom-nav.php';?>
     <?php include 'includes/songsTable.php';?>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="javascript/waves.js"></script>
     <script src="javascript/script-library.js"></script>

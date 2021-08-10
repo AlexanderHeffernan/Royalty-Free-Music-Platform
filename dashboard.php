@@ -160,8 +160,6 @@
                                 </span>
                                 <div class="accordion">
                                     <div class="accordion-content">
-                                        <p>A-Z</p>
-                                        <p>Z-A</p>
                                         <p>New</p>
                                         <p>Popular</p>
                                         <p>Most Downloaded</p>

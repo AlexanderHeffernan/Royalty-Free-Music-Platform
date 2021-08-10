@@ -178,13 +178,19 @@ if(window.location.pathname.toString() == "/rfm/library.php") {
 
     var newPlaylistButton = document.createElement("button");
     newPlaylistButton.innerText = "+";
-    newPlaylistButton.setAttribute("onClick", "createPlaylist()");
+    //newPlaylistButton.setAttribute("onClick", "createPlaylist()");
+    newPlaylistButton.id="myBtn";
     var breakElement = document.createElement("br");
 
     panel.appendChild(newPlaylistButton);
     panel.appendChild(breakElement);
     document.getElementById("filterContainer").appendChild(panel);
 }
+
+
+
+
+
 
 var sortingOrder = [];
 var listNames = [];
@@ -1093,7 +1099,12 @@ function addSongToPlaylist(songID, playlistID) {
 
 function createPlaylist(playlistName) {
     if(playlistName == undefined) {
-        playlistName = "New Playlist";
+        var playlistNameInput = document.getElementById("newPlaylistName");
+        if(playlistNameInput != null) {
+            playlistName = playlistNameInput.value;
+        } else {
+            playlistName = "New Playlist";
+        }
     }
 
     var newPlaylistString = "";
@@ -1114,4 +1125,105 @@ function createPlaylist(playlistName) {
         sessionStorage.setItem("reloading", "true");
         document.location.reload();
     },500);
+}
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+if(btn != null) {
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+var activeGenreFilters = [];
+var activeMoodFilters = [];
+var activeInstrumentFilters = [];
+var allGenreFilters = ["JAZZ", "ELECTRONIC", "HIP HOP", "COUNTRY", "POP", "ROCK", "CINEMATIC", "CLASSICAL", "FUTURE BASS"];
+var allMoodFilters = ["HAPPY", "SAD", "JOYFUL", "NOSTALGIA", "PEACEFUL", "ANGRY", "INTENSE", "SLEEP", "WORKOUT"];
+var allInstrumentFilters = ["DRUMS", "GUITAR", "PIANO", "WOODWIND", "STRING", "BRASS", "PRECUSSION", "SYNTH"];
+
+function filter(filterName, category) {
+    if(category == "genre") {
+        if(!activeGenreFilters.includes(filterName)) {
+            activeGenreFilters.push(filterName);
+        }
+        else {
+            for(var i = 0; i < activeGenreFilters.length; i++) {
+                console.log(activeGenreFilters[i] + " and " + filterName);
+                if(activeGenreFilters[i] == filterName){
+                    delete activeGenreFilters[i];
+                }
+            }
+        }
+    }
+    else if(category == "mood") {
+        if(!activeMoodFilters.includes(filterName)) {
+            activeMoodFilters.push(filterName);
+        }
+        else {
+            for(var i = 0; i < activeMoodFilters.length; i++) {
+                console.log(activeMoodFilters[i] + " and " + filterName);
+                if(activeMoodFilters[i] == filterName){
+                    delete activeMoodFilters[i];
+                }
+            }
+        }
+    }
+    if(category == "instrument") {
+        if(!activeInstrumentFilters.includes(filterName)) {
+            activeInstrumentFilters.push(filterName);
+        }
+        else {
+            for(var i = 0; i < activeInstrumentFilters.length; i++) {
+                console.log(activeInstrumentFilters[i] + " and " + filterName);
+                if(activeInstrumentFilters[i] == filterName){
+                    delete activeInstrumentFilters[i];
+                }
+            }
+        }
+    }
+
+    activeGenreFilters = activeGenreFilters.filter(function(x) {
+        return x !== undefined;
+    });
+    activeMoodFilters = activeMoodFilters.filter(function(x) {
+        return x !== undefined;
+    });
+    activeInstrumentFilters = activeInstrumentFilters.filter(function(x) {
+        return x !== undefined;
+    });
+
+    var allSongs = document.getElementsByClassName("musiclist")[0];
+
+    for(var i = 0; i < allSongs.childElementCount; i++) {
+        var tags = allSongs.childNodes[i].childNodes[0].childNodes[2].childNodes[1];
+        var tagsMatched = 0;
+        for(var j = 0; j < tags.childElementCount; j++) {
+            if(activeGenreFilters.includes(tags.childNodes[j].innerText) || activeInstrumentFilters.includes(tags.childNodes[j].innerText) || activeMoodFilters.includes(tags.childNodes[j].innerText)) {
+                tagsMatched += 1;
+            }
+        }
+        if(tagsMatched == 0 && (activeGenreFilters.length != 0 || activeMoodFilters.length != 0 || activeInstrumentFilters.length != 0)) {
+            allSongs.childNodes[i].style.display = "none";
+        } else {
+            allSongs.childNodes[i].style.display = "block";
+        }
+    }
 }
