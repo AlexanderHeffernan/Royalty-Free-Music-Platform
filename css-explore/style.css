@@ -7,6 +7,7 @@
   color: white;
 }
 
+
 .musiclist {
   width: 85%;
   height: 69vh;
@@ -83,6 +84,7 @@ body {
 .filtercontainer {
   height: 69%;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 @media all and (max-width: 1229px) {
@@ -142,16 +144,17 @@ body {
 }
 
 .panel button {
-  background-color: purple;
+  background-color: transparent;
+  border: solid 1px rgba(128, 0, 128, 0.548);
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 4px;
   padding-bottom: 4px;
   outline: none;
-  border: none;
   color: #f1f1f1;
   border-radius: 2px;
   margin-bottom: 5px;
+  font-weight: 100;
 }
 
 .arrowicon {
@@ -645,10 +648,10 @@ background-color: rgb(54, 54, 54);
 
 
 /* Create an active/current tablink class */
-.sortresultbtn button.active {
+.sortresultbtn button .active {
   color: #fff;
   outline: none;
-  background-color: #60c2b4;
+  background-color: #36b3a0;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -954,4 +957,26 @@ img {
   font-size: 20px;
 }
 
+.sortresultbtn .active{
+  background-color: #36b3a0;
+}
 
+.topsrb .active{
+  background-color: #36b3a0;
+}
+
+.panel .activetag{
+  background-color: purple;
+}
+
+.sideetext{
+  color: #8d0096;
+  font-weight: bold;
+  font-size: 25px;
+  left: 15px;
+  position: relative;
+}
+
+.topsb{
+  margin-top:-20px;
+}
