@@ -10,12 +10,6 @@ if (isset($_POST["submit"])) {
     $password = $_POST['password'];
     $passwordRepeat = $_POST['passwordRepeat'];
     $profilePictureDirectory = $_POST['profilePicture'];
-    $artist = $_POST['artist'];
-    if($artist === "on") {
-        $artist = "1";
-    }else {
-        $artist = "0";
-    }
     
     if (emptyInputSignup($username, $email, $password, $passwordRepeat) !== false) {
         header("location: login.php?error=emptyinput");
@@ -92,7 +86,7 @@ if (isset($_POST["submit"])) {
             }
         }
     }
-    createUser($connection, $username, $email, $password, basename($profilePictureName), $artist);
+    createUser($connection, $username, $email, $password, basename($profilePictureName));
 }
 else {
     header("location: login.php");
