@@ -33,10 +33,6 @@
                     <input type="file" accept="image/*" name="profilePicture" class="input-field">
                     <br>
                     <br>
-                    <label style="color: white">Are you a music creator?</label><br>
-                    <div style="display: inline; color: lightgrey; font-size: 14px;"><input type="checkbox" name="artist" style="width: 25px">Yes, I am a creator wanting to upload my work to RFM</div><br>
-                    <br>
-                    <br>
                     <p style="color: white">By creating an account you agree to our <a href="documentation.php#TOS" target="_blank" style="color:dodgerblue">Terms & Privacy</a>.</p>
                     <br>
                     <button type="submit" name="submit" class="submit-btn">SIGN UP</button>

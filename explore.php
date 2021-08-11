@@ -138,7 +138,7 @@
     <script src="javascript/script-explore.js"></script>
     <script src="javascript/sortingAlgorithms.js"></script>
     <script>
-        sortSongs("main-container", "musicList", 1, 15, "false", 0, 0)
+        sortSongs("main-container", "musicList", 2, 15, "false", 0, 0)
     </script>
 </body>
 </html>

@@ -51,30 +51,19 @@
         else {
             echo "<div class='accountDropdown'>
                     <button onclick=\"accountDropDown()\" class='waves-disable dropbtn'>";
-            if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "") {
+            if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "" || htmlspecialchars($_SESSION["usersProfilePicture"]) === "resources/users/profilePicture/") {
                     
                 echo '<img src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" width="150px" height="auto" class="profilePicture clickOff" id="profilePicture"/>';
             } else {
                 echo '<img src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image" width="150px" height="auto" class="profilePicture clickedOff" id="profilePicture"/>';                  
             }
-            if($_SESSION["artist"] === 1) {
-                echo "</button>
-                <div id='myDropdown' class='dropdown-content-nav'>
-                    <a href='dashboard.php'>Dashboard</a>
-                    <a href='#'>Account Settings</a>
-                    <a href='includes/logout.inc.php'>Logout</a>
-                </div>
-                </div>";
-            }
-            else {
-                echo "</button>
-                <div id='myDropdown' class='dropdown-content-nav'>
-                    <a href='dashboard.php'>Become an Artist</a>
-                    <a href='#'>Account Settings</a>
-                    <a href='includes/logout.inc.php'>Logout</a>
-                </div>
-                </div>";
-            }
+            echo "</button>
+            <div id='myDropdown' class='dropdown-content-nav'>
+                <a href='dashboard.php'>Account</a>
+                <a href='includes/logout.inc.php'>Logout</a>
+            </div>
+            </div>";
+            
         }
     ?>
     </div>
