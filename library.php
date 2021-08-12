@@ -93,7 +93,7 @@
         <p>Create A New Playlist</p>
     </div>
         <input id="newPlaylistName" type="text" name="Name" placeholder="Name" class="inputplname">
-        <button onclick="createPlaylist()">Create</button>
+        <button class="createbutton" onclick="createPlaylist()">Create</button>
   </div>
 </div>
 

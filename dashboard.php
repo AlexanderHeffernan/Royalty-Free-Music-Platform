@@ -125,23 +125,38 @@
                                     <input type="text" name="duration" class="input-field" placeholder="ENTER DURATION" required>
                                     <select name="genre" class="input-field" placeholder="NONE">
                                         <option value="None">ENTER GENRE</option>
+                                        <option value="Jazz">Jazz</option>
+                                        <option value="Electronic">Electronic</option>
+                                        <option value="Hip hop">Hip hop</option>
+                                        <option value="Country">Country</option>
                                         <option value="Pop">Pop</option>
                                         <option value="Rock">Rock</option>
-                                        <option value="Hip hop">Hip hop</option>
-                                        <option value="Jazz">Jazz</option>
+                                        <option value="Cinematic">Cinematic</option>
+                                        <option value="Classical">Classical</option>
+                                        <option value="Future bass">Future bass</option>
                                     </select>
                                     <select name="mood" class="input-field" placeholder="NONE">
                                         <option value="None">ENTER MOOD</option>
-                                        <option value="Cheerful">Cheerful</option>
-                                        <option value="Happy">Hapyy</option>
+                                        <option value="Happy">Happy</option>
                                         <option value="Sad">Sad</option>
+                                        <option value="Joyful">Joyful</option>
+                                        <option value="Nostalgia">Nostalgia</option>
+                                        <option value="Peaceful">Peaceful</option>
                                         <option value="Angry">Angry</option>
+                                        <option value="Intense">Intense</option>
+                                        <option value="Sleep">Sleep</option>
+                                        <option value="Workout">Workout</option>
                                     </select>
                                     <select name="instrument" class="input-field">
                                         <option value="None">ENTER MAIN INSTRUMENT</option>
-                                        <option value="Piano">Piano</option>
+                                        <option value="Drums">Drums</option>
                                         <option value="Guitar">Guitar</option>
-                                        <option value="Drum">Drum</option>
+                                        <option value="Piano">Piano</option>
+                                        <option value="Woodwind">Woodwind</option>
+                                        <option value="String">String</option>
+                                        <option value="Brass">Brass</option>
+                                        <option value="Precussion">Precussion</option>
+                                        <option value="Synth">Synth</option>
                                     </select>
                                     <button type="submit" name="submit" class="submit-btn">Upload</button>
                                 </form>

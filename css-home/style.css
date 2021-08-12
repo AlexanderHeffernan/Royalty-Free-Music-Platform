@@ -37,7 +37,7 @@ body {
 
 
 .hero {
-  background: url(https://mforum.ist/media/isnt-he-cute.3251/full) center;
+  background: url(../resources/hero_background.png) center;
   background-size:cover;
   background-position: center;
   color: #f2f2f2;
