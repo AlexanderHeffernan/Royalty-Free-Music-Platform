@@ -459,7 +459,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
             var playIcon = document.createElement("img");
             playIcon.className = "playButton";
             playIcon.title = "Play";
-            playIcon.src = "resources/play.png";
+            playIcon.src = "resources/bootstrap_icons/play-fill_white.svg";
             playIcon.id = "playButton" + i + "" + listID;
 
             var playButton = document.createElement("button");
@@ -701,7 +701,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
             var playIcon = document.createElement("img");
             playIcon.className = "playButton";
             playIcon.title = "Play";
-            playIcon.src = "resources/play.png";
+            playIcon.src = "resources/bootstrap_icons/play-fill_white.svg";
             playIcon.id = "playButton" + i + "" + listID;
 
             var playButton = document.createElement("button");
@@ -748,7 +748,7 @@ function play(songIdInput, listID, mode) {
     }
     if(songIdInput == "current" || ((songIdInput == songID) && (listID == currentList))) {
         if(playButtonPress == 0){
-            document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
+            document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/play-fill_white.svg";
             document.getElementById("songItem" + songID + "" + currentList).classList = "";
             songID = 0;
             if(mode == 0) {
@@ -763,10 +763,10 @@ function play(songIdInput, listID, mode) {
             if(!audio.paused) {
                 requestAnimationFrame(whilePlaying);
             }
-            document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
+            document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/pause-fill_white.svg";
             document.getElementById("songItem" + songID + "" + currentList).classList = "selectedSong";
-            document.getElementById('playPauseButton').src = "resources/pause.png";
-            document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
+            document.getElementById('playPauseButton').src = "resources/bootstrap_icons/pause-fill_white.svg";
+            document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/pause-fill_white.svg";
             if(mode == 0) {
                 document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[currentList][songID]];
                 document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[currentList][songID]];
@@ -784,9 +784,9 @@ function play(songIdInput, listID, mode) {
         }
         else if(isPlaying == true) {
             audio.pause();
-            document.getElementById('playPauseButton').src = "resources/play.png";
+            document.getElementById('playPauseButton').src = "resources/bootstrap_icons/play-fill_white.svg";
             document.getElementById("songItem" + songID + "" + currentList).classList = "";
-            document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
+            document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/play-fill_white.svg";
             isPlaying = false;
             if(mode == 0) {
                 document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
@@ -807,8 +807,8 @@ function play(songIdInput, listID, mode) {
             if(!audio.paused) {
                 requestAnimationFrame(whilePlaying);
             }
-            document.getElementById('playPauseButton').src = "resources/pause.png";
-            document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
+            document.getElementById('playPauseButton').src = "resources/bootstrap_icons/pause-fill_white.svg";
+            document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/pause-fill_white.svg";
             document.getElementById("songItem" + songID + "" + currentList).classList = "selectedSong";
             isPlaying = true;
 
@@ -828,10 +828,10 @@ function play(songIdInput, listID, mode) {
     }
     else {
         audio.pause();
-        document.getElementById('playPauseButton').src = "resources/pause.png";
+        document.getElementById('playPauseButton').src = "resources/bootstrap_icons/pause-fill_white.svg";
         console.log('playButton' + songID + "" + currentList);
         if(document.getElementById('playButton' + songID + "" + currentList)) {
-            document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
+            document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/play-fill_white.svg";
             document.getElementById("songItem" + songID + "" + currentList).classList = "";
         }
         if(songID == songIdInput && listID == currentList && isPlaying) {
@@ -852,7 +852,7 @@ function play(songIdInput, listID, mode) {
                 requestAnimationFrame(whilePlaying);
             }
             playButtonPress += 1;
-            document.getElementById('playButton' + songID + "" + listID).src = "resources/pause.png";
+            document.getElementById('playButton' + songID + "" + listID).src = "resources/bootstrap_icons/pause-fill_white.svg";
             document.getElementById("songItem" + songID + "" + listID).classList = "selectedSong";
             if(mode == 0) {
                 document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
@@ -895,7 +895,7 @@ function play(songIdInput, listID, mode) {
 
 function next() {
     if(playButtonPress == 0) {
-        document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
+        document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/play-fill_white.svg";
         songID = 0;
         audio.src = myAudio[sortingOrder[currentList][songID]];
         audio.play();
@@ -904,9 +904,9 @@ function next() {
         if(!audio.paused) {
             requestAnimationFrame(whilePlaying);
         }
-        document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
-        document.getElementById('playPauseButton').src = "resources/pause.png";
-        document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
+        document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/pause-fill_white.svg";
+        document.getElementById('playPauseButton').src = "resources/bootstrap_icons/pause-fill_white.svg";
+        document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/pause-fill_white.svg";
         document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[currentList][songID]];
         document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[currentList][songID]];
         document.getElementById('songTitle').innerHTML = titles[sortingOrder[currentList][songID]];
@@ -916,7 +916,7 @@ function next() {
     }
     else {
         audio.pause();
-        document.getElementById('playButton' + songID + "" + currentList).src = "resources/play.png";
+        document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/play-fill_white.svg";
         if(songID + 1 >= sortingOrder[currentList].length) {
             if(currentList + 1 >= sortingOrder.length) {
                 currentList = 0;
@@ -936,9 +936,9 @@ function next() {
         if(!audio.paused) {
             requestAnimationFrame(whilePlaying);
         }
-        document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
-        document.getElementById('playPauseButton').src = "resources/pause.png";
-        document.getElementById('playButton' + songID + "" + currentList).src = "resources/pause.png";
+        document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/pause-fill_white.svg";
+        document.getElementById('playPauseButton').src = "resources/bootstrap_icons/pause-fill_white.svg";
+        document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/pause-fill_white.svg";
         document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[currentList][songID]];
         document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[currentList][songID]];
         document.getElementById('songTitle').innerHTML = titles[sortingOrder[currentList][songID]];
