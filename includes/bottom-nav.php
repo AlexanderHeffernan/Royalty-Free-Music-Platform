@@ -22,7 +22,7 @@
                     <a onclick="downloadSong()" id="btm-nav_downloadButton" class="bottom-btn"><img class="bottom-nav-icons" title="Download" src="resources/bootstrap_icons/download_white.svg"></img></a>
                     <a class="bottom-btn"><img class="bottom-nav-icons" title="Favourite" src="resources/bootstrap_icons/heart_white.svg"></img></a>
                     <a class="bottom-btn"><img class="bottom-nav-icons" title="Add to playlist" style="color: white;" src="resources/bootstrap_icons/plus-lg_white.svg" />
-                    <a class="bottom-btn"><img class="bottom-nav-icons" title="Share" src="resources/bootstrap_icons/share-fill_white.svg"></img></a>
+                    <a class="bottom-btn"><img class="bottom-nav-icons" title="Share" src="resources/bootstrap_icons/share_white.svg"></img></a>
 
                     <input class="volumeScroller" type="range" id="volume-slider" max="100" value="100">
                     <button id="mute-icon"></button>
