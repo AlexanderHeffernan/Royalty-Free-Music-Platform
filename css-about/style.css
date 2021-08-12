@@ -23,12 +23,12 @@ body {
     background: #121212;
     color: transparent;
     margin-bottom: 150px;
+    
   }
   
   /* ---------- main content ---------- */
   .main-container {
     color: #f1f1f1;
-    display: flex;
     width: 100%;
     top: 130px;
     position: relative;
@@ -70,24 +70,316 @@ body {
     color: white;
   }
 
-.hero{
+.head{
     background-color: red;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     top:-65px;
     position: relative;
     background: url(https://i.imgur.com/AspwLAO.png) center;
+    background: url(../resources/About-Page-Background.png) center;
     background-size:cover;
     background-position: center;
     color: #f2f2f2;
 
+}
+
+.head-container{
+    width: 100%;
+    background-color: transparent;
+    height: 90vh;
+    text-align: center;
+    padding-top:0px;
+    background: linear-gradient(0deg, #7d2681, #3700ff70);
+    background-size: 300%;
+    position: relative;
+    -webkit-animation: hero-gradient 20s infinite alternate;
+    animation: hero-gradient 20s infinite alternate;
+  
+}
+
+.head-content{
+  top: 40%;
+  position: absolute;
+  width: 100%;
+}
+
+.head-text{
+  font-size: 40px;
 
 }
 
-.hero-content{
-    width: 100%;
-    background-color: transparent;
-    height: 100vh;
-    text-align: center;
-    padding-top:50% ;
+.features{
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(0deg, #3700ff70, #7d2681);
+  background-size: 300%;
+  position: relative;
+  -webkit-animation: hero-gradient 20s infinite alternate;
+  animation: hero-gradient 20s infinite alternate;
+  top:-65px;
+}
+
+.features2{
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(0deg, #7d2681, #3700ff70);
+  background-size: 300%;
+  position: relative;
+  -webkit-animation: hero-gradient 20s infinite alternate;
+  animation: hero-gradient 20s infinite alternate;
+  top:-65px;
+}
+
+.featureheadtext{
+  font-size: 25px;
+  padding-bottom: 100px;
+
+}
+
+.features-container{
+  background-color: transparent;
+  height: 400px;
+  padding-top:10px;
+  display: flex;
+  text-align: center;
+  overflow: hidden;
+
+}
+
+.features-content{
+  background-color: transparent;
+  position: relative;
+  margin-left:auto ;
+  margin-right:auto ;
+  width: auto;
+  display: flex;
+}
+
+.imagepannel{
+  width: 500px;
+  width: 500px;
+  
+}
+
+.textpannel{
+  width: 500px;
+  background-color:transparent;
+  padding-top: 150px;
+  
+}
+
+.border2{
+  padding-left:100px;
+  border-left:2px solid rgb(0, 175, 175);
+}
+
+.border1{
+  padding-right:100px;
+  border-right:2px solid rgb(0, 175, 175);
+}
+
+
+
+.herocontainer{
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  padding-top: 6%; /* 16:9 Aspect Ratio */
+  top:-65px;
+
+}
+
+
+
+.hero {
+  background: url(../resources/hero_background.png) center;
+  background-size:cover;
+  background-position: center;
+  color: #f2f2f2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+
+
+}
+
+.hero .container {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #7c26813d, #3700ff27);
+  background-size: 300%;
+  position: relative;
+  -webkit-animation: hero-gradient 20s infinite alternate;
+  animation: hero-gradient 20s infinite alternate;
+
+
+}
+
+@-webkit-keyframes hero-gradient {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
+
+@keyframes hero-gradient {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
+
+.hero .container .arrow {
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+  position: absolute;
+  bottom: 2.5rem;
+  margin-bottom: -14px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 14px;
+  color: white;
+}
+
+.hero .container .arrow:hover {
+  -webkit-animation: arrow 4s infinite;
+          animation: arrow 4s infinite;
+}
+
+.hero .container .arrow .material-icons {
+  font-size: 2.5rem;
+}
+
+@-webkit-keyframes arrow {
+  25% {
+    bottom: 1.5rem;
+  }
+  50% {
+    bottom: 1.6rem;
+  }
+}
+
+
+.hero .header-container {
+  overflow: hidden;
+  position: absolute;
+  top: 14rem;
+  left: 2rem;
+}
+
+.hero .header-container h1 {
+  position: relative;
+  font-weight: 100;
+  font-size: 2.25rem;
+  -webkit-animation: header 4s;
+          animation: header 4s;
+}
+
+.hero .header-container p {
+  font-size: 1.5rem;
+  padding-top: 2rem;
+}
+
+.hero .search {
+  position: absolute;
+  left: 47.5%;
+  top: 23rem;
+  -webkit-transform: translateX(-47.5%);
+          transform: translateX(-47.5%);
+  width: 50%;
+}
+
+.hero .search .scrolled {
+  display: contents;
+}
+
+.hero .search .search-icon {
+  position: absolute;
+  font-size: 1.7rem;
+  top: 50%;
+  left: 0.5rem;
+  top:32px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  background: transparent;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.hero .search input {
+  font-size: 1rem;
+  background: rgba(18, 18, 18, 0.75);
+  color: #f2f2f2;
+  padding: 0.5rem 0.5rem 0.5rem 3rem;
+  height: 1.8rem;
+  width: 100%;
+  border-radius: 15px;
+  border: none;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.25rem 0.06rem rgba(143, 0, 153, 0.714);
+          box-shadow: 0.1rem 0.1rem 0.25rem 0.06rem rgba(143, 0, 153, 0.714);
+}
+
+.hero .search input:focus {
+  outline: none;
+}
+
+.hero .search input::-webkit-input-placeholder {
+  font-size: 1rem;
+  display: -webkit-box;
+  display: flex;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 3rem;
+}
+
+.hero .search input:-ms-input-placeholder {
+  font-size: 1rem;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 3rem;
+}
+
+.hero .search input::-ms-input-placeholder {
+  font-size: 1rem;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 3rem;
+}
+
+.hero .search input::placeholder {
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 3rem;
+}
+/*# sourceMappingURL=style.css.map */
+
+.content {
+  background: linear-gradient(#7d2681, #305d81);
+  padding-bottom: 75px;
+
 }
