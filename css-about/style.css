@@ -23,7 +23,6 @@ body {
     background: #121212;
     color: transparent;
     margin-bottom: 150px;
-    overflow: hidden;
   }
   
   /* ---------- main content ---------- */
@@ -82,4 +81,13 @@ body {
     background-position: center;
     color: #f2f2f2;
 
+
+}
+
+.hero-content{
+    width: 100%;
+    background-color: transparent;
+    height: 100vh;
+    text-align: center;
+    padding-top:50% ;
 }

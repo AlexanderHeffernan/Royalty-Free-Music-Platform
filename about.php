@@ -14,7 +14,9 @@
     <!-- content -->
 <div class="main-container" id="main-container"> 
     <div class="hero">
+        <div class="hero-content">
         <p>rfm</p>
+        </div>
 
     </div>
 </div>
