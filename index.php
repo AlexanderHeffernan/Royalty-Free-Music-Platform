@@ -9,6 +9,15 @@
 </head>
 <body>
     <?php include 'includes/navbar.php';?>
+    <div id="myModal2" class="modal2">
+        <div class="modal-content2">
+            <button class="close2"><i class="material-icons">close</i></button>
+            <h1>Add to...</h1>
+            <div class="addToPlaylistPanel" id="addToPlaylistPanel">     
+
+            </div>
+        </div>
+    </div>
     <section class="herocontainer">
         <div class="hero">
         <div class="container">

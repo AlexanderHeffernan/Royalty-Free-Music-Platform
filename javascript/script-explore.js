@@ -505,4 +505,3 @@ $(document).ready(function(){
     $("#SYNTH").addClass("activetag")}
     });
 });
-

@@ -129,6 +129,23 @@
             </li>
             -->
         </ul> 
+
+
+<!--<button class="addtoplaylistbuttontest" id="myBtn2">ADD TO PLAYLIST</button>-->
+
+<div id="myModal2" class="modal2">
+    <div class="modal-content2">
+        <button class="close2"><i class="material-icons">close</i></button>
+        <h1>Add to...</h1>
+        <div class="addToPlaylistPanel" id="addToPlaylistPanel">     
+
+        </div>
+    </div>
+</div>
+
+
+
+
     </div>
     <?php include 'includes/bottom-nav.php';?>
     <?php include 'includes/songsTable.php';?>
