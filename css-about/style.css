@@ -149,7 +149,7 @@ body {
  
 }
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .features, .features2, .features3{
     height: auto;
     padding-bottom: 200px;
@@ -174,10 +174,10 @@ body {
   text-align: center;
   overflow: hidden;
   z-index: 1;
-
+  width: 100%;
 }
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .features-container{
     height: auto;
 
@@ -191,7 +191,7 @@ body {
   position: relative;
   margin-left:auto ;
   margin-right:auto ;
-  width: auto;
+  width: 100%;
   display: flex;
 
 }
@@ -199,14 +199,14 @@ body {
 
 
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .features-container {
     display: block;
 
   }
 }
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .features-content{
     display: block;
 
@@ -214,12 +214,12 @@ body {
 }
 
 .imagepannel{
-  width: 500px;
-  height: 500px;
-  
+  width: 50%;
+  height: 300px;
+  margin: 30px;
 }
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .imagepannel{
     width: 50%;
     height: auto;
@@ -233,14 +233,15 @@ body {
 
 
 .textpannel{
-  width: 500px;
+  width: 50%;
   background-color:transparent;
   padding-top:0px;
   z-index: 1;
+  margin: 10px;
   
 }
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .textpannel{
     display: block;
     width: 100%;
@@ -250,14 +251,14 @@ body {
 }
 
 .textpannel h1{
-  font-size: 45px;
+  font-size: 2.5rem;
   font-weight: 600;
   padding-left: 5px;
   padding-right: 5px;
 
 }
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .textpannel p{
     display: block;
     width: 50%;
@@ -284,7 +285,7 @@ body {
 }
 
 .textpannel p{
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 200;
   padding-top: 5px;
   padding-left: 5px;
@@ -293,7 +294,7 @@ body {
 }
 
 .tp1{
-  padding-top:50px;
+  padding-top:30px;
 
 }
 
@@ -302,7 +303,7 @@ body {
 
 }
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .tp2{
     padding-bottom:80px;
 
@@ -310,7 +311,7 @@ body {
   }
 }
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .border1{
     padding-top:50px;
 
@@ -333,7 +334,7 @@ body {
 }
 
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .border1{
     border:none;
     margin-right:0px;
@@ -343,7 +344,7 @@ body {
   }
 }
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .border2{
     border:none;
     margin-right:0px;
@@ -470,8 +471,7 @@ body {
 .search {
   position: relative;
   top: 50px;
-  -webkit-transform: translateX(-47.5%);
-          transform: translateX(-47.5%);
+  text-align: center;
   width: 500px;
   z-index: 2;
 }
@@ -584,7 +584,7 @@ body {
   position: relative;
 }
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .fc3{
     width:50%;
     text-align: center;
@@ -606,31 +606,27 @@ body {
   z-index: 0;
   top:-700px;
   right:-500px;
-  width: 1700px;
-  height: 1600px;
+  width: 1500px;
+  height: 1300px;
 
 
 }
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .coolerhero{
     display: none;
   }
 }
 
-.search2{
-  display: none;
-}
 
-
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .search{
 display: none;
   }
 }
 
 
-@media all and (max-width: 1580px) {
+@media all and (max-width: 925px) {
   .search2{
     position: relative;
     left:-30px;
@@ -670,7 +666,7 @@ display: none;
   color: #f2f2f2;
   padding: 0.5rem 0.5rem 0.5rem 3rem;
   height: 1.8rem;
-  width: 100%;
+  width: 90%;
   border-radius: 15px;
   border: none;
   -webkit-box-shadow: 0.1rem 0.1rem 0.25rem 0.06rem rgba(143, 0, 153, 0.714);
