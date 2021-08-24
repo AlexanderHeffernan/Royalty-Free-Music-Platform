@@ -151,9 +151,11 @@ var playlistValues = [];
 
 for(var i = 0; i < playlists.length; i++) {
     if (i % 2 == 0) {
-        playlistNames.push(playlists[i]);
+        if(playlists[i] != "")
+            playlistNames.push(playlists[i]);
     }else{
-        playlistValues.push(playlists[i]);
+        if(playlists[i] != "undefined")
+            playlistValues.push(playlists[i]);
     }
 }
 console.log(playlistNames);
@@ -186,11 +188,6 @@ if(window.location.pathname.toString() == "/rfm/library.php") {
     panel.appendChild(breakElement);
     document.getElementById("filterContainer").appendChild(panel);
 }
-
-
-
-
-
 
 var sortingOrder = [];
 var listNames = [];
@@ -339,13 +336,16 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
 
             var SaveText = document.createElement("p");
             SaveText.innerHTML = "Add To Playlist";
+            SaveText.setAttribute("onClick", "openAddToPlaylistPopup(" + ids[sortingOrder[listID][i]] + ")");
 
             var LikeText = document.createElement("p");
             LikeText.innerHTML = "Like";
             LikeText.setAttribute("onClick", "addSongToPlaylist(" + ids[sortingOrder[listID][i]] + ", 0)");
 
-            var DownloadText = document.createElement("p");
+            var DownloadText = document.createElement("a");
             DownloadText.innerHTML = "Download";
+            DownloadText.setAttribute('onclick', "downloadSong()");
+            DownloadText.setAttribute('href', "../rfm/" + directories[sortingOrder[listID][i]]);
             
             var DropdownDiv = document.createElement("div");
             DropdownDiv.className = "dropdown-content";
@@ -1087,6 +1087,9 @@ function addSongToPlaylist(songID, playlistID) {
                 }
             }
         }
+        else if(i != playlistNames.length - 1) {
+            newPlaylistString = newPlaylistString.concat(";");
+        }
     }
     
     $.ajax({
@@ -1095,6 +1098,18 @@ function addSongToPlaylist(songID, playlistID) {
         data: 'newPlaylistString='+newPlaylistString
     })
     console.log("Uploading... " + newPlaylistString);
+
+    if(playlistID == 0) {
+        console.log('yay ' + ids[sortingOrder[currentList][songID]]);
+        var statType = '2';
+        $.ajax({
+            url: "includes/incrementSongStats.inc.php",
+            type: 'post',
+            data: 'songID='+ids[sortingOrder[currentList][songID]]+'&statType='+statType
+        })
+    }
+
+    hideAddToPlaylistPopup();
 }
 
 function createPlaylist(playlistName) {
@@ -1226,4 +1241,51 @@ function filter(filterName, category) {
             allSongs.childNodes[i].style.display = "flex";
         }
     }
+}
+
+// Get the modal
+var modal2 = document.getElementById("myModal2");
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("close2")[0];
+
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+  hideAddToPlaylistPopup();
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    hideAddToPlaylistPopup();
+  }
+}
+
+
+
+function openAddToPlaylistPopup (songId) {
+    var panel = document.getElementById("addToPlaylistPanel");
+    panel.innerHTML = "";
+
+    for(var i = 0; i < playlistNames.length; i++) {
+        var button = document.createElement("button");
+        button.innerText = playlistNames[i];
+        button.setAttribute("onClick", "addSongToPlaylist(" + songId + ", " + i + ")");
+        button.classList = "playlistbtn";
+
+        var breakElement = document.createElement("br");
+        
+        panel.appendChild(button);
+        panel.appendChild(breakElement);
+    }
+    var breakElement = document.createElement("br");
+
+    panel.appendChild(breakElement);
+
+    modal2.style.display = "block";
+}
+
+function hideAddToPlaylistPopup () {
+    modal2.style.display = "none";
 }

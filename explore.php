@@ -131,21 +131,20 @@
         </ul> 
 
 
-<button class="addtoplaylistbuttontest" id="myBtn2">ADD TO PLAYLIST</button>
+<!--<button class="addtoplaylistbuttontest" id="myBtn2">ADD TO PLAYLIST</button>-->
 
 <div id="myModal2" class="modal2">
     <div class="modal-content2">
         <button class="close2"><i class="material-icons">close</i></button>
         <h1>Add to...</h1>
+
         <div class="plb-container">
             <div class="pbl-content">
-                <button class="playlistbtn">Loved Songs</button>
-                <button class="playlistbtn">dasdsaasd Songs</button>
-                <button class="playlistbtn">Loved Songs</button>
-                <button class="playlistbtn">Loved Songs</button>
+                <div class="addToPlaylistPanel" id="addToPlaylistPanel">     
+
+                </div>
             </div>
         </div>
-
     </div>
 </div>
 

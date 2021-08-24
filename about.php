@@ -18,7 +18,15 @@
             <div class="head-content"> 
                 <p class="head-text">Who are we?</p>
                 <p class="subtext">The Biggest and Bestiest Royalty Free Music Libary In The World - That's Free!</p>
-                <a href="login.php"><button class="head-btn">Get Started Now!</button></a>
+                <?php
+                    if (!isset($_SESSION["userid"])) {
+                        echo "<a href=\"login.php\"><button class=\"head-btn\">Sign up now!</button></a>";
+                    }
+                    else {
+                        echo "<a href=\"explore.php\"><button class=\"head-btn\">Explore now!</button></a>";
+                        
+                    }
+                ?>
             </div>            
         </div>
     </div>
@@ -60,18 +68,20 @@
                 <h1 class="blacktext">Well what are you waiting for?</p>
                 <p class="blacktext">Explore now!</p> 
                 <div class="search2">
-                <form action="explore.php" method="POST">
-                    <input type="text" name="search" placeholder="What mood are you looking for?...">
-                    <button type="submit" name="submit-search" class="material-icons search-icon">search</button> 
-                </form>
-            </div>               
+                    <form action="explore.php" method="POST">
+                        <input type="text" name="search" placeholder="What mood are you looking for?...">
+                        <button type="submit" name="submit-search" class="material-icons search-icon">search</button> 
+                    </form>
+                </div>               
             </div>
+            <!--
             <div class="search">
                 <form action="explore.php" method="POST">
                     <input type="text" name="search" placeholder="What mood are you looking for?...">
                     <button type="submit" name="submit-search" class="material-icons search-icon">search</button> 
                 </form>
             </div>
+-->
             </div>
                 <img class="coolerhero" src="resources/coolerhero.png" alt="">
 
