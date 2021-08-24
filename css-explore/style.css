@@ -986,8 +986,9 @@ img {
 .modal2 {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1000; /* Sit on top */
-  padding-top: 25vh;
+  z-index: 100; /* Sit on top */
+  padding-top: 40vh;
+  top:0px;
   left: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
@@ -1007,7 +1008,11 @@ img {
   font-size: 20px;
   text-align: center;
   overflow: hidden;
+  display: block;
+
 }
+
+
 
 .modal-content2 h1{
 width: 100%;
@@ -1039,6 +1044,7 @@ font-size: 1.6rem;
   outline: none;
   border: none;
   border-radius: 100px;
+  position: absolute;
 }
 
 .close:hover,
@@ -1058,6 +1064,9 @@ font-size: 1.6rem;
   color: #f1f1f1;
   border-radius: 2px;
   margin-bottom: 5px;
+  width: auto;
+  position: relative;
+  display: block;
 }
 
 .addtoplaylistbuttontest{
@@ -1074,5 +1083,24 @@ font-size: 1.6rem;
 
 .dontshowatplmenu{
   display: none;
+
+}
+
+
+.plb-container{
+  background-color: transparent;
+  text-align: center;
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.pbl-content{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  background-color: transparent;
+  width: 100%;
 
 }

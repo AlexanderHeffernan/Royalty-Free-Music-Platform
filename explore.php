@@ -137,7 +137,15 @@
     <div class="modal-content2">
         <button class="close2"><i class="material-icons">close</i></button>
         <h1>Add to...</h1>
-        <button class="playlistbtn">Loved Songs</button>
+        <div class="plb-container">
+            <div class="pbl-content">
+                <button class="playlistbtn">Loved Songs</button>
+                <button class="playlistbtn">dasdsaasd Songs</button>
+                <button class="playlistbtn">Loved Songs</button>
+                <button class="playlistbtn">Loved Songs</button>
+            </div>
+        </div>
+
     </div>
 </div>
 
