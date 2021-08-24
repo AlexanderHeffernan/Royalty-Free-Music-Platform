@@ -23,4 +23,11 @@
         }
     }
 
+    if($statType === '2') {
+        $sql = "UPDATE songs SET likes = likes + 1 WHERE id = '$songID'";
+        if($connection->query($sql)===TRUE){
+            echo "DATA updated";
+        }
+    }
+
     

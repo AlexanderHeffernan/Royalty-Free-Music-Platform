@@ -344,8 +344,10 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
             LikeText.innerHTML = "Like";
             LikeText.setAttribute("onClick", "addSongToPlaylist(" + ids[sortingOrder[listID][i]] + ", 0)");
 
-            var DownloadText = document.createElement("p");
+            var DownloadText = document.createElement("a");
             DownloadText.innerHTML = "Download";
+            DownloadText.setAttribute('onclick', "downloadSong()");
+            DownloadText.setAttribute('href', "../rfm/" + directories[sortingOrder[listID][i]]);
             
             var DropdownDiv = document.createElement("div");
             DropdownDiv.className = "dropdown-content";
@@ -1087,6 +1089,9 @@ function addSongToPlaylist(songID, playlistID) {
                 }
             }
         }
+        else if(i != playlistNames.length - 1) {
+            newPlaylistString = newPlaylistString.concat(";");
+        }
     }
     
     $.ajax({
@@ -1095,6 +1100,16 @@ function addSongToPlaylist(songID, playlistID) {
         data: 'newPlaylistString='+newPlaylistString
     })
     console.log("Uploading... " + newPlaylistString);
+
+    if(playlistID == 0) {
+        console.log('yay ' + ids[sortingOrder[currentList][songID]]);
+        var statType = '2';
+        $.ajax({
+            url: "includes/incrementSongStats.inc.php",
+            type: 'post',
+            data: 'songID='+ids[sortingOrder[currentList][songID]]+'&statType='+statType
+        })
+    }
 }
 
 function createPlaylist(playlistName) {

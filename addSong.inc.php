@@ -12,6 +12,7 @@ if (isset($_POST["submit"])) {
     $instrument = $_POST["instrument"];
     $listens = 0;
     $downloads = 0;
+    $likes = 0;
 
     require_once 'includes/dbh.inc.php';
     require_once 'includes/functions.inc.php';
@@ -90,7 +91,7 @@ if (isset($_POST["submit"])) {
             echo $error . "These are the errors" . "\n";
         }
     }
-    uploadSong($connection, $title, $artist, basename($audioName), basename($coverName), $listens, $downloads, $duration, $genre, $mood, $instrument);
+    uploadSong($connection, $title, $artist, basename($audioName), basename($coverName), $listens, $downloads, $likes, $duration, $genre, $mood, $instrument);
 }
 else {
     header("location: dashboard.php");

@@ -570,19 +570,19 @@ body {
 
 }
 
-.dropdown-content p{
+.dropdown-content p, .dropdown-content a{
   text-align: left;
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left:10px ;
   overflow: hidden;
   cursor: pointer;
-  
+  color: white;
 
 }
 
 
-.dropdown-content p:hover{
+.dropdown-content p:hover, .dropdown-content a:hover{
   background-color: rgb(54, 54, 54);
   }
 @media all and (max-width: 1139px) {

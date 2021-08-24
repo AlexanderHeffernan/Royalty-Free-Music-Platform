@@ -145,9 +145,9 @@ function emptyInputSongUpload($title, $artist) {
     return $result;
 }
 
-function uploadSong($connection, $title, $artist, $audio, $cover, $listens, $downloads, $duration, $genre, $mood, $instrument) {
+function uploadSong($connection, $title, $artist, $audio, $cover, $listens, $downloads, $likes, $duration, $genre, $mood, $instrument) {
 
-    $sql = "INSERT INTO songs (directory, title, artist, cover, listens, downloads, duration, genre, mood, instrument) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    $sql = "INSERT INTO songs (directory, title, artist, cover, listens, downloads, likes, duration, genre, mood, instrument) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     $statement = mysqli_stmt_init($connection);
     if(!mysqli_stmt_prepare($statement, $sql)) {
         header("location: dashboard.php?errorstatementFailed");
@@ -157,7 +157,7 @@ function uploadSong($connection, $title, $artist, $audio, $cover, $listens, $dow
     $audioDir = "resources/songs/audio/" . $audio;
     $coverDir = "resources/songs/covers/" . $cover;
     echo "<p>", $title, " ", $artist, " ", $audio, " ", $cover, "</p>";
-    mysqli_stmt_bind_param($statement, "ssssssssss", $audioDir, $title, $artist, $coverDir, $listens, $downloads, $duration, $genre, $mood, $instrument);
+    mysqli_stmt_bind_param($statement, "sssssssssss", $audioDir, $title, $artist, $coverDir, $listens, $downloads, $likes, $duration, $genre, $mood, $instrument);
     mysqli_stmt_execute($statement);
     mysqli_stmt_close($statement);
     header("location: dashboard.php?error=none");
