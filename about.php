@@ -66,11 +66,9 @@
             <div class="features-content fc32">
                 <div class="textpannel fc3 tp3">
                 <h1 class="blacktext">Well what are you waiting for?</p>
-                <p class="blacktext">Explore now!</p> 
                 <div class="search2">
                     <form action="explore.php" method="POST">
-                        <input type="text" name="search" placeholder="What mood are you looking for?...">
-                        <button type="submit" name="submit-search" class="material-icons search-icon">search</button> 
+                        <input type="text" name="search" placeholder="Explore now!">
                     </form>
                 </div>               
             </div>

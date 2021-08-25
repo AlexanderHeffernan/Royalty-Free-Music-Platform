@@ -483,9 +483,7 @@ body {
 .search .search-icon {
   position: absolute;
   font-size: 1.7rem;
-  top: 50%;
-  left: 0.5rem;
-  top:32px;
+  bottom:0px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   cursor: pointer;
@@ -648,9 +646,9 @@ display: none;
 .search2 .search-icon {
   position: absolute;
   font-size: 1.7rem;
-  top: 50%;
-  left: 0.5rem;
-  top:32px;
+  top:50%;
+  left:20px;
+
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   cursor: pointer;
@@ -662,15 +660,13 @@ display: none;
 
 .search2 input {
   font-size: 1rem;
-  background: rgba(18, 18, 18, 0.75);
+  background: rgba(0, 0, 0, 0.75);
   color: #f2f2f2;
   padding: 0.5rem 0.5rem 0.5rem 3rem;
   height: 1.8rem;
   width: 90%;
   border-radius: 15px;
   border: none;
-  -webkit-box-shadow: 0.1rem 0.1rem 0.25rem 0.06rem rgba(143, 0, 153, 0.714);
-          box-shadow: 0.1rem 0.1rem 0.25rem 0.06rem rgba(143, 0, 153, 0.714);
 }
 
 .search2 input:focus {
@@ -712,6 +708,21 @@ display: none;
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
   margin-left: 3rem;
+}
+
+
+@media all and (max-width: 700px) {
+  .search2 input{
+    width: 100%;
+
+  }
+}
+
+@media all and (max-width: 700px) {
+  .textpannel{
+    width: 100%;
+
+  }
 }
 
 

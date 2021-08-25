@@ -841,11 +841,73 @@ img{
   }
 }
 
+
+.playlistbtn{
+  background-color: purple;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  outline: none;
+  border: none;
+  color: #f1f1f1;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  width: auto;
+  position: relative;
+  display: block;
+}
+
+.addtoplaylistbuttontest{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  color: white;
+
+}
+
+.showatplmenu{
+  display: block;
+}
+
+.dontshowatplmenu{
+  display: none;
+
+}
+
+
+.plb-container{
+  background-color: transparent;
+  text-align: center;
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.addToPlaylistPanel{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  background-color: transparent;
+  width: 100%;
+
+}
+
+.addToPlaylistPanel br{
+  display: none;
+}
+
+
+
+
+
+
 .modal2 {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 100; /* Sit on top */
-  padding-top: 40vh;
+  padding-top: 30vh;
   top:0px;
   left: 0;
   width: 100%; /* Full width */
@@ -921,7 +983,7 @@ font-size: 1.6rem;
   border: none;
   color: #f1f1f1;
   border-radius: 2px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   width: auto;
   position: relative;
   display: block;
@@ -953,12 +1015,16 @@ font-size: 1.6rem;
   width: 100%;
 }
 
-.pbl-content{
+.addToPlaylistPanel{
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   display: grid;
   background-color: transparent;
-  width: auto;
+  width: 100%;
 
+}
+
+.addToPlaylistPanel br{
+  display: none;
 }

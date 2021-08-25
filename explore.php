@@ -139,11 +139,9 @@
         <h1>Add to...</h1>
 
         <div class="plb-container">
-            <div class="pbl-content">
                 <div class="addToPlaylistPanel" id="addToPlaylistPanel">     
 
                 </div>
-            </div>
         </div>
     </div>
 </div>
