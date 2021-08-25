@@ -18,8 +18,8 @@
             </div>
         </div>
     </div>
-    <section class="herocontainer">
-        <div class="hero">
+    <section class="herocontainerHome">
+        <div class="heroHome">
         <div class="container">
             <div class="header-container">
                 <h1>
@@ -43,6 +43,39 @@
         </div>
     </section>
     <section class="content" id="content">
+        <?php
+            if (!isset($_SESSION["userid"])) {
+                echo "<link rel=\"stylesheet\" href=\"css-about/style.css\">
+                <div class=\"features\">
+                            <p class=\"featureheadtext\"></p>
+                    
+                            <div class=\"features-container\">
+                                <div class=\"features-content\">
+                                    <img class=\"imagepannel border1\" src=\"resources/AlbumCover4.png\" alt=\"\">
+                                    <div class=\"textpannel tp1\">
+                                        <h1>Never worry about licencing again!</p>
+                                        <p>RFM has you coved, all the music found on our website is 100% royalty free and 100% free for the taking. Weither it be a youtube video or short film, RFM's Large and Free music libery will Enhance your perosnal project's audible experience.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class=\"features2\">
+                        <p class=\"featureheadtext\"></p>
+                    
+                            <div class=\"features-container\">
+                                <div class=\"features-content\">
+                                    <div class=\"textpannel tp2\">
+                                    <h1>RFM is the best source for carefully curated Royalty Free Music</p>
+                                        <p>With unlimited downloads, talented artists and a wide collection of genres, RFM is your one stop shop for royalty free music</p>                
+                                    </div>
+                                    <img class=\"imagepannel border2\" src=\"resources/about-page-img-1.png\" alt=\"\">
+                    
+                                </div>
+                            </div>
+                        </div>";
+            }
+        ?>
         <div id="listensSection">
             <div class="top-songs">
                 <h1>most listened to songs of the week</h1>
