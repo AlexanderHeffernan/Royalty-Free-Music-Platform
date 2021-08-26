@@ -185,6 +185,7 @@ if(window.location.pathname.toString() == "/rfm/library.php") {
     panel.appendChild(newPlaylistButton);
     panel.appendChild(breakElement);
     document.getElementById("filterContainer").appendChild(panel);
+    document.getElementsByClassName("accordion")[0].click();
 }
 
 var sortingOrder = [];
@@ -1244,4 +1245,6 @@ document.getElementById("nextButton").style.opacity = "50%";
 document.getElementById("nextButton").style.transition = "1s ease-in-out";
 
 document.getElementById("btm-nav_cover").style.opacity = "50%";
-document.getElementById("btm-nav_cover").style.transition = "1s ease-in-out"
+document.getElementById("btm-nav_cover").style.transition = "1s ease-in-out";
+
+document.getElementsByClassName("playlistbtn")[0].click();

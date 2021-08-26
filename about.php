@@ -38,7 +38,7 @@
                 <img class="imagepannel border1" src="resources/AlbumCover4.png" alt="">
                 <div class="textpannel tp1">
                     <h1>Never worry about licencing again!</p>
-                    <p>RFM has you coved, all the music found on our website is 100% royalty free and 100% free for the taking. Weither it be a youtube video or short film, RFM's Large and Free music libery will Enhance your perosnal project's audible experience.</p>
+                    <p>RFM has you covered. All the music found on our website is 100% royalty free. Whether it be a youtube video or short film, RFM's large and free music libery will enhance your personal projects.</p>
                 </div>
             </div>
         </div>
