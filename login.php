@@ -29,10 +29,6 @@
                     <input type="password" name="passwordRepeat" class="input-field" placeholder="ENTER REPEATED PASSWORD" required>
                     <br>
                     <br>
-                    <label style="color: white">Profile picture:</label>
-                    <input type="file" accept="image/*" name="profilePicture" class="input-field">
-                    <br>
-                    <br>
                     <p style="color: white">By creating an account you agree to our <a href="documentation.php#TOS" target="_blank" style="color:dodgerblue">Terms & Privacy</a>.</p>
                     <br>
                     <button type="submit" name="submit" class="submit-btn">SIGN UP</button>

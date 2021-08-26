@@ -78,17 +78,17 @@
         ?>
         <div id="listensSection">
             <div class="top-songs">
-                <h1>most listened to songs of the week</h1>
+                <h1>most listened to songs</h1>
             </div>  
         </div>
         <div id="downloadsSection">
             <div class="top-songs">
-                <h1>most downloaded songs of the week</h1>
+                <h1>most downloaded songs</h1>
             </div>
         </div>
         <div id="newestSongs">
             <div class="top-songs">
-                <h1>most recent songs of the week</h1>
+                <h1>most recent songs</h1>
             </div>
         </div>
     </section>

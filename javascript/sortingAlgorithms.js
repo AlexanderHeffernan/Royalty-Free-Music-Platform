@@ -127,7 +127,7 @@ for (i = 1; i < rowLength; i++){
 }
 
 var isPlaying = false;
-var songID = 1;
+var songID;
 var currentList = 0;
 
 var myAudio = [];
@@ -158,8 +158,6 @@ for(var i = 0; i < playlists.length; i++) {
             playlistValues.push(playlists[i]);
     }
 }
-console.log(playlistNames);
-console.log(playlistValues);
 
 if(window.location.pathname.toString() == "/rfm/library.php") {
     
@@ -331,27 +329,24 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
         
 
         for(var i = 0; i < amount; i++) {
-            var ShareText = document.createElement("p");
-            ShareText.innerHTML = "Share";
 
-            var SaveText = document.createElement("p");
-            SaveText.innerHTML = "Add To Playlist";
-            SaveText.setAttribute("onClick", "openAddToPlaylistPopup(" + ids[sortingOrder[listID][i]] + ")");
-
-            var LikeText = document.createElement("p");
-            LikeText.innerHTML = "Like";
-            LikeText.setAttribute("onClick", "addSongToPlaylist(" + ids[sortingOrder[listID][i]] + ", 0)");
+            if(document.getElementById("libraryLink")) {
+                var SaveText = document.createElement("p");
+                SaveText.innerHTML = "Add To Playlist";
+                SaveText.setAttribute("onClick", "openAddToPlaylistPopup(" + ids[sortingOrder[listID][i]] + ")");
+            }
 
             var DownloadText = document.createElement("a");
             DownloadText.innerHTML = "Download";
             DownloadText.setAttribute('onclick', "downloadSong()");
             DownloadText.setAttribute('href', "../rfm/" + directories[sortingOrder[listID][i]]);
+            DownloadText.setAttribute('download', '');
             
             var DropdownDiv = document.createElement("div");
             DropdownDiv.className = "dropdown-content";
-            DropdownDiv.appendChild(ShareText);
-            DropdownDiv.appendChild(SaveText);
-            DropdownDiv.appendChild(LikeText);
+            if(document.getElementById("libraryLink")) {
+                DropdownDiv.appendChild(SaveText);
+            }
             DropdownDiv.appendChild(DownloadText);
 
             var moreIcon = document.createElement("i");
@@ -546,33 +541,9 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
         sortingOrder.push(newSortingOrder);
 
         for(var i = 0; i < amount; i++) {
-            var ShareText = document.createElement("p");
-            ShareText.innerHTML = "Share";
-
-            var NotifyMeText = document.createElement("p");
-            NotifyMeText.innerHTML = "Notify Me";
-
-            var NotificationsText = document.createElement("p");
-            NotificationsText.innerHTML = "Notifications";
-
-            var SaveText = document.createElement("p");
-            SaveText.innerHTML = "Save";
-
-            var LikeText = document.createElement("p");
-            LikeText.innerHTML = "Like";
-
-            var DownloadText = document.createElement("p");
-            DownloadText.innerHTML = "Download";
-
             var DropdownDiv = document.createElement("div");
 
             DropdownDiv.className = "dropdown-content";
-            DropdownDiv.appendChild(ShareText);
-            DropdownDiv.appendChild(NotifyMeText);
-            DropdownDiv.appendChild(NotificationsText);
-            DropdownDiv.appendChild(SaveText);
-            DropdownDiv.appendChild(LikeText);
-            DropdownDiv.appendChild(DownloadText);
 
             var path = window.location.pathname;
             var page = path.split("/").pop();
@@ -581,8 +552,9 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
                 var DeleteTextForm = document.createElement("form");
                 DeleteTextForm.action = "deleteSong.inc.php";
                 DeleteTextForm.method = "post";
+                DeleteTextForm.id = "deleteForm";
                 var DeleteTextID = document.createElement("input");
-                DeleteTextID.value = ids[sortingOrder[listID][i]];
+                DeleteTextID.value = myIds[sortingOrder[listID][i]];
                 DeleteTextID.setAttribute("readonly", "true");
                 DeleteTextID.setAttribute("required", "true");
                 DeleteTextID.style.display = "none";
@@ -592,6 +564,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
                 DeleteTextButton.innerHTML = "Delete";
                 DeleteTextButton.name = "submit";
                 DeleteTextButton.type = "submit";
+                DeleteTextButton.id = "deleteButton";
                 DeleteTextForm.appendChild(DeleteTextID);
                 DeleteTextForm.appendChild(DeleteTextButton);
                 DropdownDiv.appendChild(DeleteTextForm);
@@ -743,44 +716,17 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
 }
 
 function play(songIdInput, listID, mode) {
+    document.getElementById("playPauseButton").style.opacity = "100%";
+    document.getElementById("nextButton").style.opacity = "100%";
+    document.getElementById("btm-nav_cover").style.opacity = "100%";
+    
     if(listID == undefined) {
         listID = currentList;
     }
+    console.log(songIdInput + " and " + songID);
     if(songIdInput == "current" || ((songIdInput == songID) && (listID == currentList))) {
         if(playButtonPress == 0){
-            document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/play-fill_white.svg";
-            document.getElementById("songItem" + songID + "" + currentList).classList = "";
-            songID = 0;
-            if(mode == 0) {
-                audio.src = myAudio[sortingOrder[currentList][songID]];
-            }
-            else {
-                audio.src = myMyAudio[sortingOrder[currentList][songID]];
-            }
-            
-            audio.play();
-            seekSlider.value = 0;
-            if(!audio.paused) {
-                requestAnimationFrame(whilePlaying);
-            }
-            document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/pause-fill_white.svg";
-            document.getElementById("songItem" + songID + "" + currentList).classList = "selectedSong";
-            document.getElementById('playPauseButton').src = "resources/bootstrap_icons/pause-fill_white.svg";
-            document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/pause-fill_white.svg";
-            if(mode == 0) {
-                document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[currentList][songID]];
-                document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[currentList][songID]];
-                document.getElementById('songTitle').innerHTML = titles[sortingOrder[currentList][songID]];
-                document.getElementById('songArtist').innerHTML = artists[sortingOrder[currentList][songID]];
-            }
-            else {
-                document.getElementById('btm-nav_cover').src = "../rfm/" + myCovers[sortingOrder[currentList][songID]];
-                document.getElementById('btm-nav_downloadButton').href = "../rfm/" + myDirectories[sortingOrder[currentList][songID]];
-                document.getElementById('songTitle').innerHTML = myTitles[sortingOrder[currentList][songID]];
-                document.getElementById('songArtist').innerHTML = myArtists[sortingOrder[currentList][songID]];
-            }   
-            isPlaying = true;
-            playButtonPress += 1;
+
         }
         else if(isPlaying == true) {
             audio.pause();
@@ -789,16 +735,22 @@ function play(songIdInput, listID, mode) {
             document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/play-fill_white.svg";
             isPlaying = false;
             if(mode == 0) {
-                document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
-                document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[listID][songID]];
-                document.getElementById('songTitle').innerHTML = titles[sortingOrder[listID][songID]];
-                document.getElementById('songArtist').innerHTML = artists[sortingOrder[listID][songID]];
+                //document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
+                //document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[listID][songID]];
+                if(document.getElementById('openAddToPlaylistPopupButton')) {
+                    //document.getElementById('openAddToPlaylistPopupButton').setAttribute('onclick', "openAddToPlaylistPopup(" + ids[sortingOrder[listID][songID]] + ")");
+                }
+                //document.getElementById('songTitle').innerHTML = titles[sortingOrder[listID][songID]];
+                //document.getElementById('songArtist').innerHTML = artists[sortingOrder[listID][songID]];
             }
             else {
-                document.getElementById('btm-nav_cover').src = "../rfm/" + myCovers[sortingOrder[listID][songID]];
-                document.getElementById('btm-nav_downloadButton').href = "../rfm/" + myDirectories[sortingOrder[listID][songID]];
-                document.getElementById('songTitle').innerHTML = myTitles[sortingOrder[listID][songID]];
-                document.getElementById('songArtist').innerHTML = myArtists[sortingOrder[listID][songID]];
+                //document.getElementById('btm-nav_cover').src = "../rfm/" + myCovers[sortingOrder[listID][songID]];
+                //document.getElementById('btm-nav_downloadButton').href = "../rfm/" + myDirectories[sortingOrder[listID][songID]];
+                if(document.getElementById('openAddToPlaylistPopupButton')) {
+                    //document.getElementById('openAddToPlaylistPopupButton').setAttribute('onclick', "openAddToPlaylistPopup(" + myIds[sortingOrder[listID][songID]] + ")");
+                }
+                //document.getElementById('songTitle').innerHTML = myTitles[sortingOrder[listID][songID]];
+                //document.getElementById('songArtist').innerHTML = myArtists[sortingOrder[listID][songID]];
             }
         }
         else if(isPlaying == false) {
@@ -815,12 +767,14 @@ function play(songIdInput, listID, mode) {
             if(mode == 0) {
                 document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
                 document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[listID][songID]];
+                document.getElementById('openAddToPlaylistPopupButton').setAttribute('onclick', "openAddToPlaylistPopup(" + ids[sortingOrder[listID][songID]] + ")");
                 document.getElementById('songTitle').innerHTML = titles[sortingOrder[listID][songID]];
                 document.getElementById('songArtist').innerHTML = artists[sortingOrder[listID][songID]];
             }
             else {
                 document.getElementById('btm-nav_cover').src = "../rfm/" + myCovers[sortingOrder[listID][songID]];
                 document.getElementById('btm-nav_downloadButton').href = "../rfm/" + myDirectories[sortingOrder[listID][songID]];
+                document.getElementById('openAddToPlaylistPopupButton').setAttribute('onclick', "openAddToPlaylistPopup(" + myIds[sortingOrder[listID][songID]] + ")");
                 document.getElementById('songTitle').innerHTML = myTitles[sortingOrder[listID][songID]];
                 document.getElementById('songArtist').innerHTML = myArtists[sortingOrder[listID][songID]];
             }
@@ -857,12 +811,16 @@ function play(songIdInput, listID, mode) {
             if(mode == 0) {
                 document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
                 document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[listID][songID]];
+                if(document.getElementById('openAddToPlaylistPopupButton')) {
+                    document.getElementById('openAddToPlaylistPopupButton').setAttribute('onclick', "openAddToPlaylistPopup(" + ids[sortingOrder[listID][songID]] + ")");
+                }
                 document.getElementById('songTitle').innerHTML = titles[sortingOrder[listID][songID]];
                 document.getElementById('songArtist').innerHTML = artists[sortingOrder[listID][songID]];
             }
             else {
                 document.getElementById('btm-nav_cover').src = "../rfm/" + myCovers[sortingOrder[listID][songID]];
                 document.getElementById('btm-nav_downloadButton').href = "../rfm/" + myDirectories[sortingOrder[listID][songID]];
+                document.getElementById('openAddToPlaylistPopupButton').setAttribute('onclick', "openAddToPlaylistPopup(" + myIds[sortingOrder[listID][songID]] + ")");
                 document.getElementById('songTitle').innerHTML = myTitles[sortingOrder[listID][songID]];
                 document.getElementById('songArtist').innerHTML = myArtists[sortingOrder[listID][songID]];
             }
@@ -890,33 +848,16 @@ function play(songIdInput, listID, mode) {
     if(listID != currentList && listID != undefined) {
         currentList = listID;
     }
-    
 };
 
 function next() {
     if(playButtonPress == 0) {
-        document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/play-fill_white.svg";
-        songID = 0;
-        audio.src = myAudio[sortingOrder[currentList][songID]];
-        audio.play();
-        audio.currentTime = 0;
-        seekSlider.value = 0;
-        if(!audio.paused) {
-            requestAnimationFrame(whilePlaying);
-        }
-        document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/pause-fill_white.svg";
-        document.getElementById('playPauseButton').src = "resources/bootstrap_icons/pause-fill_white.svg";
-        document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/pause-fill_white.svg";
-        document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[currentList][songID]];
-        document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[currentList][songID]];
-        document.getElementById('songTitle').innerHTML = titles[sortingOrder[currentList][songID]];
-        document.getElementById('songArtist').innerHTML = artists[sortingOrder[currentList][songID]];
-        isPlaying = true;
-        playButtonPress += 1;
+        
     }
     else {
         audio.pause();
         document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/play-fill_white.svg";
+        document.getElementById("songItem" + songID + "" + currentList).classList = "";
         if(songID + 1 >= sortingOrder[currentList].length) {
             if(currentList + 1 >= sortingOrder.length) {
                 currentList = 0;
@@ -929,6 +870,7 @@ function next() {
         else {
             songID += 1;
         }
+        document.getElementById("songItem" + songID + "" + currentList).classList = "selectedSong";
         audio.src = myAudio[sortingOrder[currentList][songID]];
         audio.play();
         audio.currentTime = 0;
@@ -941,6 +883,9 @@ function next() {
         document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/pause-fill_white.svg";
         document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[currentList][songID]];
         document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[currentList][songID]];
+        if(document.getElementById('openAddToPlaylistPopupButton')) {
+            document.getElementById('openAddToPlaylistPopupButton').setAttribute('onclick', "openAddToPlaylistPopup(" + ids[sortingOrder[currentList][songID]] + ")");
+        }
         document.getElementById('songTitle').innerHTML = titles[sortingOrder[currentList][songID]];
         document.getElementById('songArtist').innerHTML = artists[sortingOrder[currentList][songID]];
         isPlaying = true;
@@ -1171,7 +1116,7 @@ var activeGenreFilters = [];
 var activeMoodFilters = [];
 var activeInstrumentFilters = [];
 var allGenreFilters = ["JAZZ", "ELECTRONIC", "HIP HOP", "COUNTRY", "POP", "ROCK", "CINEMATIC", "CLASSICAL", "FUTURE BASS"];
-var allMoodFilters = ["HAPPY", "SAD", "JOYFUL", "NOSTALGIA", "PEACEFUL", "ANGRY", "INTENSE", "SLEEP", "WORKOUT"];
+var allMoodFilters = ["HAPPY", "SAD", "JOYFUL", "NOSTALGIA", "PEACEFUL", "CHILL", "ANGRY", "INTENSE", "SLEEP", "WORKOUT"];
 var allInstrumentFilters = ["DRUMS", "GUITAR", "PIANO", "WOODWIND", "STRING", "BRASS", "PRECUSSION", "SYNTH"];
 
 function filter(filterName, category) {
@@ -1251,8 +1196,10 @@ var span2 = document.getElementsByClassName("close2")[0];
 
 
 // When the user clicks on <span> (x), close the modal
-span2.onclick = function() {
-  hideAddToPlaylistPopup();
+if(span2) {
+    span2.onclick = function() {
+    hideAddToPlaylistPopup();
+    }
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -1289,3 +1236,12 @@ function openAddToPlaylistPopup (songId) {
 function hideAddToPlaylistPopup () {
     modal2.style.display = "none";
 }
+
+document.getElementById("playPauseButton").style.opacity = "50%";
+document.getElementById("playPauseButton").style.transition = "1s ease-in-out";
+
+document.getElementById("nextButton").style.opacity = "50%";
+document.getElementById("nextButton").style.transition = "1s ease-in-out";
+
+document.getElementById("btm-nav_cover").style.opacity = "50%";
+document.getElementById("btm-nav_cover").style.transition = "1s ease-in-out"

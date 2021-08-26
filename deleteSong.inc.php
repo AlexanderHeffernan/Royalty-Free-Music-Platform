@@ -17,7 +17,7 @@ if(isset($_POST["submit"])) {
     mysqli_stmt_execute($statement);
     mysqli_stmt_close($statement);
     echo $id;
-    //header("location: dashboard.php?error=none");
+    header("location: dashboard.php?error=none");
     exit();
     
 }

@@ -5,6 +5,7 @@
     
     <title>RFM - Royalty Free Music</title>
     <link rel="stylesheet" href="css-explore/style.css">
+    <link rel="stylesheet" href="css-includes/explore-library_base.css">
     <link rel="stylesheet" href="css-explore/waves.css"> 
 </head>
 <body>
@@ -62,6 +63,7 @@
                     <button onclick="filter('JOYFUL', 'mood')" id="JOYFUL" >JOYFUL</button>
                     <button onclick="filter('NOSTALGIA', 'mood')" id="NOSTALGIA" >NOSTALGIA</button>
                     <button onclick="filter('PEACEFUL', 'mood')" id="PEACEFUL" >PEACEFUL</button>
+                    <button onclick="filter('CHILL', 'mood')" id="CHILL">CHILL</button>
                     <button onclick="filter('ANGRY', 'mood')" id="ANGRY" >ANGRY</button>
                     <button onclick="filter('INTENSE', 'mood')" id="INTENSE" >INTENSE</button>
                     <button onclick="filter('SLEEP', 'mood')" id="SLEEP" >SLEEP</button>
@@ -158,7 +160,7 @@
     <script src="javascript/script-explore.js"></script>
     <script src="javascript/sortingAlgorithms.js"></script>
     <script>
-        sortSongs("main-container", "musicList", 2, 15, "false", 0, 0)
+        sortSongs("main-container", "musicList", 2, 30, "false", 0, 0)
     </script>
 </body>
 </html>

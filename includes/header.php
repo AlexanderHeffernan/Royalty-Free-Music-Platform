@@ -12,6 +12,6 @@
       rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/waves.min.css">
+    <link rel="stylesheet" href="css-includes/waves.min.css">
     <link rel="shortcut icon" href="resources/RFMLOGOPURPLE.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>

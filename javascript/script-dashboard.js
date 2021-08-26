@@ -89,7 +89,6 @@ else {
   document.getElementById("recentSongArtist").parentNode.removeChild(document.getElementById("recentSongArtist"));
   document.getElementById("recentSongListens").parentNode.removeChild(document.getElementById("recentSongListens"));
   document.getElementById("recentSongDownloads").parentNode.removeChild(document.getElementById("recentSongDownloads"));
-  document.getElementById("recentSongLikes").parentNode.removeChild(document.getElementById("recentSongLikes"));
 
 }
 

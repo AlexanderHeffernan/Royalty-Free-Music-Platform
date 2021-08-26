@@ -386,6 +386,15 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $("#CHILL").click(function(){
+        if($("#CHILL").hasClass("activetag")){
+    $("#CHILL").removeClass("activetag")}
+        else{
+    $("#CHILL").addClass("activetag")}
+    });
+});
+
 
 $(document).ready(function(){
     $("#ANGRY").click(function(){

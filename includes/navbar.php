@@ -10,7 +10,11 @@
     <div class="navlinks">
         <button onclick="window.location.href='index.php';" id="homeLink" class="navbtn"><p>Home</p></button>
         <button onclick="window.location.href='explore.php';" id="exploreLink" class="navbtn"><p>Explore</p></button>
-        <button onclick="window.location.href='library.php';" id="libraryLink" class="navbtn"><p>Library</p></button>
+        <?php
+            if(isset($_SESSION["userid"])) {
+                echo "<button onclick=\"window.location.href='library.php';\" id=\"libraryLink\" class=\"navbtn\"><p>Library</p></button>";
+            }
+        ?>
         <button onclick="window.location.href='about.php';" id="aboutLink" class="navbtn"><p>About</p></button>
         <button title="Search" id="searchIcon" class="searchbartoggle searchbartoggleorigin material-icons">search</button>
 
@@ -71,7 +75,12 @@
     <div class="mobile-sidenav">
         <button onclick="window.location.href='index.php';" id="homeLink" class="sidebtn"><p>Home</p></button>
         <button onclick="window.location.href='explore.php';" id="exploreLink" class="sidebtn"><p>Explore</p></button>
-        <button onclick="window.location.href='library.php';" id="libraryLink" class="sidebtn"><p>Library</p></button>
+        
+        <?php
+            if(isset($_SESSION["userid"])) {
+                echo "<button onclick=\"window.location.href='library.php';\" id=\"libraryLink\" class=\"sidebtn\"><p>Library</p></button>";
+            }
+        ?>
         <button onclick="window.location.href='about.php';" id="documentationLink" class="sidebtn"><p>About</p></button>
     </div>
 

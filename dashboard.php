@@ -19,8 +19,8 @@
         <div class="container">
             <div class="profile">
                 <div class="profile-picture">
-                    <div class="on-hover" title="Change Profile Picture">
-                    <span class="material-icons">
+                    <div onclick="profileSettingsFunction()" class="on-hover" title="Change Profile Picture">
+                    <span onclick="profileSettingsFunction()" class="material-icons">
                         photo_camera
                         </span>
                     </div>
@@ -28,9 +28,9 @@
                     <?php 
                     if(htmlspecialchars($_SESSION["usersProfilePicture"]) === "resources/users/profilePicture/" || htmlspecialchars($_SESSION["usersProfilePicture"]) === "") {
                         
-                        echo '<img src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" style="width:12.25rem"/>';
+                        echo '<img onclick="profileSettingsFunction()" src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" style="width:12.25rem"/>';
                     } else {
-                        echo '<img src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image" style="width:12.25rem"/>';                  
+                        echo '<img onclick="profileSettingsFunction()" src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image" style="width:12.25rem"/>';                  
                     }
                     ?>
                     
@@ -80,10 +80,6 @@
                         <h2 id="totalListens">0</h2>
                     </div>
                     <div>
-                        <h3>Total Likes:</h3>
-                        <h2>0</h2>
-                    </div>
-                    <div>
                         <h3>Total Downloads:</h3>
                         <h2 id="totalDownloads">0</h2>
                     </div>
@@ -103,7 +99,6 @@
                             <div class="statistics">
                                 <div>
                                     <p id="recentSongListens">0 Listens</p>
-                                    <p id="recentSongLikes">0 Likes</p>
                                     <p id="recentSongDownloads">0 Downloads</p>
                                 </div>
                             </div>
@@ -142,6 +137,7 @@
                                         <option value="Joyful">Joyful</option>
                                         <option value="Nostalgia">Nostalgia</option>
                                         <option value="Peaceful">Peaceful</option>
+                                        <option value="Chill">Chill</option>
                                         <option value="Angry">Angry</option>
                                         <option value="Intense">Intense</option>
                                         <option value="Sleep">Sleep</option>
@@ -168,19 +164,6 @@
                     <div class="container">
                         <div class="song-header">
                             <h2>All Songs</h2>
-                            <div class="filter" onclick="filterClickTwo()">
-                                Filter
-                                <span class="material-icons filter-button-two" id="filter">
-                                    arrow_drop_down
-                                </span>
-                                <div class="accordion">
-                                    <div class="accordion-content">
-                                        <p>New</p>
-                                        <p>Popular</p>
-                                        <p>Most Downloaded</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div id="AllSongsContainer" class="song-container">
                 

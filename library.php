@@ -1,10 +1,15 @@
 <?php 
     session_start();
     include 'includes/header.php';
+
+    if(!isset($_SESSION['usersUsername'])){ //if login in session is not set
+        header("Location: 404.php ");
+    }
 ?>
     
     <title>RFM - Royalty Free Music</title>
     <link rel="stylesheet" href="css-library/style.css">
+    <link rel="stylesheet" href="css-includes/explore-library_base.css">
     <link rel="stylesheet" href="css-explore/waves.css"> 
 </head>
 <body>
