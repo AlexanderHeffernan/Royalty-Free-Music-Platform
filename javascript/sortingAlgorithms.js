@@ -1247,4 +1247,8 @@ document.getElementById("nextButton").style.transition = "1s ease-in-out";
 document.getElementById("btm-nav_cover").style.opacity = "50%";
 document.getElementById("btm-nav_cover").style.transition = "1s ease-in-out";
 
-document.getElementsByClassName("playlistbtn")[0].click();
+if(document.getElementsByClassName("playlistbtn")) { 
+    if(document.getElementsByClassName("playlistbtn")[0]) {
+        document.getElementsByClassName("playlistbtn")[0].click();
+    }
+}
