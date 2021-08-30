@@ -182,7 +182,7 @@
     <!-- Javascript -->
     <script src="javascript/sortingAlgorithms.js"></script>
     <script>
-        sortSongs("AllSongsContainer", "musiclist", 2, 10, "false", 0, 1);
+        sortSongs("AllSongsContainer", "musiclist", 2, 100, "false", 0, 1);
     </script>
     <script src="javascript/script-dashboard.js"></script>
     
