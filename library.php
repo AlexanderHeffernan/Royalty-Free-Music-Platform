@@ -21,6 +21,7 @@
             <button class="hamburger" onclick="filterhamburger()"><i class="material-icons">menu</i></button>
         </div>
         <?php
+
             if(isset($_POST['submit-search'])) {
                 echo "<p class='showingResultsForText'>Showing results for: " . $_POST['search'] . ".";
             }

@@ -196,6 +196,15 @@ var linearGradients = ["linear-gradient(180deg, rgba(60,221,211,1) 0%, rgba(37,4
 var randomLinearGradient = Math.floor(Math.random() * (linearGradients.length - 0) + 0);
 var previousPlaylistID;
 
+var scrollToBottom = false;
+var timesScrolledToBottom = 0;
+var canLoadMore = true;
+
+function setScrollToBottom() {
+    scrollToBottom = true;
+    timesScrolledToBottom += 1;
+}
+
 function sortSongs(containerName, listName, sortType, amount, ranked, listID, mode, searchInput, playlistIds, playlistID) {
     
     searchInput = searchInput || "";
@@ -217,6 +226,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
 
         if(amount > directories.length) {
             amount = directories.length;
+            canLoadMore = false;
         }
 
         if(listNames.includes(listName)) {
@@ -326,6 +336,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
         sortingOrder.push(newSortingOrder);
         if(amount > newSortingOrder.length) {
             amount = newSortingOrder.length;
+            canLoadMore = false;
         }
         
 
@@ -489,6 +500,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
     } else if(mode == 1) {
         if(amount > myDirectories.length) {
             amount = myDirectories.length;
+            canLoadMore = false;
         }
 
         if(listNames.includes(listName)) {
@@ -714,6 +726,24 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
         section = document.getElementById(containerName);
         section.appendChild(list);
     }
+
+    if(document.getElementById("loadMoreButton")) {
+        document.getElementById("loadMoreButton").remove();
+    }
+
+    if(window.location.pathname.toString() == "/rfm/explore.php" && canLoadMore) {
+        var loadMoreButton = document.createElement("a");
+        loadMoreButton.innerHTML = "Load more songs...";
+        loadMoreButton.id = "loadMoreButton";
+        loadMoreButton.setAttribute('onclick', "setScrollToBottom(); sortSongs(\"" + containerName + "\", \"" + listName + "\", " + sortType + ", " + (amount + 15) + ", \"" + ranked + "\", " + listID + ", " + mode + ");");
+        section.appendChild(loadMoreButton);
+    }
+
+    if(scrollToBottom) {
+        console.log("YAY");
+        list.scrollTop = (list.scrollHeight + 900) / (timesScrolledToBottom + 1) * timesScrolledToBottom;
+        scrollToBottom = false;
+    }
 }
 
 function play(songIdInput, listID, mode) {
@@ -764,21 +794,6 @@ function play(songIdInput, listID, mode) {
             document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/pause-fill_white.svg";
             document.getElementById("songItem" + songID + "" + currentList).classList = "selectedSong";
             isPlaying = true;
-
-            if(mode == 0) {
-                document.getElementById('btm-nav_cover').src = "../rfm/" + covers[sortingOrder[listID][songID]];
-                document.getElementById('btm-nav_downloadButton').href = "../rfm/" + directories[sortingOrder[listID][songID]];
-                document.getElementById('openAddToPlaylistPopupButton').setAttribute('onclick', "openAddToPlaylistPopup(" + ids[sortingOrder[listID][songID]] + ")");
-                document.getElementById('songTitle').innerHTML = titles[sortingOrder[listID][songID]];
-                document.getElementById('songArtist').innerHTML = artists[sortingOrder[listID][songID]];
-            }
-            else {
-                document.getElementById('btm-nav_cover').src = "../rfm/" + myCovers[sortingOrder[listID][songID]];
-                document.getElementById('btm-nav_downloadButton').href = "../rfm/" + myDirectories[sortingOrder[listID][songID]];
-                document.getElementById('openAddToPlaylistPopupButton').setAttribute('onclick', "openAddToPlaylistPopup(" + myIds[sortingOrder[listID][songID]] + ")");
-                document.getElementById('songTitle').innerHTML = myTitles[sortingOrder[listID][songID]];
-                document.getElementById('songArtist').innerHTML = myArtists[sortingOrder[listID][songID]];
-            }
         }
     }
     else {
