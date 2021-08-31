@@ -877,7 +877,6 @@
     position: relative;
     display: block;
     text-align: center;
-    max-width: 1000px;
     overflow: hidden;
     text-overflow: ellipsis;
 
