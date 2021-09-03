@@ -30,7 +30,7 @@
                         
                         echo '<img onclick="profileSettingsFunction()" src="resources/users/profilePicture/defualt_profile_image_large_224px.png" alt="Default Profile Image" style="width:12.25rem"/>';
                     } else {
-                        echo '<img onclick="profileSettingsFunction()" src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image" style="width:12.25rem"/>';                  
+                        echo '<img onclick="profileSettingsFunction()" src="' . htmlspecialchars($_SESSION["usersProfilePicture"]) . '" alt="Default Profile Image" style="width:100%; height:100%;"/>';                  
                     }
                     ?>
                     

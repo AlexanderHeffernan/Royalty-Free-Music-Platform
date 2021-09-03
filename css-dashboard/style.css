@@ -165,6 +165,8 @@ main .profile .profile-picture {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
+  width: 130px;
+  height: 130px;
 }
 
 main .profile .profile-picture .on-hover {

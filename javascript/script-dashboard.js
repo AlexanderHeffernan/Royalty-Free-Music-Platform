@@ -64,7 +64,7 @@ function reloadP() {
   setTimeout(function(){
     sessionStorage.setItem("reloading", "true");
     document.location.reload();
-  },500);
+  },1000);
   
 }
 
@@ -227,7 +227,7 @@ function editProfilePicture() {
 
     var fd = new FormData();
     var files = $('#inputProfilePictureElement')[0].files;
-        
+    console.log($('#inputProfilePictureElement')[0].files);
     // Check file selected or not
     if(files.length > 0 ){
       fd.append('file',files[0]);
