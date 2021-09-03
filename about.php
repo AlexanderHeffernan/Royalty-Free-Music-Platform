@@ -65,10 +65,11 @@
         <div class="features-container">
             <div class="features-content fc32">
                 <div class="textpannel fc3 tp3">
-                <h1 class="blacktext">Well what are you waiting for?</p>
+                <h1 class="whitetext">Well what are you waiting for?</p>
                 <div class="search2">
                     <form action="explore.php" method="POST">
-                        <input type="text" name="search" placeholder="Explore now!">
+                        <input type="text" name="search" placeholder="What mood are you looking for?...">
+                        <button type="submit" name="submit-search" class="material-icons search-icon"></button> 
                     </form>
                 </div>               
             </div>

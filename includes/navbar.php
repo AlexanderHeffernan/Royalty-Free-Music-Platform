@@ -64,6 +64,7 @@
             echo "</button>
             <div id='myDropdown' class='dropdown-content-nav'>
                 <a href='dashboard.php'>Account</a>
+                <a href='documentation.php'>Documentation</a>
                 <a href='includes/logout.inc.php'>Logout</a>
             </div>
             </div>";

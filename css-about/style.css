@@ -140,13 +140,13 @@ body {
 
 .features3{
   width: 100%;
-  height: 100vh;
+  height: 87vh;
   text-align: center;
-  background-color: #eeeeee;
+  background-color: #121212;
   position: relative;
   top:-65px;
   overflow: hidden;
- 
+ color: white;
 }
 
 @media all and (max-width: 925px) {

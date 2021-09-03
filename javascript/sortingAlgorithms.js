@@ -205,7 +205,30 @@ function setScrollToBottom() {
     timesScrolledToBottom += 1;
 }
 
+var currentSortType;
+
 function sortSongs(containerName, listName, sortType, amount, ranked, listID, mode, searchInput, playlistIds, playlistID) {
+    
+    if(currentSortType != sortType) {
+        canLoadMore = true;
+        currentSortType = sortType;
+    }
+
+    //for(var i = 0; i < activeGenreFilters.length;){
+    //    str = activeGenreFilters[i];
+    //    str = str.replace(/\s/g, '');
+    //    document.getElementById(str).click(); 
+    //}
+    //for(var i = 0; i < activeMoodFilters.length;){
+    //    str = activeMoodFilters[i];
+    //    str = str.replace(/\s/g, '');
+    //    document.getElementById(str).click(); 
+    //}
+    //for(var i = 0; i < activeInstrumentFilters.length;){
+    //    str = activeInstrumentFilters[i];
+    //    str = str.replace(/\s/g, '');
+    //    document.getElementById(str).click(); 
+    //}
     
     searchInput = searchInput || "";
     playlistIds = playlistIds || "";
@@ -732,18 +755,20 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
     }
 
     if(window.location.pathname.toString() == "/rfm/explore.php" && canLoadMore) {
-        var loadMoreButton = document.createElement("a");
-        loadMoreButton.innerHTML = "Load more songs...";
+        var loadMoreButton = document.createElement("button");
+        loadMoreButton.innerHTML = "LOAD MORE SONGS";
         loadMoreButton.id = "loadMoreButton";
+        loadMoreButton.classList = "sortbutton waves-effect waves-light";
         loadMoreButton.setAttribute('onclick', "setScrollToBottom(); sortSongs(\"" + containerName + "\", \"" + listName + "\", " + sortType + ", " + (amount + 15) + ", \"" + ranked + "\", " + listID + ", " + mode + ");");
-        section.appendChild(loadMoreButton);
+        document.getElementsByClassName("musiclist")[0].appendChild(loadMoreButton);
     }
 
     if(scrollToBottom) {
-        console.log("YAY");
         list.scrollTop = (list.scrollHeight + 900) / (timesScrolledToBottom + 1) * timesScrolledToBottom;
         scrollToBottom = false;
     }
+
+    filterSongs();
 }
 
 function play(songIdInput, listID, mode) {
@@ -754,7 +779,6 @@ function play(songIdInput, listID, mode) {
     if(listID == undefined) {
         listID = currentList;
     }
-    console.log(songIdInput + " and " + songID);
     if(songIdInput == "current" || ((songIdInput == songID) && (listID == currentList))) {
         if(playButtonPress == 0){
 
@@ -799,14 +823,12 @@ function play(songIdInput, listID, mode) {
     else {
         audio.pause();
         document.getElementById('playPauseButton').src = "resources/bootstrap_icons/pause-fill_white.svg";
-        console.log('playButton' + songID + "" + currentList);
         if(document.getElementById('playButton' + songID + "" + currentList)) {
             document.getElementById('playButton' + songID + "" + currentList).src = "resources/bootstrap_icons/play-fill_white.svg";
             document.getElementById("songItem" + songID + "" + currentList).classList = "";
         }
         if(songID == songIdInput && listID == currentList && isPlaying) {
             isPlaying = false;
-            console.log("YAY AGAIN");
         }
         else {
             songID = songIdInput;
@@ -916,7 +938,6 @@ audio.onpause = function() {
 };
 
 function downloadSong() {
-    console.log('yay ' + ids[sortingOrder[currentList][songID]]);
     var statType = '1';
     $.ajax({
         url: "includes/incrementSongStats.inc.php",
@@ -1042,7 +1063,6 @@ function addSongToPlaylist(songID, playlistID) {
                     playlistValues[i] = playlistValues[i].concat(songID);
                 }
                 else {
-                    console.log("YAY");
                     newPlaylistString = newPlaylistString.concat("." + songID + ";");
                     playlistValues[i] = playlistValues[i].concat("." + songID);
                 }
@@ -1058,10 +1078,8 @@ function addSongToPlaylist(songID, playlistID) {
         type: 'post',
         data: 'newPlaylistString='+newPlaylistString
     })
-    console.log("Uploading... " + newPlaylistString);
 
     if(playlistID == 0) {
-        console.log('yay ' + ids[sortingOrder[currentList][songID]]);
         var statType = '2';
         $.ajax({
             url: "includes/incrementSongStats.inc.php",
@@ -1095,7 +1113,6 @@ function createPlaylist(playlistName) {
         type: 'post',
         data: 'newPlaylistString='+newPlaylistString
     })
-    console.log("Uploading... " + newPlaylistString);
 
     setTimeout(function(){
         sessionStorage.setItem("reloading", "true");
@@ -1142,7 +1159,6 @@ function filter(filterName, category) {
         }
         else {
             for(var i = 0; i < activeGenreFilters.length; i++) {
-                console.log(activeGenreFilters[i] + " and " + filterName);
                 if(activeGenreFilters[i] == filterName){
                     delete activeGenreFilters[i];
                 }
@@ -1155,7 +1171,6 @@ function filter(filterName, category) {
         }
         else {
             for(var i = 0; i < activeMoodFilters.length; i++) {
-                console.log(activeMoodFilters[i] + " and " + filterName);
                 if(activeMoodFilters[i] == filterName){
                     delete activeMoodFilters[i];
                 }
@@ -1168,7 +1183,6 @@ function filter(filterName, category) {
         }
         else {
             for(var i = 0; i < activeInstrumentFilters.length; i++) {
-                console.log(activeInstrumentFilters[i] + " and " + filterName);
                 if(activeInstrumentFilters[i] == filterName){
                     delete activeInstrumentFilters[i];
                 }
@@ -1185,15 +1199,23 @@ function filter(filterName, category) {
     activeInstrumentFilters = activeInstrumentFilters.filter(function(x) {
         return x !== undefined;
     });
+    filterSongs();
+}
 
+function filterSongs() {
     var allSongs = document.getElementsByClassName("musiclist")[0];
 
     for(var i = 0; i < allSongs.childElementCount; i++) {
         var tags = allSongs.childNodes[i].childNodes[0].childNodes[2].childNodes[1];
+        
         var tagsMatched = 0;
         for(var j = 0; j < tags.childElementCount; j++) {
-            if(activeGenreFilters.includes(tags.childNodes[j].innerText) || activeInstrumentFilters.includes(tags.childNodes[j].innerText) || activeMoodFilters.includes(tags.childNodes[j].innerText)) {
-                tagsMatched += 1;
+            if(activeGenreFilters.length == 0 || activeGenreFilters.includes(tags.childNodes[1].innerText.toUpperCase())) {
+                if(activeInstrumentFilters.length == 0 || activeInstrumentFilters.includes(tags.childNodes[3].innerText.toUpperCase())) {
+                    if(activeMoodFilters.length == 0 || activeMoodFilters.includes(tags.childNodes[2].innerText.toUpperCase())) {
+                        tagsMatched += 1;
+                    }
+                }
             }
         }
         if(tagsMatched == 0 && (activeGenreFilters.length != 0 || activeMoodFilters.length != 0 || activeInstrumentFilters.length != 0)) {

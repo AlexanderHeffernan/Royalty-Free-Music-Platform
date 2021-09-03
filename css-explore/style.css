@@ -16,17 +16,19 @@
   position: relative;
   left: 14.5%;
   overflow:scroll;
+  height: 79%;
 }
 
 @media all and (max-width: 1229px) {
   .musiclist {
     left: auto;
-    margin-left: auto;
-    margin-right: auto;
     width: 99%;
-    text-align: center;
     overflow-x: hidden;
   }
+}
+
+body, html {
+  height: 100%;
 }
 
 /* ---------- main content ---------- */
@@ -34,6 +36,7 @@
   color: #f1f1f1;
   display: flex;
   width: 100%;
+  height: 100%;
   top: 130px;
   position: relative;
 }
@@ -195,13 +198,19 @@
 }
 
 #loadMoreButton {
+  background-color: #8f0099;
+  color: rgb(255, 255, 255);
+  outline: none;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 10%;
+  width: 175px;
+  height: 35px;
   position: relative;
-  top: -20px;
-  z-index: 100;
-  height: 10px;
-}
-
-#loadMoreButton:hover {
-  cursor: pointer;
-  color: purple;
+  left: 50%;
+  margin-left: -87.5px;
 }
