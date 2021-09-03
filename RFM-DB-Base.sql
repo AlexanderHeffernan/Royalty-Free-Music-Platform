@@ -129,7 +129,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`usersId`, `usersUsername`, `usersEmail`, `usersPassword`, `usersPictureDirectory`, `Playlists`) VALUES
 (27, 'Upwards', 'upwards@gmail.com', '$2y$10$MHWnhgUzcot9PNzoh4ayoO2Aq/iWFvMYAFA6yMyswjkpKwaZ4agim', 'resources/users/profilePicture/Upwards.jpg', 'Liked Songs;79.107.99.98;Loved Songs;3.99.104;Cool Songs;79.99.96.86'),
-(29, 'Redman Games', 'redmangamesstudio@gmail.com', '$2y$10$Z8DvkXb054DRAgMX8ggt9uCX0DyEOHTo3ikp23lza36nVCKGp7mMO', 'resources/users/profilePicture/Cloud Computing.jpg', ''),
+(29, 'Redman Games', 'redmangamesstudio@gmail.com', '$2y$10$Z8DvkXb054DRAgMX8ggt9uCX0DyEOHTo3ikp23lza36nVCKGp7mMO', 'resources/users/profilePicture/redmangames.jpg', ''),
 (30, 'Blank_Account', 'blank@gmail.com', '$2y$10$MHWnhgUzcot9PNzoh4ayoO2Aq/iWFvMYAFA6yMyswjkpKwaZ4agim', 'resources/users/profilePicture/Avatar-2.png', ''),
 (31, 'Alex_Heffernan', 'heffernan.alexander@icloud.com', '$2y$10$HeZ2paIzzuv8aM8v9kU7AefVzRBudkyzqCpU/Td1v3DOgtu7VoMBi', 'resources/users/profilePicture/Avatar-2.png', 'Liked Songs;99.96;Something;'),
 (32, 'LokeshDhade', 'lokesh.dhade@gmail.com', '$2y$10$i31nDMD7emwDvBh6.9CFZuJ07T2gcwM8d9sjbN6BkN1WVOdMc/Csu', 'resources/users/profilePicture/', 'Liked Songs;;Cool songs;'),
