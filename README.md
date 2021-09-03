@@ -1,7 +1,7 @@
 **Repository install instructions**
 
 Initiate git with the command: "git init"
-Then to clone this repository use the command: "git clone https://github.com/DTG-SQUAD-2021/RFM.git"
+Then to clone this repository using the command: "git clone https://github.com/DTG-SQUAD-2021/RFM.git"
 
 **Repository configuration instructions**
 
