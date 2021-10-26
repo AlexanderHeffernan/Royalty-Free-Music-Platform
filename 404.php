@@ -14,6 +14,9 @@
 <div class="fourofour-container">
     <div class="fourofour">
         <p>404</p>
+        <a class="plus101container">
+            <a href="505.php" class="plus101button">+101=</a>
+        </a>
         <a class="tip">You're not supposed to be here.</a>
         <a class="backbuttoncontainer">
             <a href="index.php" class="backbutton">Go Back</a>

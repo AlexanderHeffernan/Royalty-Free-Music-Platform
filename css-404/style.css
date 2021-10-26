@@ -5,7 +5,6 @@ body{
 
 }
 
-
 body {
 	margin: 0;
 	width: 100%;
@@ -119,3 +118,27 @@ body {
     color: white;
   }
 
+  .plus101container{
+    width: 100%;
+    background-color: transparent;
+    margin-left:auto ;
+    margin-right:auto ;
+    text-align: center;
+}
+
+.plus101button{
+    padding:8px;
+    top:-100px;
+    left:150px;
+    position: relative;
+    color: white;
+    font-size: 1rem;
+    display: block;
+    border: none;
+    margin-left:auto ;
+    margin-right:auto ;
+    text-align: center;
+    cursor: pointer;
+    width: 50px;
+
+}
