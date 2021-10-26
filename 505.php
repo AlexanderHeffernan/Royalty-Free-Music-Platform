@@ -43,6 +43,7 @@ body {
     <script src="javascript/script-home.js"></script>
     <script src="javascript/sortingAlgorithms.js"></script>
 
+    
     </body>
 </html>
 
