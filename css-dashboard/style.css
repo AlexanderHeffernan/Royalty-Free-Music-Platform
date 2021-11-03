@@ -165,8 +165,8 @@ main .profile .profile-picture {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-  width: 130px;
-  height: 130px;
+  width: 12rem;
+  height: 12rem;
 }
 
 main .profile .profile-picture .on-hover {
@@ -709,6 +709,6 @@ h1 {
   padding: 10px;
 }
 
-#deleteButton:hover{
+#deleteButton:hover {
   background-color: rgb(54, 54, 54);
 }
