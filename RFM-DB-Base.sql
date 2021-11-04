@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 31, 2021 at 12:06 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Nov 04, 2021 at 09:42 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -128,18 +128,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`usersId`, `usersUsername`, `usersEmail`, `usersPassword`, `usersPictureDirectory`, `Playlists`) VALUES
-(27, 'Upwards', 'upwards@gmail.com', '$2y$10$MHWnhgUzcot9PNzoh4ayoO2Aq/iWFvMYAFA6yMyswjkpKwaZ4agim', 'resources/users/profilePicture/Upwards.jpg', 'Liked Songs;79.107.99.98;Loved Songs;3.99.104;Cool Songs;79.99.96.86'),
-(34, 'Yung Limp', 'yunglimp@gmail.com', '$2y$10$uG3P6zRxbbBTS4zk0HHNcOyhxtVGe/c/SYr17VxIXlQKBX0bT1Vti', 'resources/users/profilePicture/channels4_profile.jpg', 'Liked Songs;'),
+(2, 'Upwards', 'upwards@gmail.com', '$2y$10$CLov4tLZ2wCgBdHXp9J8Le6kzQ4zJgJW6Gp0orCWppufuA07GCoWm', 'resources/users/profilePicture/Upwards.jpg', 'Liked Songs;'),
+(3, 'Yung Limp', 'yunglimp@gmail.com', '$2y$10$auwH1OWQpNK7FM9ARR/KbutF4H3TEOo518lxP5NF7FEd.aNHBjJsC', 'resources/users/profilePicture/channels4_profile.jpg', 'Liked Songs;');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `songs`
---
-ALTER TABLE `songs`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -152,16 +146,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `songs`
---
-ALTER TABLE `songs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
