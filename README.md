@@ -46,33 +46,33 @@ Royalty Free Music(RFM) is a website that hosts a library of free music. Our web
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-**Implcations we had to consider during the design and development processes of Royalty Free Music (RFM)**
+**Implications we had to consider during the design and development processes of Royalty Free Music (RFM)**
 
-*Legal*
+*Legal:*
 
 The implication of Legality is a significant aspect of our project. Songs on our website must be royalty free. That way users can enter into our website and download any songs to use freely. This ensures trust within our users. To ensure all the music on our site is royalty free, we started off the site by uploading songs created by Tobey Lim (member of design team and later the development team) who agreed to making his songs/tracks royalty free. To further ensure all the music on the site is royalty free, users must confirm that the music is theirs and royalty free before uploading to the website.
 
-*Intellectual Property*
+*Intellectual Property:*
 
 Intellectual property is a license and ownership of digital property. Our project RFM addresses this implication because the content provided on the website is royalty free which is material that is able to be used without payment of royalties or license fees. The project RFM abides by IP so that the goal of RFM to distribute content and provide music is able to have the rights to do so.
 
-*Privacy*
+*Privacy:*
 
 Our project addresses the implication of privacy by keeping the users who use our services personal information private. The login information users input into the website is encrypted so that only authorized parties can access sensitive information. This prevents attacks and data breaches to our users
 
-*Accessibility*
+*Accessibility:*
 
 By making our website responsive it can be accessible on both large and smaller screen devices such as laptops, monitors, tablets and phones. This is an important part of the ux aspect of the website.
 
-*Usability*
+*Usability:*
 
 Over the course of the project we continue to find more ways to add pages and features into the website. Playlists, download songs, profile customization and adding songs were things we found necessary for our users to do.
 
-*Functionality*
+*Functionality:*
 
 By adding the double hamburger nav we made the website twice as functional.
 
-*Health and Safety*
+*Health and Safety:*
 
 Users cannot interact or rate songs. This means that harassment and bullying cannot be found on our website.
 
