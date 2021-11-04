@@ -159,7 +159,7 @@ for(var i = 0; i < playlists.length; i++) {
     }
 }
 
-if(window.location.pathname.toString() == "/rfm/library.php") {
+if(window.location.pathname.toString().includes("library.php")) {
     
     var panel = document.getElementById("panel");
 
@@ -754,7 +754,7 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
         document.getElementById("loadMoreButton").remove();
     }
 
-    if(window.location.pathname.toString() == "/rfm/explore.php" && canLoadMore) {
+    if(window.location.pathname.toString().includes("explore.php") && canLoadMore) {
         var loadMoreButton = document.createElement("button");
         loadMoreButton.innerHTML = "LOAD MORE SONGS";
         loadMoreButton.id = "loadMoreButton";
