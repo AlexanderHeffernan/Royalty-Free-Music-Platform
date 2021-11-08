@@ -61,7 +61,7 @@ Royalty Free Music(RFM) is a website that hosts a library of royalty free music.
 
 *September:*
 
-* 03/9/21 - The full team (Alex Heffernan, Lokesh Dhade, Benj Baniqued, and Tobey Lim) finalised the project. The website was fully functional and was exactly as intended. The project was now ready to be submitted for marking. In the months following, only minor improvements would be made to the website to ensure eease of setting up on new devices and to futureproof.
+* 03/9/21 - The full team (Alex Heffernan, Lokesh Dhade, Benj Baniqued, and Tobey Lim) finalised the project. The website was fully functional and was exactly as intended. The project was now ready to be submitted for marking. In the months following, only minor improvements would be made to the website to ensure ease of setting up on new devices and to futureproof.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
