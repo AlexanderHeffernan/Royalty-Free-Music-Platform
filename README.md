@@ -8,20 +8,20 @@ Royalty Free Music(RFM) is a website that hosts a library of royalty free music.
 
 **Software used:**
 
-* Visual Studio Code
-* Adobe XD
+* Visual Studio Code (Programming)
+* Adobe XD (Designing)
 
 **Websites used:**
 
-* Trello
+* Trello (Task management)
 * Unsplash.com and Pexels.com
 
 **Techniques/tools used:**
 
-* Git/GitHub
-* FontAwesome
+* Git/GitHub (Source control and online repository systems)
+* FontAwesome (Icon library)
 * JQuery (Accordion - expanding content on button press)
-* MYSQL
+* MYSQL (Database language)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
