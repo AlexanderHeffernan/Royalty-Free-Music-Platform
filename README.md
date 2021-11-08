@@ -2,7 +2,26 @@
 
 **About Royalty Free Music(RFM)**
 
-Royalty Free Music(RFM) is a website that hosts a library of free music. Our website is aimed/targeted specifically towards all creators, such as filmmakers, who require quick and free access to music for their creative projects. Around the web, there are websites that provide the same services we are giving, but they are based on paid subscriptions. However, there are several free royalty free image services around the web, such as unsplash.com and pixabay.com. Our aim was to combine these two services into one, taking the high quality music aspects of paid services along with the royalty free nature of websites like unsplash.com.
+Royalty Free Music(RFM) is a website that hosts a library of royalty free music. Our website is aimed/targeted specifically towards all creators, such as filmmakers, who require quick and free access to music for their creative projects. A wide range of coding and programming languages (HTML 5, CSS 3, JavaScript, and PHP 8) were used to develop the digital outcome to a higher quality. From the start, it was important to us that the website was aesthetically pleasing and that the legality, accessibility and usabiity of the site was always focused on. Royalty Free Music (RFM) is inspired by the many high quality music paid services online, combined with sites like Unsplash.com and Pixabay.com which allow for royalty free download of content.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**Software used:**
+
+* Visual Studio Code
+* Adobe XD
+
+**Websites used:**
+
+* Trello
+* Unsplash.com and Pexels.com
+
+**Techniques/tools used:**
+
+* Git/GitHub
+* FontAwesome
+* JQuery (Accordion - expanding content on button press)
+* MYSQL
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -46,9 +65,17 @@ Royalty Free Music(RFM) is a website that hosts a library of free music. Our web
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-**Implications we had to consider during the design and development processes of Royalty Free Music (RFM)**
+**Requirements Implications we had to consider during the design and development processes of Royalty Free Music (RFM)**
 
-*Legal:*
+*Social:*
+
+RFM allows users to listen and download songs for free, allowing for infinite use in creative projects (both commercial and personal). This is greatly beneficial to society, which meets the social implication of the website. We also decided not to upload any explicit songs to the website as to not offend others, allowing for a positive social environment.
+
+*Cultural:*
+
+Cultural implications were addressed by only uploading content to the website that was not offesnsive to any cultural background. All the content uploaded to the site was only uploaded if relevant to requirements we had in place. Everyonce in a while we would also share our website with others, to ensure there is nothing cultural innappropriate that we've missed. However, so far nothing cultural innappropriate has been identified, meaning this implication has been addressed.
+
+*Legal: (Requirement 1)*
 
 The implication of Legality is a significant aspect of our project. Songs on our website must be royalty free. That way users can enter into our website and download any songs to use freely. This ensures trust within our users. To ensure all the music on our site is royalty free, we started off the site by uploading songs created by Tobey Lim (member of design team and later the development team) who agreed to making his songs/tracks royalty free. To further ensure all the music on the site is royalty free, users must confirm that the music is theirs and royalty free before uploading to the website.
 
@@ -60,21 +87,28 @@ Intellectual property is a license and ownership of digital property. Our projec
 
 Our project addresses the implication of privacy by keeping the users who use our services personal information private. The login information users input into the website is encrypted so that only authorized parties can access sensitive information. This prevents attacks and data breaches to our users
 
-*Accessibility:*
+*Accessibility: (Requirement 2)*
 
 By making our website responsive it can be accessible on both large and smaller screen devices such as laptops, monitors, tablets and phones. This is an important part of the ux aspect of the website.
 
-*Usability:*
+*Usability: (Requirement 3)*
 
 Over the course of the project we continue to find more ways to add pages and features into the website. Playlists, download songs, profile customization and adding songs were things we found necessary for our users to do.
 
 *Functionality:*
 
-By adding the double hamburger nav we made the website twice as functional.
+By adding the double hamburger nav we made the website twice as functional. Every song on the website has been tagged appropriately to make finding songs effective.
 
 *Health and Safety:*
 
 Users cannot interact or rate songs. This means that harassment and bullying cannot be found on our website.
+
+*Aesthetics:*
+
+For our website, the aim was to create a modern, functional and practical design that had a great user interface and user experience. These two were very instrumental throughout the design phase and throughout the project building phase. 
+For the home page, we knew we needed to make accessing our content as easy as possible, so we built a simplistic splash screen that had a search bar built right into the middle of the screen, a signup and login link in the top right corner, along with a few sentences explaining what the website is about. From there the main elements of the home page were finalised. 
+Next, the homepage went through several iterations and design ideas before we finally settled on the final design. The different iterations we looked at considered the different aesthetics and creativity that would attract our target audience. This included a colour change and several repositioning of different elements and swapping out images.
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
