@@ -1205,14 +1205,17 @@ function filter(filterName, category) {
 function filterSongs() {
     var allSongs = document.getElementsByClassName("musiclist")[0];
 
-    for(var i = 0; i < allSongs.childElementCount; i++) {
+    for(var i = 0; i < (allSongs.childElementCount-1); i++) {
+
         var tags = allSongs.childNodes[i].childNodes[0].childNodes[2].childNodes[1];
         
         var tagsMatched = 0;
+
         for(var j = 0; j < tags.childElementCount; j++) {
-            if(activeGenreFilters.length == 0 || activeGenreFilters.includes(tags.childNodes[1].innerText.toUpperCase())) {
-                if(activeInstrumentFilters.length == 0 || activeInstrumentFilters.includes(tags.childNodes[3].innerText.toUpperCase())) {
-                    if(activeMoodFilters.length == 0 || activeMoodFilters.includes(tags.childNodes[2].innerText.toUpperCase())) {
+
+            if(activeGenreFilters.length == 0 || activeGenreFilters.includes(tags.childNodes[0].innerText.toUpperCase())) {
+                if(activeInstrumentFilters.length == 0 || activeInstrumentFilters.includes(tags.childNodes[2].innerText.toUpperCase())) {
+                    if(activeMoodFilters.length == 0 || activeMoodFilters.includes(tags.childNodes[1].innerText.toUpperCase())) {
                         tagsMatched += 1;
                     }
                 }
