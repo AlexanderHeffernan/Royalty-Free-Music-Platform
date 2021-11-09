@@ -2,7 +2,7 @@
 
 **About Royalty Free Music(RFM)**
 
-Royalty Free Music(RFM) is a website that hosts a library of royalty free music. Our website is aimed/targeted specifically towards all creators, such as filmmakers, who require quick and free access to music for their creative projects. A wide range of coding and programming languages (HTML 5, CSS 3, JavaScript, and PHP 8) were used to develop the digital outcome to a higher quality. From the start, it was important to us that the website was aesthetically pleasing and that the legality, accessibility and usabiity of the site was always focused on. Royalty Free Music (RFM) is inspired by the many high quality music paid services online, combined with sites like Unsplash.com and Pixabay.com which allow for royalty free download of content.
+Royalty Free Music(RFM) is a website that hosts a library of royalty free music. Our website is aimed/targeted specifically towards all creators, such as filmmakers, who require quick and free access to music for their creative projects. A wide range of coding and programming languages (HTML 5, CSS 3, JavaScript, and PHP 8) were used to develop the digital outcome to a higher quality. From the start, it was important to us that the website was aesthetically pleasing and that the legality, accessibility and usabiity of the site was always focused on. Royalty Free Music (RFM) is inspired by the many high quality music paid services online like Artlist.com, combined with sites like Unsplash.com and Pixabay.com which allow for royalty free download of content.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
