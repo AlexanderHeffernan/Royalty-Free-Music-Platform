@@ -6,6 +6,15 @@ Royalty Free Music(RFM) is a website that hosts a library of royalty free music.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+**Our Team**
+
+* Alex Heffernan (Head Back-end Developer and Head of Development Team)
+* Benj Baniqued (UI/UX Designer and Front-end Developer)
+* Lokesh Dhade (Head Front-end Developer) 
+* Tobey Lim (UI/UX Designer and Head of Design Team)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 **Software used:**
 
 * Visual Studio Code (Programming)
@@ -128,7 +137,7 @@ Next, the homepage went through several iterations and design ideas before we fi
 
 *Future-proofing:*
 
-Future ideas include a mobile app for both Android and IOS. Health and safaty imporvement could incluce explicit detection algorithm.
+Future ideas include a mobile app for both Android and IOS. Health and safaty imporvement could incluce explicit detection algorithm.Better terms and conditions. Copyright detection algorithm.
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
