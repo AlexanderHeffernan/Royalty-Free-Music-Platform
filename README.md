@@ -87,7 +87,7 @@ Royalty Free Music(RFM) is a website that hosts a library of royalty free music.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-**Requirements Implications we had to consider during the design and development processes of Royalty Free Music (RFM)**
+**Requirements and other important ideas we had to consider during the design and development process of Royalty Free Music (RFM)**
 
 *Social:*
 
