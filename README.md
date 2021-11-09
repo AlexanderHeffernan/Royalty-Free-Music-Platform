@@ -65,6 +65,19 @@ Royalty Free Music(RFM) is a website that hosts a library of royalty free music.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+**Development and design process for Royalty Free Music (RFM)**
+
+* Planning/researching
+* Designing
+* Coding HTML
+* Coding CSS
+* Finalising Designs
+* Working on backend
+* Coding JavaScript
+* Project Finalised
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 **Requirements Implications we had to consider during the design and development processes of Royalty Free Music (RFM)**
 
 *Social:*
@@ -79,6 +92,10 @@ Cultural implications were addressed by only uploading content to the website th
 
 The implication of Legality is a significant aspect of our project. Songs on our website must be royalty free. That way users can enter into our website and download any songs to use freely. This ensures trust within our users. To ensure all the music on our site is royalty free, we started off the site by uploading songs created by Tobey Lim (member of design team and later the development team) who agreed to making his songs/tracks royalty free. To further ensure all the music on the site is royalty free, users must confirm that the music is theirs and royalty free before uploading to the website.
 
+*Ethical:*
+
+Users have to agree that any music they upload to the website is 100% their own and 100% royalty free. If a users does not accept these terms and uploads something that they either do not own or is not royalty free, their music will be removed from the website and their account will be suspended indefinitely.
+
 *Intellectual Property:*
 
 Intellectual property is a license and ownership of digital property. Our project RFM addresses this implication because the content provided on the website is royalty free which is material that is able to be used without payment of royalties or license fees. The project RFM abides by IP so that the goal of RFM to distribute content and provide music is able to have the rights to do so.
@@ -89,7 +106,7 @@ Our project addresses the implication of privacy by keeping the users who use ou
 
 *Accessibility: (Requirement 2)*
 
-By making our website responsive it can be accessible on both large and smaller screen devices such as laptops, monitors, tablets and phones. This is an important part of the ux aspect of the website.
+By making our website responsive it can be accessible on both large and smaller screen devices such as laptops, monitors, tablets and phones. This is an important part of the ux aspect of the website. It also had to be accessible on every browser (Chrome, Safari, Firefox, Edge, et cetera).
 
 *Usability: (Requirement 3)*
 
@@ -108,6 +125,10 @@ Users cannot interact or rate songs. This means that harassment and bullying can
 For our website, the aim was to create a modern, functional and practical design that had a great user interface and user experience. These two were very instrumental throughout the design phase and throughout the project building phase. 
 For the home page, we knew we needed to make accessing our content as easy as possible, so we built a simplistic splash screen that had a search bar built right into the middle of the screen, a signup and login link in the top right corner, along with a few sentences explaining what the website is about. From there the main elements of the home page were finalised. 
 Next, the homepage went through several iterations and design ideas before we finally settled on the final design. The different iterations we looked at considered the different aesthetics and creativity that would attract our target audience. This included a colour change and several repositioning of different elements and swapping out images.
+
+*Future-proofing:*
+
+Future ideas include a mobile app for both Android and IOS. Health and safaty imporvement could incluce explicit detection algorithm.
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
