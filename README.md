@@ -2,7 +2,7 @@
 
 **About Royalty Free Music(RFM)**
 
-Royalty Free Music(RFM) is a website that hosts a library of royalty free music. Our website is aimed/targeted specifically towards all creators, such as filmmakers, who require quick and free access to music for their creative projects. A wide range of coding and programming languages (HTML 5, CSS 3, JavaScript, and PHP 8) were used to develop the digital outcome to a higher quality. From the start, it was important to us that the website was aesthetically pleasing and that the legality, accessibility and usabiity of the site was always focused on. Royalty Free Music (RFM) is inspired by the many high quality music paid services online like Artlist.com, combined with sites like Unsplash.com and Pixabay.com which allow for royalty free download of content.
+With a team of 3 other developers and designers, I created a website that allows its users, such as filmmakers and other content creators, infinite access to a large library of royalty free music. The platform, named Royalty Free Music (RFM), has four main pages, including the Home page which introduces new users to the website, as well as provides a list of the most listened to, most downloaded, and most recent songs. The next page is the Explore page, which allows users to search, filter, and sort through the entire collections of songs the website holds. The next page is the Library page, which allows users to view their liked songs, as well as whatever playlists they have created. Finally, there is the Account page, which allows users, particularly those looking to use the platform to distribute their royalty free songs, a dashboard to view their analytics, all their previously released songs, as well upload more songs to the platform. Through a modern and aesthetically pleasing user interface, efficient searching, filtering and sorting tools, and a 100% guarantee that any track hosted on the website is royalty free, creators can easily find music for their projects.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ Royalty Free Music(RFM) is a website that hosts a library of royalty free music.
 **Software used:**
 
 * Visual Studio Code (Programming)
-* Adobe XD (Designing)
+* Adobe XD (Designing information architecture and content formatting)
 
 **Websites used:**
 
@@ -27,10 +27,24 @@ Royalty Free Music(RFM) is a website that hosts a library of royalty free music.
 
 **Techniques/tools used:**
 
-* Git/GitHub (Source control and online repository systems)
+* Git/GitHub (Source control and online repository systems, new skill gained)
 * FontAwesome (Icon library)
 * JQuery (Accordion - expanding content on button press)
-* MYSQL (Database language)
+* MYSQL (Database language and execution of information architecture)
+
+**Important characteristics**
+
+* Mobile compatibility
+* Accessible to all users
+* Well planned information architecture
+* Well-formatted content that is easy to scan
+* Fast load times
+* Browser consistency
+* Effective navigation
+* Good error handling
+* Contrasting colour scheme
+* Usable forms
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -42,13 +56,13 @@ Royalty Free Music(RFM) is a website that hosts a library of royalty free music.
 
 *March:*
 
-* 05/03/2021 - Using Adobe XD, the initital website designs were created by Tobey Lim and Benj Baniqued. The first pages designed were the home page and the login page. We decided to use Adobe XD because of the many features it came with and because it could be quickly mastered by our design team.
+* 05/03/2021 - Using Adobe XD, the initital website designs were created by Tobey Lim and Benj Baniqued. The first pages (wave one) designed were the home page and the login page. We decided to use Adobe XD because of the many features it came with and because it could be quickly mastered by our design team. User feedback helped us choose the colour scheme, how to format the content, and how to plan out the information architecture.
 
 * 31/03/2021 - Original finalisation of the home page and the login page developed and running on all of our local servers. We decided to code the website using HTML, CSS, JavaScript and PHP. This is because each member of our team specilised in one of these programming lanuages and new the basics of the others. For instance, Lokesh Dhade and Benj Baniqued were great at using HTML and CSS to make near perfect replicas of the original designs into web form while keeping it all 100% reponsive. Alex Heffernan specilised in JavaScript and PHP, so was in charge of the back-end systems of the website. Tobey Lim helped all round, but spent most of his time creating the designs with Adobe XD.
 
 *April:*
 
-* The second wave of designs for the website were created. This time, Tobey Lim and Benj Baniqued had prepared designs for the Explore page and About page. These designs were consistent towards the original Home page and Login page, and perfectly came together with the previous designs.
+* Further designs (wave one continued) for the website were created. This time, Tobey Lim and Benj Baniqued had prepared designs for the Explore page and About page. These designs were consistent towards the original Home page and Login page, and perfectly came together with the previous designs. At this point, further end-user feedback should have been conducted to identify the need for a Library page, as well as an Account/Dashboard page, rather than later in the development process in June.
 
 *May:*
 
@@ -58,7 +72,7 @@ Royalty Free Music(RFM) is a website that hosts a library of royalty free music.
 
 * 1/6/21 - Making RFM responsive to all devices suddenly became very important to us. We decided it was important to us because our website was all about providing a quick and free service to all creators who are after music for their projects. It was important to us that our users could access this service from anywhere and with great efficiency, so the design team (Tobey Lim and Benj Baniqued) set out to put together a collection of mobile-friendly designs for the website. The development team also began to prepare the website for this transition to a completely responsive UI.
 
-* 12/6/21 - The decision was made to implement a Library page into the site. We decided to do this because we wanted to allow our users to create and save playlists of songs to allow them to come back to our website and quickly find songs/tracks they were previously interested in or liked. It would also allow users to customize who they interact with our site. For instance, users could create a playlist for each project they are currently working on. We also decided that it would be important to create a Dashboard page for users who want to upload their own music to the website. We wanted to allow our users to quickly view statistics (such as listens, likes, downloads, et cetera) and upload new songs/tracks to the website with ease. This page would later be renamed to the Account Page, and would also allow users to change their profile picture, username, email address and password. So, the design team (Tobey Lim and Benj Baniqued) set out to create the new collection of designs, while the develpoment team (Alex Heffernan and Lokesh Dhade) prepared the website for the new pages.
+* 12/6/21 - The decision was made to implement a Library page (wave two) into the site. We decided to do this before from user feedback, we realised it was important for our end users to be able to create and save playlists of songs to allow them to come back to our website and quickly find songs/tracks they were previously interested in or liked. It would also allow users to customize who they interact with our site. For instance, users could create a playlist for each project they are currently working on. We also decided, from user feedback, that it would be important to create a Dashboard page (wave two continued) for users who want to upload their own music to the website. We wanted to allow our users to quickly view statistics (such as listens, likes, downloads, et cetera) and upload new songs/tracks to the website with ease. This page would later be renamed to the Account Page, and would also allow users to change their profile picture, username, email address and password. So, the design team (Tobey Lim and Benj Baniqued) set out to create the new collection of designs, while the develpoment team (Alex Heffernan and Lokesh Dhade) prepared the website for the new pages.
 
 *July:*
 
@@ -81,8 +95,8 @@ Royalty Free Music(RFM) is a website that hosts a library of royalty free music.
 * Coding HTML
 * Coding CSS
 * Finalising Designs
-* Working on backend
-* Coding JavaScript
+* Working on backend (new skill with MySQL and PHP)
+* Coding JavaScript (new skill)
 * Project Finalised
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -139,6 +153,12 @@ Next, the homepage went through several iterations and design ideas before we fi
 
 Future ideas include a mobile app for both Android and IOS. Health and safaty imporvement could incluce explicit detection algorithm.Better terms and conditions. Copyright detection algorithm.
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**Future improvements**
+
+* Artist pages
+* Fiscal compensation
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -22,6 +22,34 @@
                     <br>
                     <button type="submit" name="submit" class="submit-btn">LOG IN</button>
                 </form>
+                <?php
+                    if(isset($_GET["error"])) {
+                        if($_GET["error"] == "emptyinput") {
+                            echo "<p id=\"loginMessage\">Fill in all fields!</p>";
+                        }
+                        else if($_GET["error"] == "invalidUsername") {
+                            echo "<p id=\"loginMessage\">Invalid username!</p>";
+                        }
+                        else if($_GET["error"] == "invalidEmail") {
+                            echo "<p id=\"loginMessage\">Invalid email!</p>";
+                        }
+                        else if($_GET["error"] == "invalidRepeatPassword") {
+                            echo "<p id=\"loginMessage\">Password not correctly repeated!</p>";
+                        }
+                        else if($_GET["error"] == "statementFailed") {
+                            echo "<p id=\"loginMessage\">Something went wrong, try again!</p>";
+                        }
+                        else if($_GET["error"] == "usernameTaken") {
+                            echo "<p id=\"loginMessage\">Username already taken!</p>";
+                        }
+                        else if($_GET["error"] == "none") {
+                            echo "<p id=\"loginMessage\">You have successfully signed up!</p>";
+                        }
+                        else if($_GET["error"] == "wronglogin") {
+                            echo "<p id=\"loginMessage\">Incorrect login information!</p>;";
+                        }
+                    }
+                ?>
                 <form action="signup.inc.php" method="post" id="register" class="input-group" enctype="multipart/form-data">
                     <input type="text" name="username" class="input-field" placeholder="ENTER USERNAME" required>
                     <input type="text" name="email" class="input-field" placeholder="ENTER EMAIL" required>
@@ -33,35 +61,6 @@
                     <br>
                     <button type="submit" name="submit" class="submit-btn">SIGN UP</button>
                 </form>
-
-                <?php
-                    if(isset($_GET["error"])) {
-                        if($_GET["error"] == "emptyinput") {
-                            echo "<p>Fill in all fields!</p>";
-                        }
-                        else if($_GET["error"] == "invalidUsername") {
-                            echo "<p>Invalid username!</p>";
-                        }
-                        else if($_GET["error"] == "invalidEmail") {
-                            echo "<p>Invalid email!</p>";
-                        }
-                        else if($_GET["error"] == "invalidRepeatPassword") {
-                            echo "<p>Password not correctly repeated!</p>";
-                        }
-                        else if($_GET["error"] == "statementFailed") {
-                            echo "<p>Something went wrong, try again!</p>";
-                        }
-                        else if($_GET["error"] == "usernameTaken") {
-                            echo "<p>Username already taken!</p>";
-                        }
-                        else if($_GET["error"] == "none") {
-                            echo "<p>You have successfully signed up!</p>";
-                        }
-                        else if($_GET["error"] == "wronglogin") {
-                            echo "<p>Incorrect login information!</p>;";
-                        }
-                    }
-                ?>
             </section>
         </div>
     </div>

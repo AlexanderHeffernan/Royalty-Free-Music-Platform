@@ -13,6 +13,9 @@
     if($connection->query($sql)===TRUE){
         echo "DATA updated";
     }
+    else {
+        echo $connection->error;
+    }
 
     session_start();
     $_SESSION["usersProfilePicture"] = $profilePictureDir;

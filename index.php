@@ -30,7 +30,7 @@
             </div>
             <div class="search">
                 <form action="explore.php" method="POST">
-                    <input type="text" name="search" placeholder="What mood are you looking for?...">
+                    <input type="text" name="search" placeholder="What would you like to search for today?">
                     <button type="submit" name="submit-search" class="material-icons search-icon">search</button> 
                 </form>
             </div>

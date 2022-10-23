@@ -43,6 +43,11 @@
                     <p class="p">First things first, you must read and accept all of the terms of service to use our site. This is a part of the process and you must abide by all of our guide lines. Failing to agree to our TOS will result in you not being able to use our site. This is just so there is no missunderstanding in terms of what you are allowed and not allowed to do.</p>
                     <h2 class="h2">2. User Requirements To Use Our Service</h2>
                     <p class="p">You must be atleast the age of 13 years old to use our service. If you are considered a minor in your country you must get permission from your legal guardian or a parent to read and accept our terms.</p>
+                    <h2 class="h2">3. Cultural appropriateness</h2>
+                    <p class="p">All tracks uploaded to this platform must be culturally appropriate. If you deem a track to be culturally inappropriate, please contact me at heffernan.alexander@icloud.com. If you have uploaded a track to the webite that is deemed by others as culturally inappropriate, it will be taken down from the platform.</p>
+                    <h2 class="h2">4. Legal requirements</h2>
+                    <p class="p">Every track on this platform must be royalty free. If you find any track on this platform that is not royalty free, please contact heffernan.alexander@icloud.com. If any track you have uplaoded is deemed to not be royalty free, it may be taken down from the platform and your account may be suspended indefinitely.</p>
+
                 </div>
 
                 <div class="devider"></div>

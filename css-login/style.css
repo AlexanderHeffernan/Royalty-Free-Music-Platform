@@ -161,3 +161,14 @@
   	opacity: 0;
   	transition: visibility 0s, opacity 1s linear;
 }	
+
+#loginMessage {
+	color: white;
+	width: 70%;
+    max-width: 280px;
+    height: 50px;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+	font-size: 14px;
+}

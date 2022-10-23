@@ -769,6 +769,11 @@ function sortSongs(containerName, listName, sortType, amount, ranked, listID, mo
     }
 
     filterSongs();
+
+    if(loadMoreButton && amount == 0) {
+        console.log("YAY")
+        sortSongs(containerName, listName, sortType, (amount + 15), ranked, listID, mode);
+    }
 }
 
 function play(songIdInput, listID, mode) {
@@ -1204,6 +1209,7 @@ function filter(filterName, category) {
 
 function filterSongs() {
     var allSongs = document.getElementsByClassName("musiclist")[0];
+    var songsVisible = 0;
 
     for(var i = 0; i < (allSongs.childElementCount-1); i++) {
 
@@ -1225,7 +1231,13 @@ function filterSongs() {
             allSongs.childNodes[i].style.display = "none";
         } else {
             allSongs.childNodes[i].style.display = "flex";
+            songsVisible += 1;
         }
+    }
+    console.log(songsVisible)
+    if(songsVisible == 0 && document.getElementById("loadMoreButton")) {
+        console.log("YAY")
+        document.getElementById("loadMoreButton").click()
     }
 }
 

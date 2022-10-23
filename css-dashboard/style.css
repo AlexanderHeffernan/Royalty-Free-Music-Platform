@@ -655,8 +655,12 @@ main .filter .accordion p {
   border-right: 0;
   border-bottom: 2px solid rgb(105, 105, 105);
   outline: none;
-  background: transparent;
+  background: #202020;
   color: white;
+}
+
+.input-field option{
+  background-color: #202020;
 }
 
 .input-field::placeholder {

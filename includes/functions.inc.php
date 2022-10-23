@@ -147,19 +147,25 @@ function emptyInputSongUpload($title, $artist) {
 
 function uploadSong($connection, $title, $artist, $audio, $cover, $listens, $downloads, $likes, $duration, $genre, $mood, $instrument) {
 
-    $sql = "INSERT INTO songs (directory, title, artist, cover, listens, downloads, likes, duration, genre, mood, instrument) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
-    $statement = mysqli_stmt_init($connection);
-    if(!mysqli_stmt_prepare($statement, $sql)) {
-        header("location: dashboard.php?errorstatementFailed");
-        exit();
-    }
-
     $audioDir = "resources/songs/audio/" . $audio;
     $coverDir = "resources/songs/covers/" . $cover;
     echo "<p>", $title, " ", $artist, " ", $audio, " ", $cover, "</p>";
+
+    $sql = "INSERT INTO songs (directory, title, artist, cover, listens, downloads, likes, duration, genre, mood, instrument) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+
+    $statement = mysqli_stmt_init($connection);
+    if(!mysqli_stmt_prepare($statement, $sql)) {
+        echo "Error: " . $connection->error;
+        //header("location: dashboard.php?errorstatementFailed");
+        exit();
+    }
+
     mysqli_stmt_bind_param($statement, "sssssssssss", $audioDir, $title, $artist, $coverDir, $listens, $downloads, $likes, $duration, $genre, $mood, $instrument);
     mysqli_stmt_execute($statement);
     mysqli_stmt_close($statement);
     header("location: dashboard.php?error=none");
     exit();
+
+    //INSERT INTO `songs` (`id`, `directory`, `title`, `artist`, `cover`, `listens`, `downloads`, `likes`, `duration`, `genre`, `mood`, `instrument`, `date`) VALUES
+    //(85, 'resources/songs/audio/Illhearted2.mp3', 'Ill Hearted', 'Upwards', 'resources/songs/covers/AlbumCover6.png', 4, 0, 0, '3:26', 'Pop', 'Sad', 'Synth', '2021-08-26'),
 }

@@ -227,7 +227,7 @@ function editProfilePicture() {
 
     var fd = new FormData();
     var files = $('#inputProfilePictureElement')[0].files;
-    console.log($('#inputProfilePictureElement')[0].files);
+    console.log(files[0]);
     // Check file selected or not
     if(files.length > 0 ){
       fd.append('file',files[0]);
@@ -236,15 +236,7 @@ function editProfilePicture() {
         type: 'post',
         data: fd,
         contentType: false,
-        processData: false,
-        success: function(response){
-           if(response != 0){
-              $("#img").attr("src",response); 
-              $(".preview img").show(); // Display image element
-           }else{
-              alert('file not uploaded');
-           }
-        },
+        processData: false
       });
     }
 
