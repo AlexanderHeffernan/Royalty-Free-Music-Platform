@@ -6,6 +6,10 @@
 
 With a team of 3 other developers and designers, I created a website that allows its users, such as filmmakers and other content creators, infinite access to a large library of royalty free music. The platform, named Royalty Free Music (RFM), has four main pages, including the Home page which introduces new users to the website, as well as provides a list of the most listened to, most downloaded, and most recent songs. The next page is the Explore page, which allows users to search, filter, and sort through the entire collections of songs the website holds. The next page is the Library page, which allows users to view their liked songs, as well as whatever playlists they have created. Finally, there is the Account page, which allows users, particularly those looking to use the platform to distribute their royalty free songs, a dashboard to view their analytics, all their previously released songs, as well upload more songs to the platform. Through a modern and aesthetically pleasing user interface, efficient searching, filtering and sorting tools, and a 100% guarantee that any track hosted on the website is royalty free, creators can easily find music for their projects.
 
+| ![Home page](https://alexanderheffernan.github.io/static/media/RFM-HomePage.d01bc85b789b1096a778.png) | ![Explore page](https://alexanderheffernan.github.io/static/media/RFM-ExplorePage.0d5281aaba6c95ffc74e.png) |
+| -------------------------------- | ------------------------------ |
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **Our Team**
@@ -14,6 +18,9 @@ With a team of 3 other developers and designers, I created a website that allows
 * Benj Baniqued (UI/UX Designer and Front-end Developer)
 * Lokesh Dhade (Head Front-end Developer) 
 * Tobey Lim (UI/UX Designer and Head of Design Team)
+
+| ![Library page](https://alexanderheffernan.github.io/static/media/RFM-LibraryPage.236ee52123229d3bc93c.png) | ![Artist profile page](https://alexanderheffernan.github.io/static/media/RFM-ArtistPage.5ee03fc83fb33ea3315a.png) |
+| -------------------------------- | ------------------------------ |
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
